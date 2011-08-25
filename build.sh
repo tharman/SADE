@@ -1,7 +1,7 @@
 #!/bin/bash
 
 JETTY_VERSION=7.4.2.v20110526
-EXIST_REV=14611
+EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
 DIGILIB_CHANGESET=cbfc94584d3b
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
