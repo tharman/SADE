@@ -1,0 +1,17 @@
+/* #########  Alles noch alt, NEU machen !!! ############ */
+
+/*Extra Entries for dialogToWindow extension*/
+.ui-dialog .ui-dialog-titlebar-minimize { position: absolute; right: 1.65em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-minimize span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-minimize:hover, .ui-dialog .ui-dialog-titlebar-minimize:focus { padding: 0; }
+.ui-dialog .ui-dialog-titlebar-dock { position: absolute; right: 2.9em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-dock span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-dock:hover, .ui-dialog .ui-dialog-titlebar-dock:focus { padding: 0; }
+/*End of extra entries*/
+.dockElement
+{
+	margin-right: 4px;
+	margin-top: 4px;
+	padding:0.4em 1em 0.4em 1em;
+	text-decoration:none;
+}

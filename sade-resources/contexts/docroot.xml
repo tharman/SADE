@@ -1,0 +1,63 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+<!--
+Configure a custom context for the document root.
+
+This context contains only a ServletHandler with a default servlet
+to serve static html files and images.
+-->
+
+<!--<Configure class="org.mortbay.jetty.handler.ContextHandler">
+  <Set name="contextPath">/</Set>
+  <Set name="resourceBase"><SystemProperty name="jetty.home" default="."/>/docroot/</Set>
+  <Set name="handler">
+    <New class="org.mortbay.jetty.handler.ResourceHandler">
+      <Set name="welcomeFiles">
+        <Array type="String">
+          <Item>index.html</Item>
+          <Item>index.htm</Item>
+        </Array>
+      </Set>
+    </New>
+  </Set>
+</Configure>-->
+
+<Configure class="org.eclipse.jetty.servlet.ServletContextHandler">
+  <Set name="contextPath">/</Set>
+  <Set name="resourceBase"><SystemProperty name="jetty.home" default="."/>/docroot</Set>
+  <Call name="addServlet">
+    <Arg>org.eclipse.jetty.servlet.DefaultServlet</Arg>
+    <Arg>/</Arg>
+  </Call>
+  <!--  <Call name="addServlet">
+    <Arg>org.apache.jasper.servlet.JspServlet</Arg>
+    <Arg>/webapps/quercus</Arg>
+    </Call>-->
+</Configure>
+
+
+<!--
+<Configure class="org.mortbay.jetty.servlet.Context">
+  <Set name="contextPath">/</Set>
+  <Set name="resourceBase"><SystemProperty name="jetty.home" default="."/>/docroot</Set>
+  <Call name="addServlet">
+    <Arg>org.mortbay.jetty.servlet.DefaultServlet</Arg>
+    <Arg>/</Arg>
+  </Call>
+  </Configure>-->
+
+<!--<Configure class="org.mortbay.jetty.handler.ContextHandler">
+  <Set name="contextPath">/</Set>
+  <Set name="resourceBase"><SystemProperty name="jetty.home" default="."/>/webapps/quercus/docroot</Set>
+  <Call name="addHandler">
+    <Arg>
+      <New class="org.mortbay.jetty.handler.ResourceHandler"/>
+    </Arg>
+  </Call>
+</Configure>-->
+
+
+
+
+

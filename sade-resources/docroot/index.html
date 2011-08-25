@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <title>TELOTA - Scalable Architecture for Digital Editions</title>
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+        <link type="text/css" href="css/uiWindow.css" rel="stylesheet" />
+        <link type="text/css" href="css/shCore.css" rel="stylesheet" />
+        <link type="text/css" href="css/shThemeDefault.css" rel="stylesheet" />
+        <link type="text/css" href="css/shThemeXQuery.css" rel="stylesheet"/>
+        <link type="text/css" href="css/sade.css" rel="stylesheet" />
+        <script src="scripts/jquery.min.js">
+        </script>
+        <script src="scripts/jquery.form.js">
+        </script>
+        <script src="scripts/jquery-ui-1.8.11.custom.min.js">
+        </script>
+        <script src="scripts/jquery.layout.js">
+        </script>
+        <script src="scripts/ui.window.js">
+        </script>
+        <script src="scripts/sade.js">
+        </script>
+    </head>
+    <body>
+        <div class="ui-layout-north ui-corner-all">
+            <a href="http://www.i-d-e.de/" target="_blank"><img src="images/ide_logo.png" class="logo left" style="margin-top:12px;"></a><a href="http://www.bbaw.de/" target="_blank"><img src="images/bbaw_logo.png" class="logo right"></a><h1>Scalable Architecture for Digital Editions</h1>
+        </div>
+        <div class="ui-layout-west ui-corner-all">
+            <div id="accordion">
+                <div>
+                    <h3><a href="#" id="homeLink">Home</a></h3>
+                    <div>
+                        <a href="">About SADE</a>
+                        <br/>
+                        <br/>
+                        <a href="http://www.bbaw.de/telota/projekte/digitale-editionen/sade/documentation" target="_blank">Documentation</a>
+                        <br/>
+                        <br/>
+                        <a href="">Resources</a>
+                        <br/>
+                        <br/>
+                        <a href="">Options</a>
+                        <br/>
+                        <!--
+                        <a href="http://www.eclipse.org/jetty/" target="_blank">jetty:// - Webserver</a>
+                        <br/>
+                        <a href="/seminarexist" target="_blank">eXist - native XML-DB</a>
+                        <br/>
+                        <br/>
+                        <a href="/digitallibrary/digicat.jsp?fn=examples" target="_blank">digilib - Bilderserver</a>
+                        <br/>
+                        <br/>
+                        <a href="/quercus" target="_blank">Quercus - PHP</a>
+                        <br/>
+                        <br/>
+                        <a href="/oai" target="_blank">jOAI - Provider &amp; Harvester</a>
+                        <br/>
+                        <br/>
+                        <a href="http://www.jquery.org" target="_blank">jQuery - AJAX</a>
+                        -->
+                    </div>
+                </div>
+                <div>
+                    <h3><a href="#" id="documentsLink">Documents</a></h3>
+                    <div id="documentsDiv">
+                    </div>
+                </div>
+                <div>
+                    <h3><a href="#">Browse</a></h3>
+                    <div id="indexDiv">
+                        <ul class="docList">
+                            <li>
+                                <a class="browseIndexLink" href="/seminarexist/rest/db/telota/xquery/getBrowseIndex.xql?type=sender">Sender</a>
+                            </li>
+                            <li>
+                                <a class="browseIndexLink" href="/seminarexist/rest/db/telota/xquery/getBrowseIndex.xql?type=recipient">Recipient</a>
+                            </li>
+                            <li>
+                                <a class="browseIndexLink" href="/seminarexist/rest/db/telota/xquery/getBrowseIndex.xql?type=date">Date</a>
+                            </li>
+                            <li>
+                                <a class="browseIndexLink" href="/seminarexist/rest/db/telota/xquery/getBrowseIndex.xql?type=place">Place</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- div>
+                    <h3><a href="#">Upload</a></h3>
+                    <div>
+                    </div>
+                </div-->
+            </div>
+        </div>
+        <div id="content" class="ui-layout-center ui-corner-all">
+            <div id="dock">
+            </div>
+            <div id ="desk">
+                <h2 class="demoHeaders"><a href="http://www.bbaw.de/telota/sade" target="_blank">SADE</a></h2>
+                <ul>
+                    <li>
+                        <a href="http://telota.bbaw.de/sade/sade.zip">Download</a>
+                    </li>
+                    <li>
+                        <a href="http://www.bbaw.de/telota/projekte/digitale-editionen/sade/documentation" target="_blank">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="http://groupman.bbaw.de/mailman/listinfo/digisade" target="_blank">Mailingliste: digisade@bbaw.de</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders"><a href="/seminarexist" target="_blank">eXist</a></h2>
+                <ul>
+                    <li>
+                        <a href="/seminarexist/webstart/seminarexist.jnlp">Java Admin Client</a>
+                    </li>
+                    <li>
+                        <a href="/seminarexist/xquery/functions.xql" target="_blank">Function Library</a>
+                    </li>
+                    <li>
+                        <a href="http://www.oxygenxml.com/seminarexist.html" target="_blank">Connect to Oxygen XML Editor</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders"><a href="http://www.w3.org/TR/xquery/" target="_blank">XQuery</a></h2>
+                <ul>
+                    <li>
+                        <a href="http://en.wikibooks.org/wiki/XQuery" target="_blank">Wikibooks - Tutorial</a>
+                    </li>
+                    <li>
+                        <a href="http://www.w3schools.com/xquery/default.asp" target="_blank">W3Schools - Tutorial</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders"><a href="http://digilib.bbaw.de/digitallibrary/digicat.jsp" target="_blank">digilib</a></h2>
+                <ul>
+                    <li>
+                        <a href="http://digilib.berlios.de/" target="_blank">Project home page</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ui-layout-east ui-corner-all">
+            <div id="tabs">
+                <ul>
+                    <li>
+                        <a href="#tabs-1">Search</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-2">Options</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-3">Index</a>
+                    </li>
+                </ul>
+                <div id="tabs-1">
+
+                        <label for="tags">
+                        </label>
+                        <input type="text" id="tags" >&nbsp;</input>
+                        <br/>
+                        <br/>
+                        <input type="button" value="Find" id="searchButton">
+                        <div id="searchResults">
+                        	&nbsp;
+                        </div>
+
+                </div>
+                <div id="tabs-2">
+                    <p>
+                        <div>
+                            <select id="xmlFiles">
+                            </select>
+                            <br/>
+                            <select id="xsltFiles">
+                            </select>
+                            <br/>
+                            <select id="cssFiles">
+                            </select>
+                            <br/>
+                            <input type="radio" name="radio1" id="radio1" value="newWindow"/>new window
+                            <br/>
+                            <input type="radio" name="radio1" id="radio1" value="contentDiv" checked="checked"/>center
+                            <br/>
+                            <input type="button" id="newWindow" value="Open">
+                        </div>
+                    </p>
+                    <p>
+                        <form id="uploadform" action="/seminarexist/rest/db/telota/xquery/uploadDocuments.xql" method="post" enctype="multipart/form-data">
+                            Upload your XML, XSLT &amp; CSS files<input type="file" name="file" id="file"/>
+                            <br/>
+							
+							<input type="text" id="u" name="u"/> <label for="u">User</label><br/>
+							
+							<input type="password" name="p" id="p"> <label for="p">Password</label>
+                            <input type="submit" id="uploadSubmitButton"/>
+                        </form>
+                    </p>
+                </div>
+                <div id="tabs-3">
+                    <label for="indexXpath">
+                        XPath:
+                    </label>
+                    <input type="text" name="indexXpath" id="indexXpath"/><input type="button" id="indexButton" value="OK">
+                    <div id="indexTabDiv">
+                    &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-layout-south">
+            <div id="telota_footer">
+                <a href="#" style="float:left;">Imprint</a>
+                <a href="#" style="float:right;">Feedback</a>
+                <a href="http://www.bbaw.de/telota" target="_blank">Telota - The electronic life of the Academy</a>
+                &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<a href="http://www.i-d-e.de/" target="_blank">Institut f&uuml;r Dokumentologie und Editorik</a>
+            </div>
+        </div>
+    </body>
+</html>

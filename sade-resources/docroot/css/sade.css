@@ -1,0 +1,105 @@
+html, body {
+    background-color: white;
+    font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: black; /*#793744;*/
+}
+
+.logo{
+	border:none;
+	margin:4px;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+div.ui-layout-north {
+	/*
+background-color:#356AA0;
+
+	border-color:#356AA0;
+	*/
+	border: 1px solid;
+	padding:2px;
+	text-align:center;
+	vertical-align:text-bottom;
+}
+
+div.ui-layout-west {
+	border: 1px solid;
+    overflow: auto;
+}
+
+div.ui-layout-center {
+	border: 1px solid;
+    overflow: auto;
+    padding: 20px;
+}
+
+div.ui-layout-east {
+	border: 1px solid;
+    overflow: auto;
+    /*
+padding: 20px;
+*/
+}
+
+div.ui-layout-south {
+	padding: 0;
+    margin: 0;
+	overflow: auto;
+}
+
+.ui-layout-resizer {
+    background-color: white;
+}
+
+.ui-layout-toggler {
+    background-color: #CB1A31;
+}
+
+ul.ui-widget-header{
+	background: white;
+	border:none;
+}
+
+
+#telota_footer {
+    color: black;
+    border-top-color: #CB1A31;
+    border-top-width: medium;
+    border-top-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    text-align: center;
+    background-color: white;
+    font-size: xx-small;
+}
+
+#telota_footer a {
+    color: black;
+}
+
+span.hi {
+	background-color:yellow;
+}
+
+.docList {
+	list-style-type:none;
+	margin-left:-40px;
+}
+
+
+
+
