@@ -29,6 +29,8 @@ fi
 # JETTY
 # get jetty
 #
+# TODO:  
+#
 #####
 echo "[SADE BUILD] get and unpack jetty"
 cd $BUILDLOC
@@ -39,6 +41,7 @@ fi
 
 tar xfz jetty-distribution-$JETTY_VERSION.tar.gz
 mv jetty-distribution-$JETTY_VERSION sade
+rm sade/webapps/test.war
 
 
 ######
