@@ -11,6 +11,31 @@ SCRIPTLOC=`dirname $SCRIPT`
 BUILDLOC=$SCRIPTLOC/build
 LOGDIR=$BUILDLOC/log
 
+USAGE="Usage: `basename $0` [-hz]\n -h help\n -z create sade.zip after build"
+
+# Parse command line options.
+while getopts hvz OPT; do
+    case "$OPT" in
+        h)
+            echo -e $USAGE
+            exit 0
+            ;;
+        z)
+            DO_ZIP=true
+            ;;
+        \?)
+            # getopts issues an error message
+            echo -e $USAGE >&2
+            exit 1
+            ;;
+    esac
+done
+
+# Remove the switches we parsed above.
+shift `expr $OPTIND - 1`
+
+
+# Create build directory
 if [ ! -d $BUILDLOC ]; then
     mkdir $BUILDLOC
 fi
@@ -144,14 +169,20 @@ java -jar start.jar & > $LOGDIR/sade_start.log 2>&1
 SADE_PID=$!
 
 sleep 10s
-echo "[SADE BUILD] restoring backup"
+echo "[SADE BUILD] restoring backup. This may take a while, be patient"
 cd $BUILDLOC/exist-trunk/
-#java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip > $LOGDIR/exist_restore.log 2>&1
-java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip
+java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip > $LOGDIR/exist_restore.log 2>&1
+#java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip
 
 kill $SADE_PID
 
 sleep 10s
+
+if [ $DO_ZIP == true ]; then
+    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade.zip"
+    cd $BUILDLOC
+    zip -rq sade.zip sade
+fi
 
 echo "[SADE BUILD] done"
 echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'java -jar start.jar'"
