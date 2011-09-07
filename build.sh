@@ -11,10 +11,10 @@ SCRIPTLOC=`dirname $SCRIPT`
 BUILDLOC=$SCRIPTLOC/build
 LOGDIR=$BUILDLOC/log
 
-USAGE="Usage: `basename $0` [-hz]\n -h help\n -z create sade.zip after build"
+USAGE="Usage: `basename $0` [-hztr]\n -h help\n -z create sade.zip after build\n -r run SADE after build"
 
 # Parse command line options.
-while getopts hvz OPT; do
+while getopts hztr OPT; do
     case "$OPT" in
         h)
             echo -e $USAGE
@@ -22,6 +22,12 @@ while getopts hvz OPT; do
             ;;
         z)
             DO_ZIP=true
+            ;;
+        t)
+            TEXTGRID_BUILD=true
+            ;;
+        r)
+            KEEP_RUNNING=true
             ;;
         \?)
             # getopts issues an error message
@@ -143,6 +149,32 @@ mkdir $BUILDLOC/sade/images
 
 #####
 #
+# Add TextGrid stuff if requested with -t
+#
+#####
+if [ $TEXTGRID_BUILD == true ]; then
+    echo "[SADE BUILD] add textgrid specific stuff"
+    cd $BUILDLOC
+
+    if [ ! -e $BUILDLOC/tgwp ]; then
+        svn co https://develop.sub.uni-goettingen.de/repos/textgrid/trunk/services/webpub/existpublish/ tgwp
+    else 
+        svn up tgwp
+    fi
+
+    cd tgwp
+
+    mvn package
+
+    cd $BUILDLOC/sade/webapps
+    mkdir tgwp
+    cd tgwp
+    unzip -q $BUILDLOC/tgwp/target/epclient.war
+
+fi
+
+#####
+#
 # SADE Docroot
 #
 #####
@@ -168,15 +200,20 @@ cd $BUILDLOC/sade
 java -jar start.jar & > $LOGDIR/sade_start.log 2>&1
 SADE_PID=$!
 
-sleep 10s
+sleep 20s
 echo "[SADE BUILD] restoring backup. This may take a while, be patient"
 cd $BUILDLOC/exist-trunk/
 java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip > $LOGDIR/exist_restore.log 2>&1
 #java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip
 
-kill $SADE_PID
+if [ $KEEP_RUNNING != true ];then
+    kill $SADE_PID
+else 
+    echo "SADE running on localhost:8080, stop with 'kill $SADE_PID'"
+    exit 0
+fi
 
-sleep 10s
+sleep 15s
 
 if [ $DO_ZIP == true ]; then
     echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade.zip"
