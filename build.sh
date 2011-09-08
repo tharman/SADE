@@ -11,6 +11,10 @@ SCRIPTLOC=`dirname $SCRIPT`
 BUILDLOC=$SCRIPTLOC/build
 LOGDIR=$BUILDLOC/log
 
+TEXTGRID_BUILD=false
+KEEP_RUNNING=false
+DO_ZIP=false
+
 USAGE="Usage: `basename $0` [-hztr]\n -h help\n -z create sade.zip after build\n -r run SADE after build"
 
 # Parse command line options.
