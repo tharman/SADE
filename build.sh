@@ -145,11 +145,12 @@ cd digilib-$DIGILIB_CHANGESET
 mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2
 
 cd $BUILDLOC/sade/webapps
-mkdir digilib
-cd digilib
+mkdir digitallibrary
+cd digitallibrary
 unzip -q $BUILDLOC/digilib-$DIGILIB_CHANGESET/webapp/target/digilib*.war
 
 mkdir $BUILDLOC/sade/images
+sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="..\/..\/images\/" \/>/g' WEB-INF/digilib-config.xml
 
 #####
 #
