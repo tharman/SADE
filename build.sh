@@ -2,7 +2,8 @@
 
 JETTY_VERSION=7.4.2.v20110526
 EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
-DIGILIB_CHANGESET=cbfc94584d3b
+#DIGILIB_CHANGESET=cbfc94584d3b
+DIGILIB_CHANGESET=ee3383f80cb0
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 SCRIPT=`readlink -f $0`
@@ -149,8 +150,9 @@ mkdir digitallibrary
 cd digitallibrary
 unzip -q $BUILDLOC/digilib-$DIGILIB_CHANGESET/webapp/target/digilib*.war
 
-mkdir $BUILDLOC/sade/images
-sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="..\/..\/images\/" \/>/g' WEB-INF/digilib-config.xml
+#mkdir $BUILDLOC/sade/images
+mkdir images
+sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="images" \/>/g' WEB-INF/digilib-config.xml
 
 #####
 #
