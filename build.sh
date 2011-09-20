@@ -1,11 +1,5 @@
 #!/bin/bash
 
-JETTY_VERSION=7.4.2.v20110526
-EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
-#DIGILIB_CHANGESET=cbfc94584d3b
-DIGILIB_CHANGESET=ee3383f80cb0
-DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
-
 SCRIPT=`readlink -f $0`
 SCRIPTLOC=`dirname $SCRIPT`
 
@@ -15,11 +9,14 @@ LOGDIR=$BUILDLOC/log
 TEXTGRID_BUILD=false
 KEEP_RUNNING=false
 DO_ZIP=false
+PROFILE=0
 
-USAGE="Usage: `basename $0` [-hztr]\n -h help\n -z create sade.zip after build\n -r run SADE after build"
+USAGE_P="-p profile:\n\t 1 -> eXist from trunk / 1.5 (default is 1.4.1)"
+USAGE="Usage: `basename $0` [-hztrp:]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n $USAGE_P"
+
 
 # Parse command line options.
-while getopts hztr OPT; do
+while getopts hztrp: OPT; do
     case "$OPT" in
         h)
             echo -e $USAGE
@@ -34,6 +31,9 @@ while getopts hztr OPT; do
         r)
             KEEP_RUNNING=true
             ;;
+        p)
+            PROFILE=$OPTARG
+            ;;
         \?)
             # getopts issues an error message
             echo -e $USAGE >&2
@@ -44,6 +44,37 @@ done
 
 # Remove the switches we parsed above.
 shift `expr $OPTIND - 1`
+
+# set software locations and versions to bundle with sade
+
+JETTY_VERSION=7.4.2.v20110526
+
+case $PROFILE in
+    1)
+        EXIST_BRANCH=trunk/eXist    # exist 1.5
+        EXIST_REV=15390
+        EXIST_SRC_LOC=exist-trunk
+        ;;
+    *)
+        EXIST_BRANCH=stable/eXist-1.4.x    
+        EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
+        EXIST_SRC_LOC=exist-1.4.x
+        ;;
+esac
+
+#if [ $PROFILE -eq 1 ]; then
+#    EXIST_BRANCH=trunk/eXist    # exist 1.5
+#    EXIST_REV=15390
+#    EXIST_SRC_LOC=exist-trunk
+#else 
+#    EXIST_BRANCH=stable/eXist-1.4.x    
+#    EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
+#    EXIST_SRC_LOC=exist-1.4.x
+#fi
+
+#DIGILIB_CHANGESET=cbfc94584d3b
+DIGILIB_CHANGESET=ee3383f80cb0
+DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 
 # Create build directory
@@ -85,23 +116,23 @@ rm sade/webapps/test.war
 # EXIST
 # checkout and build exist
 #
-# TODO: check if rev is same as checked out, if yes, no rebuild
+# TODO: different path for trunk and branch
 # 
 ######
-echo "[SADE BUILD] checkout and build eXist"
+echo "[SADE BUILD] checkout and build eXist from $EXIST_SRC_LOC"
 cd $BUILDLOC
 
 BUILD_EXIST=true
 
-if [ ! -e $BUILDLOC/exist-trunk ]; then
-    svn co https://exist.svn.sourceforge.net/svnroot/exist/trunk/eXist -r $EXIST_REV exist-trunk
+if [ ! -e $BUILDLOC/$EXIST_SRC_LOC ]; then
+    svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
 else 
     LOCAL_EXIST_REV=`LANG=C svn info exist-trunk/ |grep Revision | awk '{print $2}'`
     if [ $EXIST_REV != $LOCAL_EXIST_REV ]; then
-        svn up -r $EXIST_REV exist-trunk
+        svn up -r $EXIST_REV $EXIST_SRC_LOC
     else
         # revision did not change, and exist*.war is in place no need to rebuild
-        if [ -e $BUILDLOC/exist-trunk/dist/exist*.war ];then
+        if [ -e $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war ];then
             echo "[SADE BUILD] found already build exist.war with correct revision"
             BUILD_EXIST=false
         fi
@@ -113,7 +144,7 @@ if [ $BUILD_EXIST == true ]; then
     # we want xslfo, a diff/patch may be better than sed here
     sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' exist-trunk/extensions/build.properties
 
-    cd exist-trunk
+    cd $EXIST_SRC_LOC
     ./build.sh clean 
     ./build.sh 
     ./build.sh jnlp-sign-all dist-war
@@ -124,7 +155,7 @@ fi
 cd $BUILDLOC/sade/webapps
 mkdir exist
 cd exist
-unzip -q $BUILDLOC/exist-trunk/dist/exist*.war
+unzip -q $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war
 
 
 #####
