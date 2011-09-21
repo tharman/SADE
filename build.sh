@@ -115,8 +115,6 @@ rm sade/webapps/test.war
 #
 # EXIST
 # checkout and build exist
-#
-# TODO: different path for trunk and branch
 # 
 ######
 echo "[SADE BUILD] checkout and build eXist from $EXIST_SRC_LOC"
@@ -240,10 +238,15 @@ SADE_PID=$!
 
 sleep 20s
 echo "[SADE BUILD] restoring backup. This may take a while, be patient"
-cd $BUILDLOC/exist-trunk/
+cd $BUILDLOC/$EXIST_SRC_LOC/
 java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip > $LOGDIR/exist_restore.log 2>&1
 #java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip
+echo -e "[SADE BUILD] restore finished.\n"
 
+####
+#
+#  don't kill running sade instance if requested with -r
+##
 if [ $KEEP_RUNNING != true ];then
     kill $SADE_PID
 else 
@@ -253,10 +256,14 @@ fi
 
 sleep 15s
 
+###
+#
+# create zipfile if called with -z
+##
 if [ $DO_ZIP == true ]; then
-    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade.zip"
+    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade-$EXIST_SRC_LOC.zip"
     cd $BUILDLOC
-    zip -rq sade.zip sade
+    zip -rq sade-$EXIST_SRC_LOC.zip sade
 fi
 
 echo "[SADE BUILD] done"
