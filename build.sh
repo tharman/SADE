@@ -9,10 +9,11 @@ LOGDIR=$BUILDLOC/log
 TEXTGRID_BUILD=false
 KEEP_RUNNING=false
 DO_ZIP=false
+USE_TOMCAT=false
 PROFILE=0
 
 USAGE_P="-p profile:\n\t 1 -> eXist from trunk / 1.5 (default is 1.4.1)"
-USAGE="Usage: `basename $0` [-hztrp:]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n $USAGE_P"
+USAGE="Usage: `basename $0` [-hztrp:]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n $USAGE_P"
 
 
 # Parse command line options.
@@ -27,12 +28,17 @@ while getopts hztrp: OPT; do
             ;;
         t)
             TEXTGRID_BUILD=true
+            # eXist does not behave well with textgridclient on jetty -> use tomcat
+            USE_TOMCAT=true
             ;;
         r)
             KEEP_RUNNING=true
             ;;
         p)
             PROFILE=$OPTARG
+            ;;
+        a)
+            USE_TOMCAT=true
             ;;
         \?)
             # getopts issues an error message
@@ -42,40 +48,36 @@ while getopts hztrp: OPT; do
     esac
 done
 
-# Remove the switches we parsed above.
+# remove the switches parsed above.
 shift `expr $OPTIND - 1`
 
 # set software locations and versions to bundle with sade
 
 JETTY_VERSION=7.4.2.v20110526
-
-case $PROFILE in
-    1)
-        EXIST_BRANCH=trunk/eXist    # exist 1.5
-        EXIST_REV=15390
-        EXIST_SRC_LOC=exist-trunk
-        ;;
-    *)
-        EXIST_BRANCH=stable/eXist-1.4.x    
-        EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
-        EXIST_SRC_LOC=exist-1.4.x
-        ;;
-esac
-
-#if [ $PROFILE -eq 1 ]; then
-#    EXIST_BRANCH=trunk/eXist    # exist 1.5
-#    EXIST_REV=15390
-#    EXIST_SRC_LOC=exist-trunk
-#else 
-#    EXIST_BRANCH=stable/eXist-1.4.x    
-#    EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
-#    EXIST_SRC_LOC=exist-1.4.x
-#fi
+#JETTY_VERSION=7.4.1.v20110513
+#JETTY_VERSION=8.0.1.v20110908
 
 #DIGILIB_CHANGESET=cbfc94584d3b
 DIGILIB_CHANGESET=ee3383f80cb0
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
+TOMCAT_VERSION=7.0.21
+
+# choose exist version, default is 1.4.1, with -p 1 exist-trunk is chosen
+case $PROFILE in
+    1)
+        EXIST_BRANCH=trunk/eXist    # exist 1.5
+        EXIST_REV=15390
+        EXIST_SRC_LOC=exist-trunk
+        USE_EXIST_TRUNK=true
+        ;;
+    *)
+        EXIST_BRANCH=stable/eXist-1.4.x    
+        EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
+        EXIST_SRC_LOC=exist-1.4.x
+        USE_EXIST_TRUNK=false
+        ;;
+esac
 
 # Create build directory
 if [ ! -d $BUILDLOC ]; then
@@ -91,24 +93,60 @@ if [ -e $BUILDLOC/sade ]; then
     mv $BUILDLOC/sade $BUILDLOC/sade-bak-$(date +%F_%H-%M-%S)
 fi
 
-#####
+####
+# 
+#  get java application server, Jetty or Tomcat
 #
-# JETTY
-# get jetty
-#
-# TODO:  
-#
-#####
-echo "[SADE BUILD] get and unpack jetty"
-cd $BUILDLOC
+###
+if [ $USE_TOMCAT == true ]; then
+    #####
+    # get tomcat
+    #####
+    echo "[SADE BUILD] get and unpack tomcat $TOMCAT_VERSION"
+    cd $BUILDLOC
 
-if [ ! -e $BUILDLOC/jetty-distribution-$JETTY_VERSION.tar.gz ]; then
-    wget http://download.eclipse.org/jetty/$JETTY_VERSION/dist/jetty-distribution-$JETTY_VERSION.tar.gz -O $BUILDLOC/jetty-distribution-$JETTY_VERSION.tar.gz
+    if [ ! -e $BUILDLOC/apache-tomcat-$TOMCAT_VERSION.tar.gz ]; then
+        wget http://mirror.checkdomain.de/apache/tomcat/tomcat-7/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz -O $BUILDLOC/apache-tomcat-$TOMCAT_VERSION.tar.gz
+    fi
+
+    tar xfz apache-tomcat-$TOMCAT_VERSION.tar.gz
+    mv apache-tomcat-$TOMCAT_VERSION sade
+
+    mv sade/webapps/ROOT sade/webapps/oldroot
+
+    #####
+    # SADE Docroot
+    #####
+    echo "[SADE BUILD] install sade docroot"
+    cd $SCRIPTLOC
+
+    cp -r sade-resources/docroot $BUILDLOC/sade/webapps/ROOT
+    
+else
+    #####
+    # get jetty
+    #####
+    echo "[SADE BUILD] get and unpack jetty $JETTY_VERSION"
+    cd $BUILDLOC
+
+    if [ ! -e $BUILDLOC/jetty-distribution-$JETTY_VERSION.tar.gz ]; then
+        wget http://archive.eclipse.org/jetty/$JETTY_VERSION/dist/jetty-distribution-$JETTY_VERSION.tar.gz -O $BUILDLOC/jetty-distribution-$JETTY_VERSION.tar.gz
+    fi
+
+    tar xfz jetty-distribution-$JETTY_VERSION.tar.gz
+    mv jetty-distribution-$JETTY_VERSION sade
+    rm sade/webapps/test.war
+
+    #####
+    # SADE Docroot
+    #####
+    echo "[SADE BUILD] install sade docroot"
+    cd $SCRIPTLOC
+
+    cp -r sade-resources/docroot $BUILDLOC/sade/docroot
+    mv $BUILDLOC/sade/contexts/test.xml $BUILDLOC/sade/contexts-available/
+    cp sade-resources/contexts/docroot.xml $BUILDLOC/sade/contexts/
 fi
-
-tar xfz jetty-distribution-$JETTY_VERSION.tar.gz
-mv jetty-distribution-$JETTY_VERSION sade
-rm sade/webapps/test.war
 
 
 ######
@@ -209,32 +247,34 @@ if [ $TEXTGRID_BUILD == true ]; then
 
 fi
 
-#####
+###
 #
-# SADE Docroot
+# exist config modification, only for 1.4.1 now
+# TODO: have sed or patch do modifications
 #
-#####
-echo "[SADE BUILD] install sade docroot"
+###
 cd $SCRIPTLOC
-
-cp -r sade-resources/docroot $BUILDLOC/sade/docroot
-mv $BUILDLOC/sade/contexts/test.xml $BUILDLOC/sade/contexts-available/
-cp sade-resources/contexts/docroot.xml $BUILDLOC/sade/contexts/
-
-mv $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml.orig
-cp sade-resources/exist-conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml
+if [ $USE_EXIST_TRUNK = false ]; then 
+    mv $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml.orig
+    cp sade-resources/exist-conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml
+fi
 
 ####
 #
 # RESTORE sade xql to exist
-# does not work yet, needs to fork jetty process and run restore, use restore.sh for now
+# TODO: backup should work for eXist 1.4.1 too
 ##
 echo "[SADE BUILD] restore sade db content to eXist"
 echo "[SADE BUILD] starting sade"
 cd $BUILDLOC/sade
 
-java -jar start.jar & > $LOGDIR/sade_start.log 2>&1
-SADE_PID=$!
+if [ $USE_TOMCAT = true ]; then
+    bin/catalina.sh run & $LOGDIR/sade_start.log 2>&1
+    SADE_PID=$!
+else
+    java -jar start.jar & > $LOGDIR/sade_start.log 2>&1
+    SADE_PID=$!
+fi
 
 sleep 20s
 echo "[SADE BUILD] restoring backup. This may take a while, be patient"
@@ -267,6 +307,10 @@ if [ $DO_ZIP == true ]; then
 fi
 
 echo "[SADE BUILD] done"
-echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'java -jar start.jar'"
+if [ $USE_TOMCAT = true ]; then
+    echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'bin/startup.sh'"
+else
+    echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'java -jar start.jar'"
+fi
 
 
