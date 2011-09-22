@@ -12,12 +12,12 @@ DO_ZIP=false
 USE_TOMCAT=false
 PROFILE=0
 
-USAGE_P="-p profile:\n\t 1 -> eXist from trunk / 1.5 (default is 1.4.1)"
-USAGE="Usage: `basename $0` [-hztrp:]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n $USAGE_P"
+USAGE_P="-p profile:\n\t 1 -> eXist 1.4.1 (default ist 1.5 / trunk)"
+USAGE="Usage: `basename $0` [-hztrp:a]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n $USAGE_P"
 
 
 # Parse command line options.
-while getopts hztrp: OPT; do
+while getopts hztrp:a OPT; do
     case "$OPT" in
         h)
             echo -e $USAGE
@@ -66,16 +66,17 @@ TOMCAT_VERSION=7.0.21
 # choose exist version, default is 1.4.1, with -p 1 exist-trunk is chosen
 case $PROFILE in
     1)
-        EXIST_BRANCH=trunk/eXist    # exist 1.5
-        EXIST_REV=15390
-        EXIST_SRC_LOC=exist-trunk
-        USE_EXIST_TRUNK=true
-        ;;
-    *)
+        echo "[SADE BUILD] warning: restore to 1.4.1 does not work right now"
         EXIST_BRANCH=stable/eXist-1.4.x    
         EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
         EXIST_SRC_LOC=exist-1.4.x
         USE_EXIST_TRUNK=false
+        ;;
+    *)
+        EXIST_BRANCH=trunk/eXist    # exist 1.5
+        EXIST_REV=15390
+        EXIST_SRC_LOC=exist-trunk
+        USE_EXIST_TRUNK=true
         ;;
 esac
 
@@ -249,15 +250,11 @@ fi
 
 ###
 #
-# exist config modification, only for 1.4.1 now
-# TODO: have sed or patch do modifications
+# exist config modification
 #
 ###
 cd $SCRIPTLOC
-if [ $USE_EXIST_TRUNK = false ]; then 
-    mv $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml.orig
-    cp sade-resources/exist-conf.xml $BUILDLOC/sade/webapps/exist/WEB-INF/conf.xml
-fi
+patch -p0 < sade-resources/existconf.xslfo.patch 
 
 ####
 #

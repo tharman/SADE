@@ -1,0 +1,15 @@
+--- build/sade/webapps/exist/WEB-INF/conf.xml.orig	2011-09-22 12:40:47.614724273 +0200
++++ build/sade/webapps/exist/WEB-INF/conf.xml	2011-09-22 12:40:25.284691529 +0200
+@@ -766,11 +766,10 @@
+                 - org.exist.xquery.modules.xslfo.ApacheFopProcessorAdapter for Apache's FOP
+                 - org.exist.xquery.modules.xslfo.RenderHouseXepProcessorAdapter for RenderHouse's XEP
+             -->
+-            <!--
++
+             <module uri="http://exist-db.org/xquery/xslfo" class="org.exist.xquery.modules.xslfo.XSLFOModule">
+                 <parameter name="processorAdapter" value="org.exist.xquery.modules.xslfo.ApacheFopProcessorAdapter"/>
+             </module>
+-            -->
+ 
+             <!--
+                 exiftool:
