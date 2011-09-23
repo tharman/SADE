@@ -12,7 +12,7 @@ DO_ZIP=false
 USE_TOMCAT=false
 PROFILE=0
 
-USAGE_P="-p profile:\n\t 1 -> eXist 1.4.1 (default ist 1.5 / trunk)"
+USAGE_P="-p profile:\n\t 1 -> eXist 1.4.1 (default is 1.5 / trunk)"
 USAGE="Usage: `basename $0` [-hztrp:a]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n $USAGE_P"
 
 
