@@ -210,8 +210,16 @@ fi
 tar jxf $DIGILIB_CHANGESET.tar.bz2
 cd digilib-$DIGILIB_CHANGESET
 
+mvn clean
+
 #mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2 > $LOGDIR/digilib_build.log
-mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2
+if [ $USE_TOMCAT = true ]; then
+    echo "[SADE BUILD] building async version (servlet api3)"
+    mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3
+else
+    echo "[SADE BUILD] building noasync version (servlet api2)"
+    mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2
+fi
 
 cd $BUILDLOC/sade/webapps
 mkdir digitallibrary
