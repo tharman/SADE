@@ -281,6 +281,8 @@ else
     SADE_PID=$!
 fi
 
+# I have a fix for the following in my pipeline (waiting only as long
+# as necessary)
 sleep 20s
 echo "[SADE BUILD] restoring backup. This may take a while, be patient"
 cd $BUILDLOC/$EXIST_SRC_LOC/
