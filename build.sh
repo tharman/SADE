@@ -58,7 +58,8 @@ JETTY_VERSION=7.4.2.v20110526
 #JETTY_VERSION=8.0.1.v20110908
 
 #DIGILIB_CHANGESET=cbfc94584d3b
-DIGILIB_CHANGESET=ee3383f80cb0
+#DIGILIB_CHANGESET=ee3383f80cb0
+DIGILIB_CHANGESET=6853c02b238b
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 TOMCAT_VERSION=7.0.21
@@ -74,7 +75,8 @@ case $PROFILE in
         ;;
     *)
         EXIST_BRANCH=trunk/eXist    # exist 1.5
-        EXIST_REV=15390
+        #EXIST_REV=15390
+		EXIST_REV=15586
         EXIST_SRC_LOC=exist-trunk
         USE_EXIST_TRUNK=true
         ;;
