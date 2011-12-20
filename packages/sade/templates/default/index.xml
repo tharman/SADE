@@ -1,0 +1,14 @@
+<html><head><style>
+            div {border:1px solid grey;
+                margin: 2px; padding: 2px;
+                }
+            #left {
+                width: 200px;
+                float: left;
+            }
+             
+        </style></head><body><div id="header">SADE</div><div id="left"> 
+            left
+        </div><div id="detail"> 
+            detail    
+        </div></body></html>
