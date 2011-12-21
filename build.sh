@@ -286,10 +286,10 @@ fi
 # I have a fix for the following in my pipeline (waiting only as long
 # as necessary)
 sleep 20s
-echo "[SADE BUILD] restoring backup. This may take a while, be patient"
+echo "[SADE BUILD] installing SADE core packages"
 cd $BUILDLOC/$EXIST_SRC_LOC/
-java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip > $LOGDIR/exist_restore.log 2>&1
-#java -jar start.jar backup -r $SCRIPTLOC/sade-resources/exist-backup.zip
+# package install here
+
 echo -e "[SADE BUILD] restore finished.\n"
 
 ####
