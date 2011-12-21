@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="teixsl">
+
+    <property name="build.dir" value="build"/>
+
+    <target name="xar" depends="unzip">
+        <mkdir dir="${build.dir}"/>
+        <zip basedir="." destfile="${build.dir}/teixsl-0.1.xar" excludes="${build.dir},${build.dir}/**,*.zip"/>
+    </target>
+
+	<target name="download">
+		<get usetimestamp="true" src="http://sourceforge.net/projects/tei/files/Stylesheets/tei-xsl-6.4.zip/download" dest="tei-xsl-6.4.zip"/>   
+	</target>
+
+	<target name="unzip" depends="download">
+		<unzip src="tei-xsl-6.4.zip" dest=".">
+			<!--patternset>
+    			<include name="xml/**"/>
+  			</patternset>
+			<cutdirsmapper dirs="2"/-->
+		</unzip>
+	</target>
+
+</project>
