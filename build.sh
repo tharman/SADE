@@ -199,6 +199,22 @@ unzip -q $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war
 
 #####
 #
+# SADE Packages
+# build xar packages
+#
+#####
+
+echo "[SADE BUILD] building xar packages for SADE"
+cd $SCRIPTLOC/packages
+ant
+
+# TODO: put into local public repo? / set EXIST_HOME for  
+# repo location EXIST_HOME/webapp/WEB-INF/expathrepo instead of /tmp/expathrepo
+echo "[SADE BUILD] put xar packages into eXist local repository"
+cp build/*.xar $BUILDLOC/sade/webapps/exist/repo/packages
+
+#####
+#
 # DIGILIB
 #
 #####
