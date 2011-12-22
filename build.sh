@@ -284,10 +284,10 @@ patch -p0 < sade-resources/existconf.xslfo.patch
 
 ####
 #
-# RESTORE sade xql to exist
-# TODO: backup should work for eXist 1.4.1 too
+# deploy sade packages to exist
+#
 ##
-echo "[SADE BUILD] restore sade db content to eXist"
+echo "[SADE BUILD] install and deploy sade packages"
 echo "[SADE BUILD] starting sade"
 cd $BUILDLOC/sade
 
@@ -302,9 +302,10 @@ fi
 # I have a fix for the following in my pipeline (waiting only as long
 # as necessary)
 sleep 20s
-echo "[SADE BUILD] installing SADE core packages"
-cd $BUILDLOC/$EXIST_SRC_LOC/
-# package install here
+echo "[SADE BUILD] deploying SADE core packages"
+
+cd $SCRIPTLOC/packages
+ant -f localdeploy.xml
 
 echo -e "[SADE BUILD] restore finished.\n"
 
