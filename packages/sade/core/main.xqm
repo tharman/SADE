@@ -5,7 +5,8 @@ import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///db/sa
 
 declare function sade:init-process($config as node()) as item()* {
 
-    let $template-path := $config//template/@path
+    let $template-path := xs:string($config//sade:template/@path)
+    (: TODO: add diagnostics doc-available :) 
     let $template := doc($template-path)
     return sade:process ($template/*, $config)
 

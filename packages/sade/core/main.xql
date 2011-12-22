@@ -8,6 +8,6 @@ declare option exist:serialize "method=html media-type=text/html";
 
 let $config := doc("/db/sade/projects/default/config.xml")
 
-return sade:init-process($config)
+(:return xs:string($config//sade:template/@path):)
 
- 
+ return sade:init-process($config) 
