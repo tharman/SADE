@@ -5,7 +5,7 @@
 
     <target name="xar" depends="unzip">
         <mkdir dir="${build.dir}"/>
-        <zip basedir="." destfile="${build.dir}/teixsl-0.1.xar" excludes="${build.dir},${build.dir}/**,*.zip"/>
+        <zip basedir="." destfile="${build.dir}/teixslt-0.1.xar" excludes="${build.dir},${build.dir}/**,*.zip"/>
     </target>
 
 	<target name="download">
