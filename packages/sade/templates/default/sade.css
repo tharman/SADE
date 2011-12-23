@@ -1,0 +1,5 @@
+
+#left { width: 200px; float: left; margin-top:0px; /* if not present, left and detail is inexplicably not aligned - CHECK! */  }
+#detail {margin-left: 210px; }
+
+.block { border:1px solid grey; margin: 2px; padding: 2px; }
