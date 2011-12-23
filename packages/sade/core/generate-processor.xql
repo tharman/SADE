@@ -3,5 +3,6 @@ import module namespace gen =  "http://sade/gen" at "xmldb:exist:///db/sade/core
 declare option exist:serialize "method=text media-type=text/text";
  
 let $config :=  doc("/db/sade/projects/default/config.xml")/*
-return xmldb:store("/db/sade/core", "processor.xql",gen:generate-processor($config))
+let $generated-code := gen:generate-processor($config)
+return xmldb:store("/db/sade/core", "processor.xql", $generated-code)
 

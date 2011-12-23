@@ -1,9 +1,9 @@
 <SADE_project xmlns="http://sade">
     <!-- BASICS -->
     <name>Das ist ein Testprojekt</name>
-    <data path="/db/projects/default/data"/>
-    <scripts path="/db/projects/default/scripts"/>
-    <template path="/db/sade_test/templates/default/index.xml"/>
+    <data path="/db/sade/projects/default/data"/>
+    <scripts path="/db/sade/projects/default/scripts"/>
+    <template path="/db/sade/templates/default/index.xml"/>
     <properties>
         <property id="p1" type="pagination" col="/db/projects/default/data/texts" xpath="//pb"/>
         <property id="p2" type="pagination" col="/db/projects/default/data/register" xpath="//p"/>
@@ -15,7 +15,7 @@
     </properties>
 
     <!-- MODULES -->
-    <modules path="/db/sade_test/modules">
+    <modules path="/db/sade/modules">
         <module ns="http://sade/index" name="index" position="left"/>
         <module ns="http://sade/search" name="search" position="detail"/>
         <!--

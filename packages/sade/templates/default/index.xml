@@ -1,14 +1,18 @@
-<html><head><style>
-            div {border:1px solid grey;
-                margin: 2px; padding: 2px;
-                }
-            #left {
-                width: 200px;
-                float: left;
-            }
-             
-        </style></head><body><div id="header">SADE</div><div id="left"> 
+<html>
+    <head>
+        <title>SADE - default project</title>
+        <link rel="stylesheet" type="text/css" href="/exist/rest/db/sade/templates/default/sade.css" media="all"/>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <div id="header" class="block">SADE</div>
+        <div id="left" class="block"> 
             left
-        </div><div id="detail"> 
+        </div>
+        <div id="detail" class="block"> 
             detail    
-        </div></body></html>
+        </div>
+    </body>
+</html>

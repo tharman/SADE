@@ -15,14 +15,13 @@ declare function sade:init-process($config as node()) as item()* {
 declare function sade:process($nodes as node()*, $config as node()) as item()* {
   for $node in $nodes     
     return  typeswitch ($node)              
-        case text() return $node        
-        case attribute() return $node
+        case text() return $node                
         case element(div) return sp:process-template($node, $config)
         default return sade:process-default($node, $config )
 
     };
 
 declare function sade:process-default($node as node(), $config as node()) as item()* {
-  element {$node/name()} {sade:process($node/node(), $config )}
+  element {$node/name()} {($node/@*, sade:process($node/node(), $config ))}
   (: <div class="default">{$node/name()} </div> :)  
  };
