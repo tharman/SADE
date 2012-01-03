@@ -24,7 +24,7 @@ module namespace sp = "{$gen:modulename}/processing";
 }     
 
 (: dynamic processing of templates generated from the list of modules :)
-declare function sp:process-template($template-node as node(), $config as node()) as item()* {{ {$gen:cr}
+declare {"function sp:process-template" (: this is just to fool the script analyzing the dependencies :) }($template-node as node(), $config as node()) as item()* {{ {$gen:cr}
 
     let $div-id := xs:string($template-node/@id)
     (: look for a module to be positioned in this template-block :) 
@@ -37,7 +37,7 @@ declare function sp:process-template($template-node as node(), $config as node()
             let $modulename := $m/@name
         return concat("if ($module-name eq '", $modulename, "') then ", $modulename, ":process-template($module, $config) 
 else " )
-      } sade:process($template-node/node(), $config) 
+      } { "sade:process" }($template-node/node(), $config) 
             ) }}
       (: 
       switch ($template-name) {
