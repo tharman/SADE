@@ -240,14 +240,8 @@ cd digilib-$DIGILIB_CHANGESET
 
 mvn clean
 
-#mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2 > $LOGDIR/digilib_build.log
-if [ $USE_TOMCAT = true ]; then
-    echo "[SADE BUILD] building async version (servlet api3)"
-    mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3
-else
-    echo "[SADE BUILD] building noasync version (servlet api2)"
-    mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet2
-fi
+echo "[SADE BUILD] building async version (servlet api3)"
+mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3
 
 cd $BUILDLOC/sade/webapps
 mkdir digitallibrary
@@ -311,7 +305,7 @@ echo "[SADE BUILD] deploying SADE core packages"
 cd $SCRIPTLOC/packages
 ant -f localdeploy.xml
 
-echo -e "[SADE BUILD] restore finished.\n"
+echo -e "[SADE BUILD] sade modules deploy done.\n"
 
 ####
 #
