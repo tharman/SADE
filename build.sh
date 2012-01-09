@@ -53,16 +53,16 @@ shift `expr $OPTIND - 1`
 
 # set software locations and versions to bundle with sade
 
-JETTY_VERSION=7.4.2.v20110526
+#JETTY_VERSION=7.4.2.v20110526
 #JETTY_VERSION=7.4.1.v20110513
-#JETTY_VERSION=8.0.1.v20110908
+JETTY_VERSION=8.0.3.v20111011
 
 #DIGILIB_CHANGESET=cbfc94584d3b
 #DIGILIB_CHANGESET=ee3383f80cb0
 DIGILIB_CHANGESET=6853c02b238b
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
-TOMCAT_VERSION=7.0.21
+TOMCAT_VERSION=7.0.23
 
 # choose exist version, default is 1.4.1, with -p 1 exist-trunk is chosen
 case $PROFILE in
@@ -109,7 +109,7 @@ if [ $USE_TOMCAT == true ]; then
     cd $BUILDLOC
 
     if [ ! -e $BUILDLOC/apache-tomcat-$TOMCAT_VERSION.tar.gz ]; then
-        wget http://mirror.checkdomain.de/apache/tomcat/tomcat-7/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz -O $BUILDLOC/apache-tomcat-$TOMCAT_VERSION.tar.gz
+        wget http://archive.apache.org/dist/tomcat/tomcat-7/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz -O $BUILDLOC/apache-tomcat-$TOMCAT_VERSION.tar.gz
     fi
 
     tar xfz apache-tomcat-$TOMCAT_VERSION.tar.gz
@@ -124,6 +124,7 @@ if [ $USE_TOMCAT == true ]; then
     cd $SCRIPTLOC
 
     cp -r sade-resources/docroot $BUILDLOC/sade/webapps/ROOT
+	cp $BUILDLOC/sade/bin/catalina.sh $BUILDLOC/sade/bin/sade.sh
     
 else
     #####
@@ -149,6 +150,15 @@ else
     cp -r sade-resources/docroot $BUILDLOC/sade/docroot
     mv $BUILDLOC/sade/contexts/test.xml $BUILDLOC/sade/contexts-available/
     cp sade-resources/contexts/docroot.xml $BUILDLOC/sade/contexts/
+
+	#####
+    # SADE startup
+    #####
+	echo "[SADE BUILD] patch jetty.sh to make sure tmpdir is set to JETTY_HOME/tmp"
+	mkdir $BUILDLOC/sade/tmp
+	cd $BUILDLOC/sade/bin
+	patch -p0 < ../../../sade-resources/jetty.sh.patch
+	cp jetty.sh sade.sh
 fi
 
 
@@ -289,15 +299,9 @@ patch -p0 < sade-resources/existconf.xslfo.patch
 ##
 echo "[SADE BUILD] install and deploy sade packages"
 echo "[SADE BUILD] starting sade"
-cd $BUILDLOC/sade
 
-if [ $USE_TOMCAT = true ]; then
-    bin/catalina.sh run & $LOGDIR/sade_start.log 2>&1
-    SADE_PID=$!
-else
-    java -jar start.jar & > $LOGDIR/sade_start.log 2>&1
-    SADE_PID=$!
-fi
+$BUILDLOC/sade/bin/sade.sh start
+
 
 # I have a fix for the following in my pipeline (waiting only as long
 # as necessary)
@@ -314,7 +318,7 @@ echo -e "[SADE BUILD] restore finished.\n"
 #  don't kill running sade instance if requested with -r
 ##
 if [ $KEEP_RUNNING != true ];then
-    kill $SADE_PID
+	$BUILDLOC/sade/bin/sade.sh stop
 else 
     echo "SADE running on localhost:8080, stop with 'kill $SADE_PID'"
     exit 0
@@ -333,10 +337,7 @@ if [ $DO_ZIP == true ]; then
 fi
 
 echo "[SADE BUILD] done"
-if [ $USE_TOMCAT = true ]; then
-    echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'bin/startup.sh'"
-else
-    echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'java -jar start.jar'"
-fi
+echo "[SADE BUILD] you may now go to $BUILDLOC/sade and run 'bin/sade.sh start'"
+
 
 

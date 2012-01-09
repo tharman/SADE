@@ -1,0 +1,11 @@
+--- jetty.sh.orig	2012-01-09 11:03:51.601911401 +0100
++++ jetty.sh	2012-01-09 11:04:28.050092127 +0100
+@@ -360,7 +360,7 @@
+ #####################################################
+ # Add jetty properties to Java VM options.
+ #####################################################
+-JAVA_OPTIONS+=("-Djetty.home=$JETTY_HOME" "-Djava.io.tmpdir=$TMPDIR")
++JAVA_OPTIONS+=("-Djetty.home=$JETTY_HOME" "-Djava.io.tmpdir=$JETTY_HOME/tmp")
+ 
+ [ -f "$JETTY_HOME/etc/start.config" ] && JAVA_OPTIONS=("-DSTART=$JETTY_HOME/etc/start.config" "${JAVA_OPTIONS[@]}")
+ 
