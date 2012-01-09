@@ -10,11 +10,8 @@ TEXTGRID_BUILD=false
 KEEP_RUNNING=false
 DO_ZIP=false
 USE_TOMCAT=false
-PROFILE=0
 
-USAGE_P="-p profile:\n\t 1 -> eXist 1.4.1 (default is 1.5 / trunk)"
-USAGE="Usage: `basename $0` [-hztrp:a]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n $USAGE_P"
-
+USAGE="Usage: `basename $0` [-hztra]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n"
 
 # Parse command line options.
 while getopts hztrp:a OPT; do
@@ -34,9 +31,6 @@ while getopts hztrp:a OPT; do
         r)
             KEEP_RUNNING=true
             ;;
-        p)
-            PROFILE=$OPTARG
-            ;;
         a)
             USE_TOMCAT=true
             ;;
@@ -53,34 +47,20 @@ shift `expr $OPTIND - 1`
 
 # set software locations and versions to bundle with sade
 
-#JETTY_VERSION=7.4.2.v20110526
-#JETTY_VERSION=7.4.1.v20110513
+#Jetty
 JETTY_VERSION=8.0.3.v20111011
 
-#DIGILIB_CHANGESET=cbfc94584d3b
-#DIGILIB_CHANGESET=ee3383f80cb0
-DIGILIB_CHANGESET=6853c02b238b
+# digilib
+DIGILIB_CHANGESET=36102de2301e
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
+# tomcat
 TOMCAT_VERSION=7.0.23
 
-# choose exist version, default is 1.4.1, with -p 1 exist-trunk is chosen
-case $PROFILE in
-    1)
-        echo "[SADE BUILD] warning: restore to 1.4.1 does not work right now"
-        EXIST_BRANCH=stable/eXist-1.4.x    
-        EXIST_REV=15155 #this is stable 1.4.1, following revision is version 1.5: 14611
-        EXIST_SRC_LOC=exist-1.4.x
-        USE_EXIST_TRUNK=false
-        ;;
-    *)
-        EXIST_BRANCH=trunk/eXist    # exist 1.5
-        #EXIST_REV=15390
-		EXIST_REV=15586
-        EXIST_SRC_LOC=exist-trunk
-        USE_EXIST_TRUNK=true
-        ;;
-esac
+# exist
+EXIST_BRANCH=trunk/eXist    # exist 1.5
+EXIST_REV=15655
+EXIST_SRC_LOC=exist-trunk
 
 # Create build directory
 if [ ! -d $BUILDLOC ]; then
