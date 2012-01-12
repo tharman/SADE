@@ -8,5 +8,6 @@
     <copyright>true</copyright>
     <type>application</type>
     <target>/db/sade</target>
+	<prepare>pre-install.xql</prepare>
 	<finish>core/generate-processor.xql</finish>
 </meta>
