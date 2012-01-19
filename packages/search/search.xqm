@@ -12,3 +12,7 @@ declare function search:process-template($template-node as node(), $config as no
         result: {$result}
       </div>      
 };
+
+declare function search:header($config as node()) as item()* {
+    ()
+};

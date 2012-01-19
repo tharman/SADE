@@ -68,7 +68,7 @@ declare {"function sp:header" (: this is just to fool the script analyzing the d
       { for $m in $modules
             let $modulename := $m/@name
         return concat(", ", $modulename, ":header($config)" )
-      }             
+      } )
           
     return $result
     
