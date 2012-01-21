@@ -6,5 +6,6 @@
 		<ant dir="index"/>
 		<ant dir="search"/>
 		<ant dir="teixslt"/>
+		<ant dir="viewer" />
 	</target>
 </project>

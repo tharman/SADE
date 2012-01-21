@@ -25,6 +25,7 @@
 				let $b := repo:install('http://127.0.0.1:8080/exist/repo/packages/index-0.1.xar')
 				let $c := repo:install('http://127.0.0.1:8080/exist/repo/packages/search-0.1.xar')
 				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/teixslt-0.1.xar')
+				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/viewer-0.1.xar')
 				return "done"
 		</xdb:xquery>
 	</target>
@@ -40,6 +41,7 @@
 				let $b := repo:deploy('http://www.telota.de/sade/index')
 				let $c := repo:deploy('http://www.telota.de/sade/search')
 				let $d := repo:deploy('http://www.telota.de/sade/teixslt')
+				let $d := repo:deploy('http://www.telota.de/sade/viewer')
 				return "done"
 		</xdb:xquery>
 
