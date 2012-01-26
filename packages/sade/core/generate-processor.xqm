@@ -30,18 +30,22 @@ declare {"function sp:process-template" (: this is just to fool the script analy
 
     (: if template-node has @class="module" use the id to get the module
        otherwise look for a module to be positioned in this template-block :)
-    let $module := $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]    
-    let $module-name := xs:string($module/@name)
+    let $modules := $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]
+
+    let $result := 
+         for $module in $modules    
+            let $module-name := xs:string($module/@name)
     
     (: preserve the template-node together with its attributes 
         and put the processed content of module inside the template-node :)
-    let $result := element {{$template-node/name()}} {{ ($template-node/@* , 
+        return element {{$template-node/name()}} {{ ($template-node/@* , 
       { for $m in $modules
             let $modulename := $m/@name
         return concat("if ($module-name eq '", $modulename, "') then ", $modulename, ":process-template($module, $config) 
 else " )
       } { "sade:process" }($template-node/node(), $config) 
-            ) }}
+            ) }} 
+            
       (: 
       switch ($template-name) {
        for $m in $modules
@@ -68,7 +72,7 @@ declare {"function sp:header" (: this is just to fool the script analyzing the d
       { for $m in $modules
             let $modulename := $m/@name
         return concat(", ", $modulename, ":header($config)" )
-      } )
+      } )            
           
     return $result
     
