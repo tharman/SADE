@@ -58,9 +58,12 @@ DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz
 TOMCAT_VERSION=7.0.23
 
 # exist
-EXIST_BRANCH=trunk/eXist    # exist 1.5
-EXIST_REV=15655
-EXIST_SRC_LOC=exist-trunk
+#EXIST_BRANCH=trunk/eXist    # exist 1.5
+#EXIST_REV=15655
+#EXIST_SRC_LOC=exist-trunk
+EXIST_BRANCH=stable/eXist-2.0.x    # exist 1.5
+EXIST_REV=-1					   # revision to check out -1 means head
+EXIST_SRC_LOC=exist-2.0
 
 # Create build directory
 if [ ! -d $BUILDLOC ]; then
@@ -154,24 +157,34 @@ cd $BUILDLOC
 BUILD_EXIST=true
 
 if [ ! -e $BUILDLOC/$EXIST_SRC_LOC ]; then
-    svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+	# exist rev < 0 means head
+	if [ $EXIST_REV -lt 0 ]; then
+		svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH $EXIST_SRC_LOC
+	else
+    	svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+	fi
 else 
-    LOCAL_EXIST_REV=`LANG=C svn info exist-trunk/ |grep Revision | awk '{print $2}'`
-    if [ $EXIST_REV != $LOCAL_EXIST_REV ]; then
-        svn up -r $EXIST_REV $EXIST_SRC_LOC
-    else
-        # revision did not change, and exist*.war is in place no need to rebuild
-        if [ -e $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war ];then
-            echo "[SADE BUILD] found already build exist.war with correct revision"
-            BUILD_EXIST=false
-        fi
-    fi
+    LOCAL_EXIST_REV=`LANG=C svn info $EXIST_SRC_LOC |grep Revision | awk '{print $2}'`
+	# exist rev < 0 means head
+	if [ $EXIST_REV -lt 0 ]; then
+		svn up $EXIST_SRC_LOC
+	else
+	    if [ $EXIST_REV != $LOCAL_EXIST_REV ]; then
+    	    svn up -r $EXIST_REV $EXIST_SRC_LOC
+		else
+		    # revision did not change, and exist*.war is in place no need to rebuild
+		    if [ -e $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war ];then
+		        echo "[SADE BUILD] found already build exist.war with correct revision"
+		        BUILD_EXIST=false
+		    fi
+		fi
+	fi
 fi
 
 if [ $BUILD_EXIST == true ]; then
     echo "[SADE BUILD] building eXist"
     # we want xslfo, a diff/patch may be better than sed here
-    sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' exist-trunk/extensions/build.properties
+    sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' $EXIST_SRC_LOC/extensions/build.properties
 
     cd $EXIST_SRC_LOC
     ./build.sh clean 
