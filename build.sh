@@ -51,7 +51,7 @@ shift `expr $OPTIND - 1`
 JETTY_VERSION=8.0.3.v20111011
 
 # digilib
-DIGILIB_CHANGESET=36102de2301e
+DIGILIB_CHANGESET=a1bb909dfd38
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
@@ -142,6 +142,7 @@ else
 	cd $BUILDLOC/sade/bin
 	patch -p0 < ../../../sade-resources/jetty.sh.patch
 	cp jetty.sh sade.sh
+    cp jetty-cygwin.sh sade-cygwin.sh
 fi
 
 
@@ -320,7 +321,7 @@ sleep 15s
 if [ $DO_ZIP == true ]; then
     echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade-$EXIST_SRC_LOC.zip"
     cd $BUILDLOC
-    zip -rq sade-$EXIST_SRC_LOC.zip sade
+    zip -rq sade.zip sade
 fi
 
 echo "[SADE BUILD] done"
