@@ -108,6 +108,7 @@ if [ $USE_TOMCAT == true ]; then
 
     cp -r sade-resources/docroot $BUILDLOC/sade/webapps/ROOT
 	cp $BUILDLOC/sade/bin/catalina.sh $BUILDLOC/sade/bin/sade.sh
+	cp $BUILDLOC/sade/bin/catalina.bat $BUILDLOC/sade/bin/sade.bat
     
 else
     #####
