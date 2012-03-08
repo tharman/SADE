@@ -24,7 +24,10 @@ declare function sade:process($nodes as node()*, $config as node()) as item()* {
     };
 
 declare function sade:process-default($node as node(), $config as node()) as item()* {
-  element {$node/name()} {($node/@*, sade:process($node/node(), $config ))}
+  (: xml comments have no node name :)
+  if($node/name() ne '' ) then
+    element {$node/name()} {($node/@*, sade:process($node/node(), $config ))} 
+  else $node
   (: <div class="default">{$node/name()} </div> :)  
  };
 
