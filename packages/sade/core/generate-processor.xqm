@@ -27,12 +27,12 @@ module namespace sp = "{$gen:modulename}/processing";
 declare {"function sp:process-template" (: this is just to fool the script analyzing the dependencies :) }($template-node as node(), $config as node()) as item()* {{ {$gen:cr}
     
     let $div-id := xs:string($template-node/@id)
-    return if (not($div-id)) then $template-node
-    else
 
     (: if template-node has @class="module" use the id to get the module
        otherwise look for a module to be positioned in this template-block :)
-    let $module := $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]    
+    let $module := if($div-id) then
+                        $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]
+                    else () 
     let $module-name := xs:string($module/@name)
     
     (: preserve the template-node together with its attributes 
