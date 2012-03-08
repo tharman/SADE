@@ -50,8 +50,10 @@ shift `expr $OPTIND - 1`
 #Jetty
 JETTY_VERSION=8.0.3.v20111011
 
-# digilib
-DIGILIB_CHANGESET=a1bb909dfd38
+# digilib (setting "tip" as changeset gets head revision)
+#DIGILIB_CHANGESET=a1bb909dfd38
+DIGILIB_CHANGESET=36102de2301e
+#DIGILIB_CHANGESET=tip
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
@@ -62,7 +64,8 @@ TOMCAT_VERSION=7.0.23
 #EXIST_REV=15655
 #EXIST_SRC_LOC=exist-trunk
 EXIST_BRANCH=stable/eXist-2.0.x    # exist 1.5
-EXIST_REV=-1					   # revision to check out -1 means head
+#EXIST_REV=-1					   # revision to check out -1 means head
+EXIST_REV=16134
 EXIST_SRC_LOC=exist-2.0
 
 # Create build directory
@@ -222,20 +225,27 @@ cp build/*.xar $BUILDLOC/sade/webapps/exist/repo/packages
 #
 # DIGILIB
 #
+# TODO: use mercurial instead of the bzip download
 #####
 echo "[SADE BUILD] get and build digilib"
 cd $BUILDLOC
 
-if [ ! -e $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2 ]; then
-    wget $DIGILIB_LOC -O $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2
+if [ $DIGILIB_CHANGESET == 'tip' ]; then
+	mkdir digilib-$DIGILIB_CHANGESET
+	cd digilib-$DIGILIB_CHANGESET
+	tar --strip-components=1 --overwrite -jxf ../$DIGILIB_CHANGESET.tar.bz2
+else 
+	if [ ! -e $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2 ]; then
+		wget $DIGILIB_LOC -O $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2
+	fi
+	tar -jxf $DIGILIB_CHANGESET.tar.bz2
+	cd digilib-$DIGILIB_CHANGESET
 fi
-
-tar jxf $DIGILIB_CHANGESET.tar.bz2
-cd digilib-$DIGILIB_CHANGESET
 
 mvn clean
 
 echo "[SADE BUILD] building async version (servlet api3)"
+#mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3 -Pcodec-bioformats -Pcodec-imagej -Pcodec-jai
 mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3
 
 cd $BUILDLOC/sade/webapps
@@ -245,7 +255,9 @@ unzip -q $BUILDLOC/digilib-$DIGILIB_CHANGESET/webapp/target/digilib*.war
 
 #mkdir $BUILDLOC/sade/images
 mkdir images
-sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="images" \/>/g' WEB-INF/digilib-config.xml
+mkdir scaled
+mkdir thumb
+sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="images:scaled:thumb" \/>/g' WEB-INF/digilib-config.xml
 
 #####
 #
@@ -320,7 +332,7 @@ sleep 15s
 # create zipfile if called with -z
 ##
 if [ $DO_ZIP == true ]; then
-    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade-$EXIST_SRC_LOC.zip"
+    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade.zip"
     cd $BUILDLOC
     zip -rq sade.zip sade
 fi
