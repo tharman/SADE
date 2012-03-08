@@ -1,18 +1,148 @@
 <html>
     <head>
-        <title>SADE - default project</title>
-        <link rel="stylesheet" type="text/css" href="/exist/rest/db/sade/templates/default/sade.css" media="all"/>
-        <style>
-           
-        </style>
+        <title>TELOTA - Scalable Architecture for Digital Editions</title>
+        <link type="text/css" href="/css/jquery-ui.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/uiWindow.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/shCore.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/shThemeDefault.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/shThemeXQuery.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/sade.css" rel="stylesheet"/>
+        <script src="/scripts/jquery.min.js"/>
+        <script src="/scripts/jquery.form.js"/>
+        <script src="/scripts/jquery-ui-1.8.11.custom.min.js"/>
+        <script src="/scripts/jquery.layout.js"/>
+        <script src="/scripts/ui.window.js"/>
+        <script src="/scripts/sade.js"/>
     </head>
     <body>
-        <div id="header" class="block">SADE</div>
-        <div id="left" class="block"> 
-            left
+        <div class="ui-layout-north ui-corner-all">
+            <a href="http://www.i-d-e.de/" target="_blank">
+                <img src="/images/ide_logo.png" class="logo left" style="margin-top:12px;"/>
+            </a>
+            <a href="http://www.bbaw.de/" target="_blank">
+                <img src="/images/bbaw_logo.png" class="logo right"/>
+            </a>
+            <h1>Scalable Architecture for Digital Editions</h1>
         </div>
-        <div id="detail" class="block"> 
-            detail    
+        <div id="content" class="ui-layout-center ui-corner-all">
+            <div id="dock"/>
+            <div id="desk">
+                <h2 class="demoHeaders">
+                    <a href="http://www.bbaw.de/telota/sade" target="_blank">SADE</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://telota.bbaw.de/sade/sade.zip">Download</a>
+                    </li>
+                    <li>
+                        <a href="http://www.bbaw.de/telota/projekte/digitale-editionen/sade/documentation" target="_blank">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="http://groupman.bbaw.de/mailman/listinfo/digisade" target="_blank">Mailingliste: digisade@bbaw.de</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders">
+                    <a href="/exist/" target="_blank">eXist</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="/exist/webstart/exist.jnlp">Java Admin Client</a>
+                    </li>
+                    <li>
+                        <a href="/exist/xquery/functions.xql" target="_blank">Function Library</a>
+                    </li>
+                    <li>
+                        <a href="/exist/eXide/" target="_blank">eXide XML editor</a>
+                    </li>
+                    <li>
+                        <a href="http://www.oxygenxml.com/exist.html" target="_blank">Connect to Oxygen XML Editor</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders">
+                    <a href="http://www.w3.org/TR/xquery/" target="_blank">XQuery</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://en.wikibooks.org/wiki/XQuery" target="_blank">Wikibooks - Tutorial</a>
+                    </li>
+                    <li>
+                        <a href="http://www.w3schools.com/xquery/default.asp" target="_blank">W3Schools - Tutorial</a>
+                    </li>
+                </ul>
+                <h2 class="demoHeaders">
+                    <a href="/digitallibrary/digicat.jsp" target="_blank">digilib</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://digilib.berlios.de/" target="_blank">Project home page</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        
+        <!--div id="header" class="block">SADE</div-->
+        <div class="ui-layout-west ui-corner-all">
+            <div id="accordion">
+                <div>
+                    <h3><a href="#" id="homeLink">Home</a></h3>
+                    <div>
+                        <a href="">About SADE</a>
+                        <br/>
+                        <br/>
+                        <a href="http://www.bbaw.de/telota/projekte/digitale-editionen/sade/documentation" target="_blank">Documentation</a>
+                        <br/>
+                        <br/>
+                        <a href="">Resources</a>
+                        <br/>
+                        <br/>
+                        <a href="">Options</a>
+                        <br/>
+                    </div>
+                </div>
+                <div>
+                    <h3><a href="#" id="homeLink">Index</a></h3>   
+                     <div id="left" class="block"> 
+                    left
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui-layout-east ui-corner-all">
+            <div id="tabs">
+                <ul>
+                    <li>
+                        <a href="#tabs-1">Search</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-2">Options</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-3">Index</a>
+                    </li>
+                </ul>
+                <div id="tabs-1">
+                    <div id="detail" class="block"> 
+                        detail
+                    </div>
+                </div>
+                 <div id="tabs-2">
+
+                </div>
+                <div id="tabs-3">
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui-layout-south">
+            <div id="telota_footer">
+                <a href="#" style="float:left;">Imprint</a>
+                <a href="#" style="float:right;">Feedback</a>
+                <a href="http://www.bbaw.de/telota" target="_blank">Telota - The electronic life of the Academy</a>
+                <a href="http://www.i-d-e.de/" target="_blank">Institut für Dokumentologie und Editorik</a>
+            </div>
+        </div>
+        
     </body>
 </html>
