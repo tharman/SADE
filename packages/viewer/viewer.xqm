@@ -7,11 +7,13 @@ declare function viewer:process-template($template-node as node(), $config as no
     
     let $item := request:get-parameter("viewer.item", "")
     let $format := request:get-parameter("viewer.format", "")
-    
+    let $defaultViewLoc := $config//sade:module[@name eq "viewer"]/sade:defaultview/@path
     
     return
         <div id="viewer"> {
-            if(starts-with($format, "image/"))
+            if($item eq "") then
+                doc($defaultViewLoc)
+            else if(starts-with($format, "image/"))
                 then
                 <div id="digilib1" class="digilib">
                     <img src="http://localhost:8080/digitallibrary/servlet/Scaler?dw=400&amp;dh=400&amp;fn={$item}" />
