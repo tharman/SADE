@@ -33,7 +33,9 @@ declare function viewer:xslt($config as node(), $docname as xs:string) as item()
     let $doc := doc(concat($config//sade:data/@path, '/' ,$docname ))
     let $xsl := doc($config//sade:viewer/@xslt)
     
-    let $html := transform:transform($doc, $xsl, <parameters/>)
+    let $html := transform:transform($doc, $xsl, <parameters>
+                                                    <param name="graphicsPrefix" value="/digitallibrary/servlet/Scaler?dw=800&amp;fn="/>
+                                                </parameters>)
     return $html
 };
 
