@@ -1,18 +1,91 @@
 <html>
     <head>
-        <title>SADE - default project</title>
-        <link rel="stylesheet" type="text/css" href="/exist/rest/db/sade/templates/default/sade.css" media="all"/>
-        <style>
-           
-        </style>
+        <title>TELOTA - Scalable Architecture for Digital Editions</title>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/jquery-ui.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/uiWindow.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/shCore.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/shThemeDefault.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/shThemeXQuery.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/rest/sade/templates/default/css/sade.css" rel="stylesheet"/>
+        <script src="/exist/rest/sade/templates/default//scripts/jquery.min.js"/>
+        <script src="/exist/rest/sade/templates/default//scripts/jquery.form.js"/>
+        <script src="/exist/rest/sade/templates/default//scripts/jquery-ui-1.8.11.custom.min.js"/>
+        <script src="/exist/rest/sade/templates/default//scripts/jquery.layout.js"/>
+        <script src="/exist/rest/sade/templates/default//scripts/ui.window.js"/>
+        <script src="/exist/rest/sade/templates/default//scripts/sade.js"/>
     </head>
     <body>
-        <div id="header" class="block">SADE</div>
-        <div id="left" class="block"> 
-            left
+        <div class="ui-layout-north ui-corner-all">
+            <a href="http://www.i-d-e.de/" target="_blank">
+                <img src="/exist/rest/sade/templates/default/images/ide_logo.png" class="logo left" style="margin-top:12px;"/>
+            </a>
+            <a href="http://www.bbaw.de/" target="_blank">
+                <img src="/exist/rest/sade/templates/default/images/bbaw_logo.png" class="logo right"/>
+            </a>
+            <h1>Scalable Architecture for Digital Editions</h1>
         </div>
-        <div id="detail" class="block"> 
-            detail    
+        <div id="content" class="ui-layout-center ui-corner-all">
+        </div>
+        
+        <div class="ui-layout-west ui-corner-all">
+            <div id="accordion">
+                <div>
+                    <h3>
+                        <a href="#" id="homeLink">Home</a>
+                    </h3>
+                    <div>
+                        <a href="">About SADE</a>
+                        <br/>
+                        <br/>
+                        <a href="http://www.bbaw.de/telota/projekte/digitale-editionen/sade/documentation" target="_blank">Documentation</a>
+                        <br/>
+                        <br/>
+                        <a href="">Resources</a>
+                        <br/>
+                        <br/>
+                        <a href="">Options</a>
+                        <br/>
+                    </div>
+                </div>
+                <div>
+                    <h3>
+                        <a href="#" id="homeLink">Index</a>
+                    </h3>
+                    <div id="left" class="block"> 
+                    left
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-layout-east ui-corner-all">
+            <div id="tabs">
+                <ul>
+                    <li>
+                        <a href="#tabs-1">Search</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-2">Options</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-3">Index</a>
+                    </li>
+                </ul>
+                <div id="tabs-1">
+                    <div id="detail" class="block"> 
+                        detail
+                    </div>
+                </div>
+                <div id="tabs-2"/>
+                <div id="tabs-3"/>
+            </div>
+        </div>
+        <div class="ui-layout-south">
+            <div id="telota_footer">
+                <a href="#" style="float:left;">Imprint</a>
+                <a href="#" style="float:right;">Feedback</a>
+                <a href="http://www.bbaw.de/telota" target="_blank">Telota - The electronic life of the Academy</a>
+                <a href="http://www.i-d-e.de/" target="_blank">Institut für Dokumentologie und Editorik</a>
+            </div>
         </div>
     </body>
 </html>

@@ -7,11 +7,13 @@ declare function viewer:process-template($template-node as node(), $config as no
     
     let $item := request:get-parameter("viewer.item", "")
     let $format := request:get-parameter("viewer.format", "")
-    
+    let $defaultViewLoc := $config//sade:module[@name eq "viewer"]/sade:defaultview/@path
     
     return
         <div id="viewer"> {
-            if(starts-with($format, "image/"))
+            if($item eq "") then
+                doc($defaultViewLoc)
+            else if(starts-with($format, "image/"))
                 then
                 <div id="digilib1" class="digilib">
                     <img src="http://localhost:8080/digitallibrary/servlet/Scaler?dw=400&amp;dh=400&amp;fn={$item}" />
@@ -31,7 +33,9 @@ declare function viewer:xslt($config as node(), $docname as xs:string) as item()
     let $doc := doc(concat($config//sade:data/@path, '/' ,$docname ))
     let $xsl := doc($config//sade:viewer/@xslt)
     
-    let $html := transform:transform($doc, $xsl, <parameters/>)
+    let $html := transform:transform($doc, $xsl, <parameters>
+                                                    <param name="graphicsPrefix" value="/digitallibrary/servlet/Scaler?dw=800&amp;fn="/>
+                                                </parameters>)
     return $html
 };
 

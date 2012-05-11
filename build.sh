@@ -50,17 +50,23 @@ shift `expr $OPTIND - 1`
 #Jetty
 JETTY_VERSION=8.0.3.v20111011
 
-# digilib
-DIGILIB_CHANGESET=36102de2301e
+# digilib (setting "tip" as changeset gets head revision)
+#DIGILIB_CHANGESET=a1bb909dfd38
+#DIGILIB_CHANGESET=36102de2301e
+DIGILIB_CHANGESET=788c757d7f70
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
-TOMCAT_VERSION=7.0.23
+TOMCAT_VERSION=7.0.27
 
 # exist
-EXIST_BRANCH=trunk/eXist    # exist 1.5
-EXIST_REV=15655
-EXIST_SRC_LOC=exist-trunk
+#EXIST_BRANCH=trunk/eXist    # exist 1.5
+#EXIST_REV=15655
+#EXIST_SRC_LOC=exist-trunk
+EXIST_BRANCH=stable/eXist-2.0.x    # exist 1.5
+#EXIST_REV=-1					   # revision to check out -1 means head
+EXIST_REV=16268
+EXIST_SRC_LOC=exist-2.0
 
 # Create build directory
 if [ ! -d $BUILDLOC ]; then
@@ -105,6 +111,7 @@ if [ $USE_TOMCAT == true ]; then
 
     cp -r sade-resources/docroot $BUILDLOC/sade/webapps/ROOT
 	cp $BUILDLOC/sade/bin/catalina.sh $BUILDLOC/sade/bin/sade.sh
+	cp $BUILDLOC/sade/bin/catalina.bat $BUILDLOC/sade/bin/sade.bat
     
 else
     #####
@@ -139,6 +146,7 @@ else
 	cd $BUILDLOC/sade/bin
 	patch -p0 < ../../../sade-resources/jetty.sh.patch
 	cp jetty.sh sade.sh
+    cp jetty-cygwin.sh sade-cygwin.sh
 fi
 
 
@@ -154,24 +162,34 @@ cd $BUILDLOC
 BUILD_EXIST=true
 
 if [ ! -e $BUILDLOC/$EXIST_SRC_LOC ]; then
-    svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+	# exist rev < 0 means head
+	if [ $EXIST_REV -lt 0 ]; then
+		svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH $EXIST_SRC_LOC
+	else
+    	svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+	fi
 else 
-    LOCAL_EXIST_REV=`LANG=C svn info exist-trunk/ |grep Revision | awk '{print $2}'`
-    if [ $EXIST_REV != $LOCAL_EXIST_REV ]; then
-        svn up -r $EXIST_REV $EXIST_SRC_LOC
-    else
-        # revision did not change, and exist*.war is in place no need to rebuild
-        if [ -e $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war ];then
-            echo "[SADE BUILD] found already build exist.war with correct revision"
-            BUILD_EXIST=false
-        fi
-    fi
+    LOCAL_EXIST_REV=`LANG=C svn info $EXIST_SRC_LOC |grep Revision | awk '{print $2}'`
+	# exist rev < 0 means head
+	if [ $EXIST_REV -lt 0 ]; then
+		svn up $EXIST_SRC_LOC
+	else
+	    if [ $EXIST_REV != $LOCAL_EXIST_REV ]; then
+    	    svn up -r $EXIST_REV $EXIST_SRC_LOC
+		else
+		    # revision did not change, and exist*.war is in place no need to rebuild
+		    if [ -e $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war ];then
+		        echo "[SADE BUILD] found already build exist.war with correct revision"
+		        BUILD_EXIST=false
+		    fi
+		fi
+	fi
 fi
 
 if [ $BUILD_EXIST == true ]; then
     echo "[SADE BUILD] building eXist"
     # we want xslfo, a diff/patch may be better than sed here
-    sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' exist-trunk/extensions/build.properties
+    sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' $EXIST_SRC_LOC/extensions/build.properties
 
     cd $EXIST_SRC_LOC
     ./build.sh clean 
@@ -207,20 +225,28 @@ cp build/*.xar $BUILDLOC/sade/webapps/exist/repo/packages
 #
 # DIGILIB
 #
+# TODO: use mercurial instead of the bzip download
 #####
 echo "[SADE BUILD] get and build digilib"
 cd $BUILDLOC
 
-if [ ! -e $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2 ]; then
-    wget $DIGILIB_LOC -O $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2
+if [ $DIGILIB_CHANGESET == 'tip' ]; then
+	wget $DIGILIB_LOC -O $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2
+	mkdir digilib-$DIGILIB_CHANGESET
+	cd digilib-$DIGILIB_CHANGESET
+	tar --strip-components=1 --overwrite -jxf ../$DIGILIB_CHANGESET.tar.bz2
+else 
+	if [ ! -e $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2 ]; then
+		wget $DIGILIB_LOC -O $BUILDLOC/$DIGILIB_CHANGESET.tar.bz2
+	fi
+	tar -jxf $DIGILIB_CHANGESET.tar.bz2
+	cd digilib-$DIGILIB_CHANGESET
 fi
-
-tar jxf $DIGILIB_CHANGESET.tar.bz2
-cd digilib-$DIGILIB_CHANGESET
 
 mvn clean
 
 echo "[SADE BUILD] building async version (servlet api3)"
+#mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3 -Pcodec-bioformats -Pcodec-imagej -Pcodec-jai
 mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3
 
 cd $BUILDLOC/sade/webapps
@@ -230,7 +256,9 @@ unzip -q $BUILDLOC/digilib-$DIGILIB_CHANGESET/webapp/target/digilib*.war
 
 #mkdir $BUILDLOC/sade/images
 mkdir images
-sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="images" \/>/g' WEB-INF/digilib-config.xml
+mkdir scaled
+mkdir thumb
+sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserver\/scaled\/small:\/docuserver\/scaled\/thumb" \/>/<parameter name="basedir-list" value="images:scaled:thumb" \/>/g' WEB-INF/digilib-config.xml
 
 #####
 #
@@ -255,6 +283,22 @@ if [ $TEXTGRID_BUILD == true ]; then
     mkdir tgwp
     cd tgwp
     unzip -q $BUILDLOC/tgwp/target/epclient.war
+
+	echo "[SADE BUILD] building textgrid xar packages for SADE"
+	cd $BUILDLOC
+	if [ ! -e $BUILDLOC/sade-textgrid-packages ]; then
+		svn co https://develop.sub.uni-goettingen.de/repos/textgrid/trunk/services/webpub/sade-textgrid-packages
+	else 
+		svn up sade-textgrid-packages
+	fi
+
+	cd $BUILDLOC/sade-textgrid-packages
+	ant
+
+	# TODO: put into local public repo? / set EXIST_HOME for  
+	# repo location EXIST_HOME/webapp/WEB-INF/expathrepo instead of /tmp/expathrepo
+	echo "[SADE BUILD] put xar packages into eXist local repository"
+	cp build/*.xar $BUILDLOC/sade/webapps/exist/repo/packages
 
 fi
 
@@ -285,7 +329,23 @@ echo "[SADE BUILD] deploying SADE core packages"
 cd $SCRIPTLOC/packages
 ant -f localdeploy.xml
 
+if [ $TEXTGRID_BUILD == true ]; then
+	cd $BUILDLOC/sade-textgrid-packages
+	ant -f localdeploy.xml
+fi
+
 echo -e "[SADE BUILD] sade modules deploy done.\n"
+
+####
+# write log whats inside this sade build
+##
+echo -e "This SADE package integrates:\nexist: $EXIST_BRANCH rev $EXIST_REV\ndigilib: $DIGILIB_CHANGESET" >> $BUILDLOC/sade/components.txt
+if [ $USE_TOMCAT == true ]; then
+	echo -e "tomcat: $TOMCAT_VERSION" >>  $BUILDLOC/sade/components.txt
+else
+	echo -e "jetty: $JETTY_VERSION" >> $BUILDLOC/sade/components.txt
+fi
+
 
 ####
 #
@@ -305,9 +365,9 @@ sleep 15s
 # create zipfile if called with -z
 ##
 if [ $DO_ZIP == true ]; then
-    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade-$EXIST_SRC_LOC.zip"
+    echo "[SADE BUILD] creating zipfile: $BUILDLOC/sade.zip"
     cd $BUILDLOC
-    zip -rq sade-$EXIST_SRC_LOC.zip sade
+    zip -rq sade.zip sade
 fi
 
 echo "[SADE BUILD] done"

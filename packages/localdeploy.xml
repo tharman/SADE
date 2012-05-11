@@ -25,7 +25,8 @@
 				let $b := repo:install('http://127.0.0.1:8080/exist/repo/packages/index-0.1.xar')
 				let $c := repo:install('http://127.0.0.1:8080/exist/repo/packages/search-0.1.xar')
 				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/teixslt-0.1.xar')
-				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/viewer-0.1.xar')
+				let $e := repo:install('http://127.0.0.1:8080/exist/repo/packages/viewer-0.1.xar')
+				let $f := repo:install('http://demo.exist-db.org/exist/apps/public-repo/public/eXide-1.0.xar')
 				return "done"
 		</xdb:xquery>
 	</target>
@@ -41,7 +42,8 @@
 				let $b := repo:deploy('http://www.telota.de/sade/index')
 				let $c := repo:deploy('http://www.telota.de/sade/search')
 				let $d := repo:deploy('http://www.telota.de/sade/teixslt')
-				let $d := repo:deploy('http://www.telota.de/sade/viewer')
+				let $e := repo:deploy('http://www.telota.de/sade/viewer')
+				let $f := repo:deploy('http://exist-db.org/apps/eXide')
 				return "done"
 		</xdb:xquery>
 

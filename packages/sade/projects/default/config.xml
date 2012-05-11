@@ -18,6 +18,9 @@
     <modules path="/db/sade/modules">
         <module ns="http://sade/index" name="index" position="left"/>
         <module ns="http://sade/search" name="search" position="detail"/>
+        <module ns="http://sade/viewer" name="viewer" position="content">
+            <defaultview path="/sade/projects/default/defaultview.xml"/>
+        </module>
         <!--
             <module path="/db/modules/browse" name="browse">
             <use_property ref="p1"/>

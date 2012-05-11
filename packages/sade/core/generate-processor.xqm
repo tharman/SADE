@@ -30,10 +30,13 @@ declare {"function sp:process-template" (: this is just to fool the script analy
 
     (: if template-node has @class="module" use the id to get the module
        otherwise look for a module to be positioned in this template-block :)
-    let $modules := $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]
-
+    let $modules := if($div-id) then
+                        $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]
+                    else () 
+    
+    (: there may be multiple modules for given position, so loop over the potential sequence :)
     let $result := 
-         for $module in $modules    
+         for $module in $modules     
             let $module-name := xs:string($module/@name)
     
     (: preserve the template-node together with its attributes 
