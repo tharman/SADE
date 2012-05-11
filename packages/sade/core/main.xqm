@@ -1,3 +1,7 @@
+(:~ This is the main module of SADE_modules governing the processing of the templates
+: @name SADE main  
+: @since 2011-12-20 
+:)
 module namespace sade = "http://sade";
 
 import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///db/sade/core/processor.xql";
@@ -14,23 +18,26 @@ declare function sade:init-process($config as node()) as item()* {
 
 };
 
+(:~ recursively traverse the nodes of the template
+switch to specific processing when element(div), otherwise continue default processing
+:)
 declare function sade:process($nodes as node()*, $config as node()) as item()* {
   for $node in $nodes     
     return  typeswitch ($node)              
         case text() return $node                
         case element(div) return sp:process-template($node, $config)
+        case comment() return $node
         default return sade:process-default($node, $config )
 
     };
 
+(:~ default processing when traversing the template: copy node and continue processing with the child nodes  
+:)
 declare function sade:process-default($node as node(), $config as node()) as item()* {
-  (: xml comments have no node name :)
-  if($node/name() ne '' ) then
-    element {$node/name()} {($node/@*, sade:process($node/node(), $config ))} 
-  else $node
-  (: <div class="default">{$node/name()} </div> :)  
- };
+  element {$node/name()} {($node/@*, sade:process($node/node(), $config ))}  
+};
 
+(:~ by-pass function, if one wants to process only one module :) 
 declare function sade:process-module($module as xs:string, $config as node()) as item()* {
 
     let $template-path := xs:string($config//sade:template/@path)    
@@ -39,13 +46,17 @@ declare function sade:process-module($module as xs:string, $config as node()) as
 
 };
 
+(:~ provides the html-wrapper :)
 declare function sade:html-output($content as node(), $config as node()) as item()* {
              
     let $wrapped := <html><head>{sp:header($config)}</head><body>{$content}</body></html>      
     return  $wrapped
-    
+
 };
 
+(:~ delivers the default html-head
+individual modules can add their stuff via callback-function
+:)
 declare function sade:header  ($config as node()) as item()* {
 
      let $header := <header>
