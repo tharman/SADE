@@ -13,8 +13,7 @@ let $modules := $config//sade:module
 let $result :=
     <processor-code>
 module namespace sp = "{$gen:modulename}/processing"; 
- declare namespace sade = "{$gen:modulename}";
-   
+ import module namespace sade = "{$gen:modulename}" at "/db/sade/core/main.xqm";
   (: generate list of imported modules, module-name as namespace-prefix :)  
 { for $m in $modules 
     let $modulename := $m/@name
@@ -31,11 +30,11 @@ declare {"function sp:process-template" (: this is just to fool the script analy
     (: if template-node has @class="module" use the id to get the module
        otherwise look for a module to be positioned in this template-block :)
     let $modules := if($div-id) then
-                        $config//sade:modules/sade:module[@position=$div-id or @name=$div-id]
+                        $config//sade:modules/sade:module[@position=$div-id or starts-with($div-id, @name)]
                     else () 
     
     (: there may be multiple modules for given position, so loop over the potential sequence :)
-    let $result := 
+    let $resolved := 
          for $module in $modules     
             let $module-name := xs:string($module/@name)
     
@@ -44,7 +43,7 @@ declare {"function sp:process-template" (: this is just to fool the script analy
         return element {{$template-node/name()}} {{ ($template-node/@* , 
       { for $m in $modules
             let $modulename := $m/@name
-        return concat("if ($module-name eq '", $modulename, "') then ", $modulename, ":process-template($module, $config) 
+        return concat("if ($module-name eq '", $modulename, "') then ", $modulename, ":process-template($template-node, $config) 
 else " )
       } { "sade:process" }($template-node/node(), $config) 
             ) }} 
@@ -59,8 +58,9 @@ else " )
          sade:process-default($template-node)
       :)     
     
-    return $result
-    
+    (: if no module was found, continue with default processing :)
+    return if (exists($resolved)) then $resolved 
+            else element {{$template-node/name()}} {{ ($template-node/@* , { "sade:process" } ($template-node/node(), $config) ) }}
   }};
   
  (: dynamic header-callback generated from the list of modules
@@ -73,8 +73,8 @@ declare {"function sp:header" (: this is just to fool the script analyzing the d
     (: run through modules (in config = project-specific) and concat their headers :)      
     let $result := ( { "sade:header" }($config) 
       { for $m in $modules
-            let $modulename := $m/@name
-        return concat(", ", $modulename, ":header($config)" )
+            let $modulename := xs:string($m/@name)
+        return concat(", if ($modules[xs:string(@name) eq '", $modulename, "']) then ", $modulename, ":header($config) else ()" )
       } )            
           
     return $result
