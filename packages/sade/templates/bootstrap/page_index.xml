@@ -14,7 +14,7 @@
   <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
           <div class="container">
-              <a class="brand" href="#">SADE: Scalable Architecture for Digital Editions</a>
+              <a class="brand" href="/">SADE: Scalable Architecture for Digital Editions</a>
           </div>
       </div>
   </div>
@@ -30,7 +30,7 @@
       </div>
       
       <div class="span7">
-        <div id="content" class="hero-unit"><p>main</p></div>
+        <div id="content"><p>main</p></div>
       </div> 
         
       <div class="span3">

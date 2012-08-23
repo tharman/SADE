@@ -68,7 +68,8 @@ TOMCAT_VERSION=7.0.29
 EXIST_BRANCH=trunk/eXist           # eXist 2.1
 EXIST_SRC_LOC=exist-2.1
 #EXIST_REV=-1					   # revision to check out -1 means head
-EXIST_REV=16994
+#EXIST_REV=16994
+EXIST_REV=16946
 
 
 # Create build directory
