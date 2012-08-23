@@ -1,35 +1,18 @@
 <SADE_project xmlns="http://sade">
     <!-- BASICS -->
-    <name>Das ist ein Testprojekt</name>
-    <data path="/db/sade/projects/default/data"/>
-    <scripts path="/db/sade/projects/default/scripts"/>
-    <template path="/db/sade/templates/default/index.xml"/>
     <properties>
+        <!-- you could change the default template by changing the property
+        template.dir to /db/sade/templates/bootstrap/ , then save and reload
+        mainpage -->
         <property key="template.dir">/db/sade/templates/default/</property>
-        <property id="p1" type="pagination" col="/db/projects/default/data/texts" xpath="//pb"/>
-        <property id="p2" type="pagination" col="/db/projects/default/data/register" xpath="//p"/>
-        <logo img_url="/default/images/logo.png"/>
-        <background img_url="/default/images/bg.png"/>
-        <title>
-            <h1>Scalable Architecture for Digital Editions</h1>
-        </title>
     </properties>
 
     <!-- MODULES -->
     <modules path="/db/sade/modules">
         <module ns="http://sade/index" name="index" position="left"/>
-        <module ns="http://sade/search" name="search" position="detail"/>
+        <module ns="http://sade/search" name="search" position="right"/>
         <module ns="http://sade/viewer" name="viewer" position="content">
             <defaultview path="/sade/projects/default/defaultview.xml"/>
         </module>
-        <!--
-            <module path="/db/modules/browse" name="browse">
-            <use_property ref="p1"/>
-            <!-|- Hier die Modulkonfiguration rein! -|->
-            </module>
-        
-        <module path="/db/modules/image_view" name="image_view"/>        
-        <module path="/db/modules/register" name="register" position="search"/>
-        <module path="/db/modules/map" name="map"/> -->
     </modules>
 </SADE_project>

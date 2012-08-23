@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>TELOTA - Scalable Architecture for Digital Editions</title>
+  <meta charset="utf-8"/>
+  <link href="/exist/rest/sade/templates/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="/exist/rest/sade/templates/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+  <link href="/exist/rest/sade/templates/bootstrap/css/sade.css" rel="stylesheet"/>
+  <!--link href="css/bootstrap-theme-simplex.css" rel="stylesheet"-->
+  <!--link href="css/bootstrap-theme-cerulean.css" rel="stylesheet"-->
+  <!--link href="css/bootstrap-theme-spacelab.css" rel="stylesheet"-->
+</head>
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+          <div class="container">
+              <a class="brand" href="#">SADE: Scalable Architecture for Digital Editions</a>
+          </div>
+      </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+      <div class="span2">
+        <img src="/exist/rest/sade/templates/default/images/ide_logo.png" style="padding-bottom:10px" />
+        <div id="left" class="well">
+          <p>left</p>
+        </div>
+      </div>
+      
+      <div class="span7">
+        <div id="content" class="hero-unit"><p>main</p></div>
+      </div> 
+        
+      <div class="span3">
+        <img src="/exist/rest/sade/templates/default/images/bbaw_logo.png" style="padding-bottom:10px; float:right;"/>
+        <div class="well" style="clear:both;">
+          <div id="right"><p>right</p></div>
+        </div>
+      </div> 
+       
+    </div>
+  </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/exist/rest/sade/templates/bootstrap/js/jquery-1.8.0.min.js"/>
+    <script src="/exist/rest/sade/templates/bootstrap/js/bootstrap.min.js"/>
+</body>
+</html>
