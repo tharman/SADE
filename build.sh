@@ -10,6 +10,7 @@ TEXTGRID_BUILD=false
 KEEP_RUNNING=false
 DO_ZIP=false
 USE_TOMCAT=false
+INCLUDE_SESAME=false
 
 USAGE="Usage: `basename $0` [-hztra]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n"
 
@@ -34,6 +35,9 @@ while getopts hztrp:a OPT; do
         a)
             USE_TOMCAT=true
             ;;
+        s)
+            INCLUDE_SESAME=true
+            ;;
         \?)
             # getopts issues an error message
             echo -e $USAGE >&2
@@ -48,7 +52,8 @@ shift `expr $OPTIND - 1`
 # set software locations and versions to bundle with sade
 
 #Jetty
-JETTY_VERSION=8.1.2.v20120308
+#JETTY_VERSION=8.1.2.v20120308 # does not work yet -> some security change
+JETTY_VERSION=8.0.4.v20111024
 
 # digilib (setting "tip" as changeset gets head revision)
 DIGILIB_CHANGESET=e1b29f51d224
@@ -108,8 +113,8 @@ if [ $USE_TOMCAT == true ]; then
     cd $SCRIPTLOC
 
     cp -r sade-resources/docroot $BUILDLOC/sade/webapps/ROOT
-	cp $BUILDLOC/sade/bin/catalina.sh $BUILDLOC/sade/bin/sade.sh
-	cp $BUILDLOC/sade/bin/catalina.bat $BUILDLOC/sade/bin/sade.bat
+    cp $BUILDLOC/sade/bin/catalina.sh $BUILDLOC/sade/bin/sade.sh
+    cp $BUILDLOC/sade/bin/catalina.bat $BUILDLOC/sade/bin/sade.bat
     
 else
     #####
@@ -262,6 +267,16 @@ sed -i 's/<parameter name="basedir-list" value="\/docuserver\/images:\/docuserve
 
 #####
 #
+# Integrate Sesame if requested with -t
+#
+#####
+if [ $INCLUDE_SESAME == true ]; then
+  echo "[SADE BUILD] download and integrate sesame"
+  wget http://downloads.sourceforge.net/project/sesame/Sesame%202/2.6.9/openrdf-sesame-2.6.9-sdk.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsesame%2Ffiles%2FSesame%25202%2F&ts=1345709220&use_mirror=switch -O $BUILDLOC/sesame-sdk.tar.gz
+fi
+
+#####
+#
 # Add TextGrid stuff if requested with -t
 #
 #####
@@ -305,10 +320,10 @@ fi
 ###
 #
 # exist config modification
-#
+# seems not neccessary in trunk anymore
 ###
-cd $SCRIPTLOC
-patch -p0 < sade-resources/existconf.xslfo.patch 
+#cd $SCRIPTLOC
+#patch -p0 < sade-resources/existconf.xslfo.patch 
 
 ####
 #
@@ -323,7 +338,7 @@ $BUILDLOC/sade/bin/sade.sh start
 
 # I have a fix for the following in my pipeline (waiting only as long
 # as necessary)
-sleep 20s
+sleep 30s
 echo "[SADE BUILD] deploying SADE core packages"
 
 cd $SCRIPTLOC/packages
