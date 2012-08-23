@@ -5,6 +5,7 @@
     <scripts path="/db/sade/projects/default/scripts"/>
     <template path="/db/sade/templates/default/index.xml"/>
     <properties>
+        <property key="template.dir">/db/sade/templates/default/</property>
         <property id="p1" type="pagination" col="/db/projects/default/data/texts" xpath="//pb"/>
         <property id="p2" type="pagination" col="/db/projects/default/data/register" xpath="//p"/>
         <logo img_url="/default/images/logo.png"/>

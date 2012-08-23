@@ -8,7 +8,7 @@ import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///db/sa
 import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/modules/diagnostics/diagnostics.xqm";
 
 (:declare default element namespace "http://sade";:)
-
+declare variable $sade:baseurl := "/exist/rest/db/sade/";
 
 (:~ main entry point 
 parametrized by config (all further processing is guided by the settings in config)
