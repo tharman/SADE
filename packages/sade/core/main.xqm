@@ -5,7 +5,7 @@
 module namespace sade = "http://sade";
 
 import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///db/sade/core/processor.xql";
-import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/modules/diagnostics/diagnostics.xqm";
+import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/core/modules/diagnostics/diagnostics.xqm";
 
 (:declare default element namespace "http://sade";:)
 declare variable $sade:baseurl := "/exist/rest/db/sade/";
