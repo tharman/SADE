@@ -48,25 +48,23 @@ shift `expr $OPTIND - 1`
 # set software locations and versions to bundle with sade
 
 #Jetty
-JETTY_VERSION=8.0.3.v20111011
+JETTY_VERSION=8.1.2.v20120308
 
 # digilib (setting "tip" as changeset gets head revision)
-#DIGILIB_CHANGESET=a1bb909dfd38
-#DIGILIB_CHANGESET=36102de2301e
-DIGILIB_CHANGESET=788c757d7f70
+DIGILIB_CHANGESET=e1b29f51d224
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
-TOMCAT_VERSION=7.0.27
+TOMCAT_VERSION=7.0.29
 
 # exist
-#EXIST_BRANCH=trunk/eXist    # exist 1.5
-#EXIST_REV=15655
-#EXIST_SRC_LOC=exist-trunk
-EXIST_BRANCH=stable/eXist-2.0.x    # exist 1.5
+#EXIST_BRANCH=stable/eXist-2.0.x    # exist 2.0
+#EXIST_SRC_LOC=exist-2.0
+EXIST_BRANCH=trunk/eXist           # eXist 2.1
+EXIST_SRC_LOC=exist-2.1
 #EXIST_REV=-1					   # revision to check out -1 means head
-EXIST_REV=16268
-EXIST_SRC_LOC=exist-2.0
+EXIST_REV=16994
+
 
 # Create build directory
 if [ ! -d $BUILDLOC ]; then
@@ -139,8 +137,8 @@ else
     cp sade-resources/contexts/docroot.xml $BUILDLOC/sade/contexts/
 
 	#####
-    # SADE startup
-    #####
+  # SADE startup
+  #####
 	echo "[SADE BUILD] patch jetty.sh to make sure tmpdir is set to JETTY_HOME/tmp"
 	mkdir $BUILDLOC/sade/tmp
 	cd $BUILDLOC/sade/bin
@@ -164,9 +162,9 @@ BUILD_EXIST=true
 if [ ! -e $BUILDLOC/$EXIST_SRC_LOC ]; then
 	# exist rev < 0 means head
 	if [ $EXIST_REV -lt 0 ]; then
-		svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH $EXIST_SRC_LOC
+		svn co svn://svn.code.sf.net/p/exist/code/$EXIST_BRANCH $EXIST_SRC_LOC
 	else
-    	svn co https://exist.svn.sourceforge.net/svnroot/exist/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+    	svn co svn://svn.code.sf.net/p/exist/code/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
 	fi
 else 
     LOCAL_EXIST_REV=`LANG=C svn info $EXIST_SRC_LOC |grep Revision | awk '{print $2}'`
@@ -192,6 +190,8 @@ if [ $BUILD_EXIST == true ]; then
     sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' $EXIST_SRC_LOC/extensions/build.properties
 
     cd $EXIST_SRC_LOC
+#      show svn rev
+    ./build.sh svn-download    
     ./build.sh clean 
     ./build.sh 
     ./build.sh jnlp-sign-all dist-war
