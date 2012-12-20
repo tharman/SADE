@@ -1,7 +1,7 @@
 xquery version "1.0";
 
 module namespace trigger='http://exist-db.org/xquery/trigger';
-import module namespace gen =  "http://sade/gen" at "xmldb:exist:///db/sade/core/generate-processor.xqm";
+import module namespace gen =  "http://sade/gen" at "xmldb:exist:///apps/sade/core/generate-processor.xqm";
 
 declare option exist:serialize "method=text media-type=text/text";
 
@@ -12,7 +12,7 @@ declare function trigger:after-update-document($uri as xs:anyURI) {
         let $x := util:log('debug', 'config.xml changes, regenerating processor.xql')
         let $config :=  doc($uri)/*
         let $generated-code := gen:generate-processor($config)
-        return xmldb:store("/db/sade/core", "processor.xql", $generated-code)
+        return xmldb:store("/apps/sade/core", "processor.xql", $generated-code)
     else ()
     
 };

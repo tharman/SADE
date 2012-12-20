@@ -1,26 +1,26 @@
 <html>
     <head>
         <title>TELOTA - Scalable Architecture for Digital Editions</title>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/jquery-ui.css" rel="stylesheet"/>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/uiWindow.css" rel="stylesheet"/>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/shCore.css" rel="stylesheet"/>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/shThemeDefault.css" rel="stylesheet"/>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/shThemeXQuery.css" rel="stylesheet"/>
-        <link type="text/css" href="/exist/rest/sade/templates/default/css/sade.css" rel="stylesheet"/>
-        <script src="/exist/rest/sade/templates/default//scripts/jquery.min.js"/>
-        <script src="/exist/rest/sade/templates/default//scripts/jquery.form.js"/>
-        <script src="/exist/rest/sade/templates/default//scripts/jquery-ui-1.8.11.custom.min.js"/>
-        <script src="/exist/rest/sade/templates/default//scripts/jquery.layout.js"/>
-        <script src="/exist/rest/sade/templates/default//scripts/ui.window.js"/>
-        <script src="/exist/rest/sade/templates/default//scripts/sade.js"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/jquery-ui.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/uiWindow.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/shCore.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/shThemeDefault.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/shThemeXQuery.css" rel="stylesheet"/>
+        <link type="text/css" href="/exist/apps/sade/templates/default/css/sade.css" rel="stylesheet"/>
+        <script src="/exist/apps/sade/templates/default//scripts/jquery.min.js"/>
+        <script src="/exist/apps/sade/templates/default//scripts/jquery.form.js"/>
+        <script src="/exist/apps/sade/templates/default//scripts/jquery-ui-1.8.11.custom.min.js"/>
+        <script src="/exist/apps/sade/templates/default//scripts/jquery.layout.js"/>
+        <script src="/exist/apps/sade/templates/default//scripts/ui.window.js"/>
+        <script src="/exist/apps/sade/templates/default//scripts/sade.js"/>
     </head>
     <body>
         <div class="ui-layout-north ui-corner-all">
             <a href="http://www.i-d-e.de/" target="_blank">
-                <img src="/exist/rest/sade/templates/default/images/ide_logo.png" class="logo left" style="margin-top:12px;"/>
+                <img src="/exist/apps/sade/templates/default/images/ide_logo.png" class="logo left" style="margin-top:12px;"/>
             </a>
             <a href="http://www.bbaw.de/" target="_blank">
-                <img src="/exist/rest/sade/templates/default/images/bbaw_logo.png" class="logo right"/>
+                <img src="/exist/apps/sade/templates/default/images/bbaw_logo.png" class="logo right"/>
             </a>
             <h1>Scalable Architecture for Digital Editions</h1>
         </div>

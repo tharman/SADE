@@ -3,8 +3,8 @@ declare namespace sade = "http://sade" ;
 import module namespace viewer = "http://sade/viewer" at "viewer.xqm";
 
 let $conf := <config xmlns="http://sade">
-                <data path="/db/sade/projects/textgrid/data/xml"/>
-                <viewer xslt="/db/sade/modules/teixslt/xml/tei/stylesheet/xhtml2/tei.xsl"/>      
+                <data path="/apps/sade/projects/textgrid/data/xml"/>
+                <viewer xslt="/apps/sade/modules/teixslt/xml/tei/stylesheet/xhtml2/tei.xsl"/>      
             </config>
             
     let $docname := 'h6h6.0'

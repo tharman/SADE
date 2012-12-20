@@ -15,7 +15,7 @@
                 <a href="http://groupman.bbaw.de/mailman/listinfo/digisade" target="_blank">Mailingliste: digisade@bbaw.de</a>
             </li>
             <li>
-                <a href="/exist/apps/eXide/index.html?open=/db/sade/projects/default/config.xml" target="_blank">Edit default config file</a>
+                <a href="/exist/apps/eXide/index.html?open=/apps/sade/projects/default/config.xml" target="_blank">Edit default config file</a>
             </li>
         </ul>
         <h2 class="demoHeaders">
@@ -57,7 +57,7 @@
         <h2>Customize this installation</h2>
         <ul>
             <li>
-                <a href="/exist/apps/eXide/index.html?open=/db/sade/projects/default/config.xml" target="_blank">Edit default config file</a>
+                <a href="/exist/apps/eXide/index.html?open=/apps/sade/projects/default/config.xml" target="_blank">Edit default config file</a>
             </li>
         </ul>
     </div>

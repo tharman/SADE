@@ -1,7 +1,7 @@
 xquery version "1.0";
 declare namespace diag  = "http://www.loc.gov/zing/srw/diagnostic/";
 
-let $diag:msgs := doc('/db/sade/modules/diagnostics/diagnostics.xml')
+let $diag:msgs := doc('/apps/sade/modules/diagnostics/diagnostics.xml')
 
 (: parameter resolution works when local XML, but not when fetched from file. ! :)
 

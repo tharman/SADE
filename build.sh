@@ -11,11 +11,12 @@ KEEP_RUNNING=false
 DO_ZIP=false
 USE_TOMCAT=false
 INCLUDE_SESAME=false
+CLEAN_BUILD=false
 
-USAGE="Usage: `basename $0` [-hztra]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n"
+USAGE="Usage: `basename $0` [-hztrac]\n -h help\n -z create sade.zip after build\n -r run SADE after build\n -a use apache tomcat\n -c clean build directorys\n"
 
 # Parse command line options.
-while getopts hztrp:a OPT; do
+while getopts hztrp:ac OPT; do
     case "$OPT" in
         h)
             echo -e $USAGE
@@ -38,6 +39,9 @@ while getopts hztrp:a OPT; do
         s)
             INCLUDE_SESAME=true
             ;;
+        c)  
+            CLEAN_BUILD=true
+            ;;
         \?)
             # getopts issues an error message
             echo -e $USAGE >&2
@@ -56,20 +60,19 @@ shift `expr $OPTIND - 1`
 JETTY_VERSION=8.0.4.v20111024
 
 # digilib (setting "tip" as changeset gets head revision)
-DIGILIB_CHANGESET=e1b29f51d224
+DIGILIB_CHANGESET=3cfeec734282
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
-TOMCAT_VERSION=7.0.29
+TOMCAT_VERSION=7.0.34
 
 # exist
 #EXIST_BRANCH=stable/eXist-2.0.x    # exist 2.0
 #EXIST_SRC_LOC=exist-2.0
 EXIST_BRANCH=trunk/eXist           # eXist 2.1
-EXIST_SRC_LOC=exist-2.1
+EXIST_SRC_LOC=exist-2.0
 #EXIST_REV=-1					   # revision to check out -1 means head
-#EXIST_REV=16994
-EXIST_REV=16946
+EXIST_REV=17880
 
 
 # Create build directory
@@ -168,9 +171,9 @@ BUILD_EXIST=true
 if [ ! -e $BUILDLOC/$EXIST_SRC_LOC ]; then
 	# exist rev < 0 means head
 	if [ $EXIST_REV -lt 0 ]; then
-		svn co svn://svn.code.sf.net/p/exist/code/$EXIST_BRANCH $EXIST_SRC_LOC
+		svn co http://svn.code.sf.net/p/exist/code/$EXIST_BRANCH $EXIST_SRC_LOC
 	else
-    	svn co svn://svn.code.sf.net/p/exist/code/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
+    	svn co http://svn.code.sf.net/p/exist/code/$EXIST_BRANCH -r $EXIST_REV $EXIST_SRC_LOC
 	fi
 else 
     LOCAL_EXIST_REV=`LANG=C svn info $EXIST_SRC_LOC |grep Revision | awk '{print $2}'`
@@ -196,9 +199,12 @@ if [ $BUILD_EXIST == true ]; then
     sed -i 's/include.module.xslfo = false/include.module.xslfo = true/g' $EXIST_SRC_LOC/extensions/build.properties
 
     cd $EXIST_SRC_LOC
-#      show svn rev
-    ./build.sh svn-download    
-    ./build.sh clean 
+#      show svn rev (does not work with svn 1.7)
+#    ./build.sh svn-download    
+#    do we really need to clean build dir? time demanding...
+    if [ $CLEAN_BUILD == true ]; then
+        ./build.sh clean
+    fi 
     ./build.sh 
     ./build.sh jnlp-sign-all dist-war
 else
@@ -223,8 +229,10 @@ cd $SCRIPTLOC/packages
 ant
 
 # TODO: put into local public repo? / set EXIST_HOME for  
+# TODO: find out where to put files for repo in exist-2.0
 # repo location EXIST_HOME/webapp/WEB-INF/expathrepo instead of /tmp/expathrepo
 echo "[SADE BUILD] put xar packages into eXist local repository"
+mkdir -p $BUILDLOC/sade/webapps/exist/repo/packages
 cp build/*.xar $BUILDLOC/sade/webapps/exist/repo/packages
 
 #####
@@ -249,7 +257,9 @@ else
 	cd digilib-$DIGILIB_CHANGESET
 fi
 
-mvn clean
+if [ $CLEAN_BUILD == true ]; then
+    mvn clean
+fi
 
 echo "[SADE BUILD] building async version (servlet api3)"
 #mvn package -Dmaven.compiler.source=1.6 -Dmaven.compiler.target=1.6 -Ptext -Ppdf -Pservlet3 -Pcodec-bioformats -Pcodec-imagej -Pcodec-jai

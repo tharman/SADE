@@ -2,8 +2,8 @@
 
 module namespace static = "http://sade/static" ;
 
-import module namespace sade = "http://sade" at "/db/sade/core/main.xqm";
-import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/core/modules/diagnostics/diagnostics.xqm";
+import module namespace sade = "http://sade" at "/apps/sade/core/main.xqm";
+import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///apps/sade/core/modules/diagnostics/diagnostics.xqm";
 
 declare function static:process-template($template-node as node(), $config as node()) as item()* {
     

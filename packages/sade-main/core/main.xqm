@@ -4,11 +4,11 @@
 :)
 module namespace sade = "http://sade";
 
-import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///db/sade/core/processor.xql";
-import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/core/modules/diagnostics/diagnostics.xqm";
+import module namespace sp =  "http://sade/processing" at  "xmldb:exist:///apps/sade/core/processor.xql";
+import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///apps/sade/core/modules/diagnostics/diagnostics.xqm";
 
 (:declare default element namespace "http://sade";:)
-declare variable $sade:baseurl := "/exist/rest/db/sade/";
+declare variable $sade:baseurl := "/exist/rest/apps/sade/";
 
 (:~ main entry point 
 parametrized by config (all further processing is guided by the settings in config)
@@ -92,7 +92,7 @@ declare function sade:process-module($module as xs:string, $config as node()) as
 };
 
 (:~ provides the html-wrapper :)
-declare function sade:html-output($content as node(), $config as node()) as item()* {
+declare function sade:html-output($content as item()*, $config as node()) as item()* {
              
     let $wrapped := <html><head>{sp:header($config)}</head><body>{$content}</body></html>      
     return  $wrapped

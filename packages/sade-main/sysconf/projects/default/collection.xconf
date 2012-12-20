@@ -6,7 +6,7 @@
     </index>
     <triggers>
         <trigger class="org.exist.collections.triggers.XQueryTrigger">
-            <parameter name="url" value="xmldb:exist://localhost/db/sade/core/generate-processor-trigger.xql"/>
+            <parameter name="url" value="xmldb:exist://localhost/apps/sade/core/generate-processor-trigger.xql"/>
         </trigger>
     </triggers>
 </collection>

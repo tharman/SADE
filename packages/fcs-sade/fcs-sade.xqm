@@ -9,10 +9,10 @@ module namespace fcsm = "http://clarin.eu/fcs/1.0/sade-module";
 
 import module namespace request="http://exist-db.org/xquery/request";
 
-import module namespace sade =  "http://sade" at "/db/sade/core/main.xqm";
+import module namespace sade =  "http://sade" at "/apps/sade/core/main.xqm";
 import module namespace fcs  = "http://clarin.eu/fcs/1.0" at "/db/cr/fcs.xqm";
 (:import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "../../core/modules/diagnostics/diagnostics.xqm";:)
-import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/core/modules/diagnostics/diagnostics.xqm";
+import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///apps/sade/core/modules/diagnostics/diagnostics.xqm";
 import module namespace repo-utils =  "http://aac.ac.at/content_repository/utils" at  "/db/cr/repo-utils.xqm";
 
 (:~ main call-back function invoked by the template-processing script
