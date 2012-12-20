@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="deploy" name="localdeploy">
 
-	<property name="server.dir" value="../build/sade/webapps/exist/WEB-INF"/>
+	<property name="server.dir" value="build/sade/webapps/exist/WEB-INF"/>
 
 	<path id="classpath.core">
 		<fileset dir="${server.dir}/lib">
@@ -23,11 +23,11 @@
 				import module namespace repo='http://exist-db.org/xquery/repo';
 				let $aa := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-projects-default-0.1.xar')
 				let $a := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-main-0.1.xar')
+				let $e := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-templates-0.1.xar')
 				let $b := repo:install('http://127.0.0.1:8080/exist/repo/packages/index-0.1.xar')
 				let $c := repo:install('http://127.0.0.1:8080/exist/repo/packages/search-0.1.xar')
 				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/teixslt-0.1.xar')
 				let $e := repo:install('http://127.0.0.1:8080/exist/repo/packages/viewer-0.1.xar')
-				(: let $f := repo:install('http://demo.exist-db.org/exist/apps/public-repo/public/eXide-1.0.xar') :)
 				return "done"
 		</xdb:xquery>
 	</target>
@@ -40,12 +40,12 @@
 				import module namespace repo='http://exist-db.org/xquery/repo';
 				(: package as named in expath-pkg.xml :)
 				let $aa := repo:deploy('http://www.telota.de/sade/projects/default')
+				let $aa := repo:deploy('http://www.telota.de/sade/templates')
 				let $a := repo:deploy('http://www.telota.de/sade/main')
 				let $b := repo:deploy('http://www.telota.de/sade/index')
 				let $c := repo:deploy('http://www.telota.de/sade/search')
 				let $d := repo:deploy('http://www.telota.de/sade/teixslt')
 				let $e := repo:deploy('http://www.telota.de/sade/viewer')
-				(: let $f := repo:deploy('http://exist-db.org/apps/eXide') :)
 				return "done"
 		</xdb:xquery>
 

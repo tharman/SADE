@@ -2,11 +2,9 @@
 <project default="xar" name="packages">
 	<property name="build.dir" value="../build"/>
 	<target name="xar">
-		<ant dir="sade-main"/>
 		<ant dir="index"/>
 		<ant dir="search"/>
 		<ant dir="teixslt"/>
 		<ant dir="viewer" />
-		<ant dir="sade-projects-default" />
 	</target>
 </project>
