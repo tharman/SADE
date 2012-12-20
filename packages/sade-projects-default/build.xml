@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="sade-projects-default">
+    <property name="build.dir" value="build"/>
+    <target name="xar">
+        <mkdir dir="${build.dir}"/>
+        <zip basedir="." destfile="${build.dir}/sade-projects-default-0.1.xar" excludes="${build.dir},${build.dir}/**"/>
+    </target>
+</project>
