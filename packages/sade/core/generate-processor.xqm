@@ -4,7 +4,7 @@ declare namespace sade = "http://sade";
 
 declare variable $gen:cr := "&#13;";
 declare variable $gen:modulename := "http://sade";
-declare variable $gen:module-collection := "xmldb:exist:///db/sade/modules/";
+declare variable $gen:module-collection := "xmldb:exist:///apps/sade/modules/";
  
 declare function gen:generate-processor($config as element() ) as item()* {
 
@@ -13,7 +13,7 @@ let $modules := $config//sade:module
 let $result :=
     <processor-code>
 module namespace sp = "{$gen:modulename}/processing"; 
- import module namespace sade = "{$gen:modulename}" at "/db/sade/core/main.xqm";
+ import module namespace sade = "{$gen:modulename}" at "/apps/sade/core/main.xqm";
   (: generate list of imported modules, module-name as namespace-prefix :)  
 { for $m in $modules 
     let $modulename := $m/@name

@@ -1,9 +1,9 @@
 module namespace index = "http://sade/index" ;
 
-import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///db/sade/core/modules/diagnostics/diagnostics.xqm";
+import module namespace diag =  "http://www.loc.gov/zing/srw/diagnostic/" at  "xmldb:exist:///apps/sade/core/modules/diagnostics/diagnostics.xqm";
 
 declare namespace sade = "http://sade" ;
-declare variable $index:transform := doc('/db/sade/modules/index/index2view.xsl');
+declare variable $index:transform := doc('/apps/sade/modules/index/index2view.xsl');
 
 
 declare function index:process-template($template-node as node(), $config as node()) as item()* {
