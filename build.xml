@@ -2,10 +2,7 @@
 <project default="xar" name="packages">
 	<property name="build.dir" value="${basedir}/build"/>
 	<target name="xar">
-	  <ant dir="modules"/>
-		<ant dir="core"/>
-		<ant dir="sade-projects-default" />
-	  <ant dir="templates" />
+	  <ant dir="src"/>
 	</target>
   <target name="clean">
     <delete dir="build"/>
