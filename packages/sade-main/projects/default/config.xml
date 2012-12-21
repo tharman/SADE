@@ -1,18 +1,21 @@
-<SADE_project xmlns="http://sade">
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
     <!-- BASICS -->
     <properties>
+        <property key="project-id">default</property>
         <!-- you could change the default template by changing the property
-        template.dir to /apps/sade/templates/bootstrap/ , then save and reload
+        template.dir to /db/sade/templates/bootstrap/ , then save and reload
         mainpage -->
-        <property key="template.dir">/apps/sade/templates/default/</property>
+        <property key="template">default/</property>
+        <property key="data-dir">/db/apps/sade-projects/default/data/</property>
     </properties>
 
     <!-- MODULES -->
-    <modules path="/apps/sade/modules">
+    <modules path="/db/sade/modules">
         <module ns="http://sade/index" name="index" position="left"/>
         <module ns="http://sade/search" name="search" position="right"/>
         <module ns="http://sade/viewer" name="viewer" position="content">
-            <defaultview path="/db/apps/sade/projects/default/defaultview.xml"/>
+            <defaultview path="/sade/projects/default/defaultview.xml"/>
         </module>
     </modules>
-</SADE_project>
+</config>
