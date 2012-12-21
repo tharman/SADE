@@ -1,0 +1,9 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/bootstrap/img" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:38+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="glyphicons-halflings-white.png" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:38+01:00" modified="2012-12-20T11:45:38+01:00" filename="glyphicons-halflings-white.png" mimetype="image/png">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="glyphicons-halflings.png" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:38+01:00" modified="2012-12-20T11:45:38+01:00" filename="glyphicons-halflings.png" mimetype="image/png">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

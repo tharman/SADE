@@ -1,0 +1,15 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/resources/css" owner="admin" group="dba" mode="755" created="2012-12-20T11:46:22+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="adminpanel.css" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:22+01:00" modified="2012-12-20T11:46:22+01:00" filename="adminpanel.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="dashboard.css" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:22+01:00" modified="2012-12-20T16:59:41+01:00" filename="dashboard.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="font-awesome.css" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:22+01:00" modified="2012-12-20T11:46:22+01:00" filename="font-awesome.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="newproject.css" owner="admin" group="dba" mode="644" created="2012-12-20T16:51:45+01:00" modified="2012-12-20T17:01:14+01:00" filename="newproject.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

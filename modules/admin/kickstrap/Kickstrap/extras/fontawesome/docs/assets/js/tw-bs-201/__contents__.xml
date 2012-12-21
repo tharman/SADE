@@ -1,0 +1,39 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/extras/fontawesome/docs/assets/js/tw-bs-201" owner="admin" group="dba" mode="755" created="2012-12-20T11:46:10+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="bootstrap-alert.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:12+01:00" modified="2012-12-20T11:46:12+01:00" filename="bootstrap-alert.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-button.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:11+01:00" modified="2012-12-20T11:46:11+01:00" filename="bootstrap-button.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-carousel.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:11+01:00" modified="2012-12-20T11:46:11+01:00" filename="bootstrap-carousel.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-collapse.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:11+01:00" modified="2012-12-20T11:46:11+01:00" filename="bootstrap-collapse.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-dropdown.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:11+01:00" modified="2012-12-20T11:46:11+01:00" filename="bootstrap-dropdown.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-modal.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:13+01:00" modified="2012-12-20T11:46:13+01:00" filename="bootstrap-modal.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-popover.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:12+01:00" modified="2012-12-20T11:46:12+01:00" filename="bootstrap-popover.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-scrollspy.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:12+01:00" modified="2012-12-20T11:46:12+01:00" filename="bootstrap-scrollspy.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-tab.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:13+01:00" modified="2012-12-20T11:46:13+01:00" filename="bootstrap-tab.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-tooltip.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:12+01:00" modified="2012-12-20T11:46:12+01:00" filename="bootstrap-tooltip.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-transition.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:12+01:00" modified="2012-12-20T11:46:12+01:00" filename="bootstrap-transition.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap-typeahead.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:13+01:00" modified="2012-12-20T11:46:13+01:00" filename="bootstrap-typeahead.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

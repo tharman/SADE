@@ -1,0 +1,9 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/themes/cerulean" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:42+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="bootswatch.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:42+01:00" modified="2012-12-20T11:45:42+01:00" filename="bootswatch.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="variables.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:42+01:00" modified="2012-12-20T11:45:42+01:00" filename="variables.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

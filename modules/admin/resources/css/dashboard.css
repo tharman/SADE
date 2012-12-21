@@ -1,0 +1,103 @@
+html, body {
+    background-color: #555;
+    font-family: Myriad Pro, Arial, Helvatica, sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+div#container {
+    position: relative;
+    margin: 10% auto 0 auto;
+    width: 960px;
+    height: 600px;
+}
+
+div#head {
+    position: relative;
+    margin: 0 0 3em 0;
+    border-bottom: 1px white solid;
+    padding: 0 0 0.5em 0; 
+}
+
+div#head img {
+    position: absolute;
+    top: -0.7em;
+    right: -1em;
+}
+
+div#content {
+    position: relative;
+    min-height: 15em;
+}
+
+div#langmenu {
+    position: absolute;
+    bottom: -2em;
+    right: 0;
+    font-size: 0.8em;
+    color: #808080;
+}
+
+div#langmenu a {
+    color: #808080;
+}
+
+div#langmenu a:hover {
+    text-decoration: underline;
+}
+
+div#footer {
+    clear: both;
+    padding: 1em 0 2em 0;
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #808080;
+}
+
+div.kachel {
+    float: left;
+    margin: 1em 1em 1em 0;
+}
+
+div.kachel a {
+    height: 6em;
+    width: 6em;
+    display: block;
+}
+
+div.kachel i {
+    color: #aaa;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+ }
+
+div.kachel i:before {
+   font-size: 5em;
+}
+
+div.kachel i:hover {
+    color: white;    
+}
+
+div.project a:hover i:before {
+    content: "\f07c";
+}
+
+/*div.newproject a:hover i:before {
+    content: "\f055";
+}
+*/
+div.kachel h2 {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-align: center;
+}

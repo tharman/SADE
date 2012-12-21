@@ -1,0 +1,27 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/apps/colorschemer" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:46+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="arrow.gif" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:48+01:00" modified="2012-12-20T11:45:48+01:00" filename="arrow.gif" mimetype="image/gif">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="config.ks" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="config.ks" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="consoletools.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:48+01:00" modified="2012-12-20T11:45:48+01:00" filename="consoletools.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="cross.gif" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="cross.gif" mimetype="image/gif">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="hs.png" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="hs.png" mimetype="image/png">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="hv.png" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="hv.png" mimetype="image/png">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="jscolor.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="jscolor.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="newbox.js" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:47+01:00" modified="2012-12-20T11:45:47+01:00" filename="newbox.js" mimetype="application/x-javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
