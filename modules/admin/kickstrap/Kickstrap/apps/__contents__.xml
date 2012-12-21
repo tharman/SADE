@@ -1,0 +1,13 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/apps" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:45+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <subcollection name="chosen" filename="chosen"/>
+    <subcollection name="universal" filename="universal"/>
+    <subcollection name="animatecss" filename="animatecss"/>
+    <subcollection name="jQueryLint" filename="jQueryLint"/>
+    <subcollection name="bootstrap" filename="bootstrap"/>
+    <subcollection name="updater" filename="updater"/>
+    <subcollection name="knockout" filename="knockout"/>
+    <subcollection name="pinesnotify" filename="pinesnotify"/>
+    <subcollection name="firebuglite" filename="firebuglite"/>
+    <subcollection name="colorschemer" filename="colorschemer"/>
+</collection>

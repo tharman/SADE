@@ -1,0 +1,123 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/bootstrap/less" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:28+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="accordion.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:36+01:00" modified="2012-12-20T11:45:36+01:00" filename="accordion.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="alerts.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:29+01:00" modified="2012-12-20T11:45:29+01:00" filename="alerts.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="bootstrap.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="breadcrumbs.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="breadcrumbs.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="button-groups.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="button-groups.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="buttons.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:30+01:00" modified="2012-12-20T11:45:30+01:00" filename="buttons.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="carousel.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="carousel.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="close.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="close.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="code.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="code.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="component-animations.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="component-animations.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="dropdowns.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="dropdowns.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="forms.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="forms.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="grid.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="grid.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="hero-unit.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:29+01:00" modified="2012-12-20T11:45:29+01:00" filename="hero-unit.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="labels-badges.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:30+01:00" modified="2012-12-20T11:45:30+01:00" filename="labels-badges.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="layouts.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:30+01:00" modified="2012-12-20T11:45:30+01:00" filename="layouts.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="mixins.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:30+01:00" modified="2012-12-20T11:45:30+01:00" filename="mixins.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="modals.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:30+01:00" modified="2012-12-20T11:45:30+01:00" filename="modals.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="navbar.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="navbar.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="navs.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="navs.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="pager.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="pager.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="pagination.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="pagination.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="popovers.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="popovers.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="progress-bars.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="progress-bars.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="reset.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:35+01:00" modified="2012-12-20T11:45:35+01:00" filename="reset.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive-1200px-min.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="responsive-1200px-min.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive-767px-max.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="responsive-767px-max.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive-768px-979px.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="responsive-768px-979px.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive-navbar.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="responsive-navbar.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive-utilities.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="responsive-utilities.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="responsive.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="responsive.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="scaffolding.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="scaffolding.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="sprites.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:31+01:00" modified="2012-12-20T11:45:31+01:00" filename="sprites.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="tables.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="tables.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="thumbnails.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="thumbnails.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="tooltip.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="tooltip.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="type.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:32+01:00" modified="2012-12-20T11:45:32+01:00" filename="type.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="utilities.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:34+01:00" modified="2012-12-20T11:45:34+01:00" filename="utilities.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="variables.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="variables.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="wells.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:33+01:00" modified="2012-12-20T11:45:33+01:00" filename="wells.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

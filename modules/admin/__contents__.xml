@@ -1,0 +1,30 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:28+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="admin.xql" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:23+01:00" modified="2012-12-20T16:48:52+01:00" filename="admin.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="dashboard.xql" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:23+01:00" modified="2012-12-20T16:57:16+01:00" filename="dashboard.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="formular.xsl" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:23+01:00" modified="2012-12-20T11:46:23+01:00" filename="formular.xsl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="generateproject.xql" owner="admin" group="dba" mode="644" created="2012-12-20T16:07:50+01:00" modified="2012-12-20T18:05:20+01:00" filename="generateproject.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="login.xql" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:23+01:00" modified="2012-12-20T16:07:11+01:00" filename="login.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="main.xqm" owner="admin" group="dba" mode="644" created="2012-12-20T14:42:09+01:00" modified="2012-12-20T15:29:52+01:00" filename="main.xqm" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="new.xql" owner="admin" group="dba" mode="755" created="2012-12-20T16:22:32+01:00" modified="2012-12-20T17:55:32+01:00" filename="new.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="xpath-explorer.xsl" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:23+01:00" modified="2012-12-20T11:46:23+01:00" filename="xpath-explorer.xsl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="resources" filename="resources"/>
+    <subcollection name="template" filename="template"/>
+    <subcollection name="kickstrap" filename="kickstrap"/>
+</collection>

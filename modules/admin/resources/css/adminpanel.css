@@ -1,0 +1,220 @@
+
+/* Backend-CSS für SADE - Scalable Architecture for Digital Editions */
+/* TELOTA - Berlin-Brandenburgische Akademie der Wissenschaften (BBAW) */
+
+/* ########### Allgemeine Seitenaufteilung ############ */
+
+html, body {
+    background-color: #555;
+    background-image: none;
+    font-family: "Myriad Pro", Arial, Helvatica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+div#container {
+    position: relative;
+    margin: 10% auto 0 auto;
+    width: 960px;
+    height: 600px;
+}
+
+div#head {
+    position: relative;
+    margin: 0 0 3em 0;
+    border-bottom: 1px white solid;
+    padding: 0 0 0.5em 0; 
+}
+
+div#head h1 {
+    width: 750px;
+    margin: 0 0 0.5em 0;
+}
+
+div#head h1 a {
+    color: white;
+}
+
+div#head h1:hover a:after {
+    padding-left: 0.5em;
+    font-family: "FontAwesome"; 
+    content: "\f06e";
+    font-size: 0.9em;
+    line-height: 0;
+    color: #808080;
+}
+
+div#head h2 {
+    position: absolute;
+    bottom: 1em;
+    right: 0;
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+div#head h2 a {
+    color: white;
+}
+
+div#nav {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: auto !important;
+    min-height: 100%;
+    overflow: hidden !important;
+} 
+
+
+div#content {
+    position: relative;
+    float: left;
+    min-height: 15em;
+    width: 76%;
+    margin: 0 0 0 0;
+    padding: 2%;
+    background-color: #EAEAEA;
+    color: black;
+}
+
+div#langmenu {
+    position: absolute;
+    bottom: -2em;
+    right: 0;
+    font-size: 0.8em;
+    color: #808080;
+}
+
+div#langmenu a {
+    color: #808080;
+}
+
+div#langmenu a:hover {
+    text-decoration: underline;
+}
+
+div#footer {
+    clear: both;
+    padding: 1em 0 2em 0;
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #808080;
+}
+
+
+/* ########## Navigation ########## */
+
+div#nav ul {
+    margin: -1px 0 0 0;
+    border-top: 1px #808080 solid;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.9em;
+}
+
+div#nav ul ul {
+    padding: 0;
+    margin: 0 0 0 1em;
+}
+
+div#nav ul li {
+    border-bottom: 1px #808080 solid;
+    margin-right: 20px;
+}
+
+div#nav ul li.active a {
+    font-style: italic;
+}
+
+div#nav ul a {
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+div#nav ul ul li {
+    border: none;
+}
+
+div#nav ul ul a {
+    padding: 0.5em;
+}
+
+div#nav a:hover {
+
+}
+
+
+/* ########### Anpassungen der betterForm-Formulare ############# */
+
+.xfControl {
+    display: block;
+    margin: 1em 0 0 0;
+}
+
+span.xfControl label {
+    width: 150px;
+    font-size: 0.8em;
+}
+
+div.xfRepeatItem {
+    margin-bottom: 2em;
+}
+
+div.xfRepeatIndex {
+   background: none; 
+}
+
+span.xfInput .xfValue,
+span.xfTextarea .xfValue{
+width: 400px;
+padding: 3px;
+} 
+
+.bf .xfSelect1 .select1wrapper {
+    width: 140px;
+}
+
+.xfAlert, .xfHint {
+    min-width: 130px;
+    max-width: 130px;
+    background-position: 5px 5px;
+}
+
+/* Upload Image */
+span.image img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+iframe#UploadTarget {
+    display: none;
+    /* sonst erscheint auf Seiten mit Upload ein Spalt über dem Header */
+}
+
+p.saved, p.savefailed {
+    margin-top: 0;
+    border: 1px #E6DB55 solid;
+    padding: 0.5em;
+    background-color: #FFFFE0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+p.savefailed {
+    border: 1px #E55454 solid;
+    background-color: #FFE0E0;
+}

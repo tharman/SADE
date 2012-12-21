@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap/Kickstrap/extras/fontawesome/docs/assets/ico" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:56+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="favicon.ico" owner="admin" group="dba" mode="644" created="2012-12-20T11:45:57+01:00" modified="2012-12-20T11:45:57+01:00" filename="favicon.ico" mimetype="image/vnd.microsoft.icon">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
