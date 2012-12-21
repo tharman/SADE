@@ -1,0 +1,55 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/iso/docx" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:40.067+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="iso-variables.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.129+01:00" modified="2012-12-20T15:07:40.129+01:00" filename="iso-variables.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixstyle.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.13+01:00" modified="2012-12-20T15:07:40.13+01:00" filename="fixstyle.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso-functions.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.133+01:00" modified="2012-12-20T15:07:40.133+01:00" filename="iso-functions.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixdotrels.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.156+01:00" modified="2012-12-20T15:07:40.156+01:00" filename="fixdotrels.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="template_orig.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.157+01:00" modified="2012-12-20T15:07:40.157+01:00" filename="template_orig.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="to.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.218+01:00" modified="2012-12-20T15:07:40.218+01:00" filename="to.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tbx.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.246+01:00" modified="2012-12-20T15:07:40.246+01:00" filename="tbx.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="from-pass2.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.249+01:00" modified="2012-12-20T15:07:40.249+01:00" filename="from-pass2.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="from.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.067+01:00" modified="2012-12-20T15:07:40.067+01:00" filename="from.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="makecoverpages2.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.085+01:00" modified="2012-12-20T15:07:40.085+01:00" filename="makecoverpages2.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="addisometa.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.088+01:00" modified="2012-12-20T15:07:40.088+01:00" filename="addisometa.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="fixstyle" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.09+01:00" modified="2012-12-20T15:07:40.09+01:00" filename="fixstyle" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="makecoverpages.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.121+01:00" modified="2012-12-20T15:07:40.121+01:00" filename="makecoverpages.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="template.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.123+01:00" modified="2012-12-20T15:07:40.123+01:00" filename="template.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="metadatamerge.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.124+01:00" modified="2012-12-20T15:07:40.124+01:00" filename="metadatamerge.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="from-pass3.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.125+01:00" modified="2012-12-20T15:07:40.125+01:00" filename="from-pass3.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="styles.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.127+01:00" modified="2012-12-20T15:07:40.127+01:00" filename="styles.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="model" filename="model"/>
+</collection>

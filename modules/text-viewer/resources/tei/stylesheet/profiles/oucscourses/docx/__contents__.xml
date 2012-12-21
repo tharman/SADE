@@ -1,0 +1,15 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/oucscourses/docx" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:41.55+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="template.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.55+01:00" modified="2012-12-20T15:07:41.55+01:00" filename="template.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="template_orig.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.565+01:00" modified="2012-12-20T15:07:41.565+01:00" filename="template_orig.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="to.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.566+01:00" modified="2012-12-20T15:07:41.566+01:00" filename="to.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="from.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.586+01:00" modified="2012-12-20T15:07:41.586+01:00" filename="from.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

@@ -1,0 +1,13 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/docx" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.634+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="build-to.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.634+01:00" modified="2012-12-20T15:07:39.634+01:00" filename="build-to.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="build-from.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.636+01:00" modified="2012-12-20T15:07:39.636+01:00" filename="build-from.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="utils" filename="utils"/>
+    <subcollection name="from" filename="from"/>
+    <subcollection name="to" filename="to"/>
+    <subcollection name="misc" filename="misc"/>
+</collection>

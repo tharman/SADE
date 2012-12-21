@@ -1,0 +1,24 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/tools/docx-templates-twiddling" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:38.944+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="enrich_template.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.944+01:00" modified="2012-12-20T15:07:38.944+01:00" filename="enrich_template.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixdocprop.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.967+01:00" modified="2012-12-20T15:07:38.967+01:00" filename="fixdocprop.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixstyle.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.969+01:00" modified="2012-12-20T15:07:38.969+01:00" filename="fixstyle.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixdotrels.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.972+01:00" modified="2012-12-20T15:07:38.972+01:00" filename="fixdotrels.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="template-oucs.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.973+01:00" modified="2012-12-20T15:07:38.973+01:00" filename="template-oucs.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="oucs.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.978+01:00" modified="2012-12-20T15:07:38.978+01:00" filename="oucs.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="fixstyle" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.983+01:00" modified="2012-12-20T15:07:38.983+01:00" filename="fixstyle" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

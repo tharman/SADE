@@ -1,0 +1,13 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/docx/utils" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.637+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="variables.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.638+01:00" modified="2012-12-20T15:07:39.638+01:00" filename="variables.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="functions.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.651+01:00" modified="2012-12-20T15:07:39.651+01:00" filename="functions.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="identity" filename="identity"/>
+    <subcollection name="verbatim" filename="verbatim"/>
+    <subcollection name="maths" filename="maths"/>
+    <subcollection name="graphics" filename="graphics"/>
+</collection>

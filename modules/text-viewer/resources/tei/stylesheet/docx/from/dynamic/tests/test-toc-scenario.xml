@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:x="http://www.jenitennison.com/xslt/xspec" stylesheet="../toc.xsl"><x:scenario label="test creating table of contents"><x:call template="tocSection"/><x:expect label="a divGen element should be created"><divGen type="toc"/></x:expect></x:scenario></x:description>

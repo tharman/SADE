@@ -1,0 +1,15 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/epub" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.612+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="build-to.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.612+01:00" modified="2012-12-20T15:07:39.612+01:00" filename="build-to.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tei-to-epub.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.615+01:00" modified="2012-12-20T15:07:39.615+01:00" filename="tei-to-epub.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="epub-common.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.625+01:00" modified="2012-12-20T15:07:39.625+01:00" filename="epub-common.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="epub-preflight.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.629+01:00" modified="2012-12-20T15:07:39.629+01:00" filename="epub-preflight.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

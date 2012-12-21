@@ -1,0 +1,9 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/nlm" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="tei_to_nlm.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39+01:00" modified="2012-12-20T15:07:39+01:00" filename="tei_to_nlm.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="nlm_3_to_nlm_2.3.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.021+01:00" modified="2012-12-20T15:07:39.021+01:00" filename="nlm_3_to_nlm_2.3.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

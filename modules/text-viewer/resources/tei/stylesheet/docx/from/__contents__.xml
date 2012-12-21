@@ -1,0 +1,22 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/docx/from" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.724+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="docxtotei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.724+01:00" modified="2012-12-20T15:07:39.724+01:00" filename="docxtotei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="parameters.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.728+01:00" modified="2012-12-20T15:07:39.728+01:00" filename="parameters.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="pass0" filename="pass0"/>
+    <subcollection name="paragraphs" filename="paragraphs"/>
+    <subcollection name="dynamic" filename="dynamic"/>
+    <subcollection name="marginals" filename="marginals"/>
+    <subcollection name="lists" filename="lists"/>
+    <subcollection name="templates" filename="templates"/>
+    <subcollection name="wordsections" filename="wordsections"/>
+    <subcollection name="pass2" filename="pass2"/>
+    <subcollection name="textruns" filename="textruns"/>
+    <subcollection name="utils" filename="utils"/>
+    <subcollection name="maths" filename="maths"/>
+    <subcollection name="graphics" filename="graphics"/>
+    <subcollection name="tables" filename="tables"/>
+</collection>

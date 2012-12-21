@@ -1,0 +1,153 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/iso/schema" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:40.312+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="isotei-lite.dtd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.617+01:00" modified="2012-12-20T15:07:40.617+01:00" filename="isotei-lite.dtd" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="w.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.632+01:00" modified="2012-12-20T15:07:40.632+01:00" filename="w.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="isotei-odd.rnc" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.633+01:00" modified="2012-12-20T15:07:40.633+01:00" filename="isotei-odd.rnc" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="relax.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.638+01:00" modified="2012-12-20T15:07:40.638+01:00" filename="relax.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="xlink.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.639+01:00" modified="2012-12-20T15:07:40.639+01:00" filename="xlink.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="t.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.64+01:00" modified="2012-12-20T15:07:40.64+01:00" filename="t.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-lite.nvdl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.647+01:00" modified="2012-12-20T15:07:40.647+01:00" filename="isotei-lite.nvdl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-odd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.647+01:00" modified="2012-12-20T15:07:40.647+01:00" filename="isotei-odd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="test2.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.67+01:00" modified="2012-12-20T15:07:40.67+01:00" filename="test2.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="test.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.677+01:00" modified="2012-12-20T15:07:40.677+01:00" filename="test.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-odd.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.681+01:00" modified="2012-12-20T15:07:40.681+01:00" filename="isotei-odd.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="math.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.856+01:00" modified="2012-12-20T15:07:40.856+01:00" filename="math.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-lite.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.857+01:00" modified="2012-12-20T15:07:40.857+01:00" filename="isotei-lite.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-odd.nvdl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.908+01:00" modified="2012-12-20T15:07:40.908+01:00" filename="isotei-odd.nvdl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="svg11.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.908+01:00" modified="2012-12-20T15:07:40.908+01:00" filename="svg11.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="a.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.097+01:00" modified="2012-12-20T15:07:41.097+01:00" filename="a.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-odd.sch" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.098+01:00" modified="2012-12-20T15:07:41.098+01:00" filename="isotei-odd.sch" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="xml.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.125+01:00" modified="2012-12-20T15:07:41.125+01:00" filename="xml.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.126+01:00" modified="2012-12-20T15:07:41.126+01:00" filename="isotei.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="xinclude.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.195+01:00" modified="2012-12-20T15:07:41.195+01:00" filename="xinclude.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="isotei.rnc" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.197+01:00" modified="2012-12-20T15:07:41.197+01:00" filename="isotei.rnc" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="teix.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.217+01:00" modified="2012-12-20T15:07:41.217+01:00" filename="teix.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="main.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.273+01:00" modified="2012-12-20T15:07:41.273+01:00" filename="main.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="structure.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.274+01:00" modified="2012-12-20T15:07:41.274+01:00" filename="structure.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ns2.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.277+01:00" modified="2012-12-20T15:07:41.277+01:00" filename="ns2.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tm9901.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.28+01:00" modified="2012-12-20T15:07:41.28+01:00" filename="tm9901.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.282+01:00" modified="2012-12-20T15:07:41.282+01:00" filename="isotei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="mathml2-qname-1.mod.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.306+01:00" modified="2012-12-20T15:07:41.306+01:00" filename="mathml2-qname-1.mod.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="isotei-odd.dtd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.307+01:00" modified="2012-12-20T15:07:41.307+01:00" filename="isotei-odd.dtd" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-lite.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.326+01:00" modified="2012-12-20T15:07:41.326+01:00" filename="isotei-lite.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="mathml.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.327+01:00" modified="2012-12-20T15:07:41.327+01:00" filename="mathml.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.336+01:00" modified="2012-12-20T15:07:41.336+01:00" filename="isotei.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="teidocx.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.477+01:00" modified="2012-12-20T15:07:41.477+01:00" filename="teidocx.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="rng.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.478+01:00" modified="2012-12-20T15:07:41.478+01:00" filename="rng.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="relaxng.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.482+01:00" modified="2012-12-20T15:07:41.482+01:00" filename="relaxng.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="test3.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.485+01:00" modified="2012-12-20T15:07:41.485+01:00" filename="test3.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="isotei.dtd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.489+01:00" modified="2012-12-20T15:07:41.489+01:00" filename="isotei.dtd" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="isotei-lite.rnc" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.491+01:00" modified="2012-12-20T15:07:41.491+01:00" filename="isotei-lite.rnc" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="schematron.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.492+01:00" modified="2012-12-20T15:07:41.492+01:00" filename="schematron.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="examples.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.499+01:00" modified="2012-12-20T15:07:41.499+01:00" filename="examples.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-lite.sch" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.5+01:00" modified="2012-12-20T15:07:41.5+01:00" filename="isotei-lite.sch" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei.sch" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.312+01:00" modified="2012-12-20T15:07:40.312+01:00" filename="isotei.sch" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="mathml2-main.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.333+01:00" modified="2012-12-20T15:07:40.333+01:00" filename="mathml2-main.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei.nvdl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.381+01:00" modified="2012-12-20T15:07:40.381+01:00" filename="isotei.nvdl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-odd.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.383+01:00" modified="2012-12-20T15:07:40.383+01:00" filename="isotei-odd.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="template.nvdl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.487+01:00" modified="2012-12-20T15:07:40.487+01:00" filename="template.nvdl" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ns1.xsd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.487+01:00" modified="2012-12-20T15:07:40.487+01:00" filename="ns1.xsd" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-lite.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.526+01:00" modified="2012-12-20T15:07:40.526+01:00" filename="isotei-lite.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="extensions.sch" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.616+01:00" modified="2012-12-20T15:07:40.616+01:00" filename="extensions.sch" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="mathml2.rng" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.617+01:00" modified="2012-12-20T15:07:40.617+01:00" filename="mathml2.rng" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
