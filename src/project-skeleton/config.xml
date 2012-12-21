@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <!-- BASICS -->
-    <properties>
-        <property key="project-id">default</property>
-        <property key="project-title">Default Project</property>
-        <!-- you could change the default template by changing the property
-        template.dir to /db/sade/templates/bootstrap/ , then save and reload
-        mainpage -->
-        <property key="template">default</property>
-        <property key="data-dir">/db/apps/sade-projects/default/data/</property>
-    </properties>
+    <!-- global parameters -->
+        <param key="project-id">default</param>
+        <param key="project-title">Default Project</param>
+        <!-- reference to a template to be used for given project 
+            change the template for the project by changing the param template
+        TODO: how to distinguish between (sade-)global and (project-)local templates ? -->
+        <param key="template">default</param>
+        <!-- data-dir is relative to project-dir
+        default: data -->
+        <param key="data-dir">data</param>
+    
 
-    <!-- MODULES -->
-    <modules path="/db/sade/modules">
-        <module ns="http://sade/index" name="index" position="left"/>
-        <module ns="http://sade/search" name="search" position="right"/>
-        <module ns="http://sade/viewer" name="viewer" position="content">
-            <defaultview path="/sade/projects/default/defaultview.xml"/>
-        </module>
-    </modules>
+    <!-- parameters for MODULE -->
+    <module key="navigation">
+        <param key="" value="" />
+        <param key=""></param>
+    </module>
+    
+    <!-- parameters for specific function call in the specific containers -->  
+    <container key="">
+        <function key="">
+            <param key="" value="" />
+            <param key=""></param>
+        </function>
+    </container>
+    
 </config>
