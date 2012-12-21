@@ -5,6 +5,7 @@ SCRIPTLOC=`dirname $SCRIPT`
 
 BUILDLOC=$SCRIPTLOC/build
 LOGDIR=$BUILDLOC/log
+SADE_MODULE_LOC=$SCRIPTLOC/..
 
 TEXTGRID_BUILD=false
 KEEP_RUNNING=false
@@ -225,7 +226,7 @@ unzip -q $BUILDLOC/$EXIST_SRC_LOC/dist/exist*.war
 #####
 
 echo "[SADE BUILD] building xar packages for SADE"
-cd $SCRIPTLOC/packages
+cd $SADE_MODULE_LOC
 ant
 
 # TODO: put into local public repo? / set EXIST_HOME for  
@@ -352,7 +353,7 @@ $BUILDLOC/sade/bin/sade.sh start
 sleep 30s
 echo "[SADE BUILD] deploying SADE core packages"
 
-cd $SCRIPTLOC/packages
+cd $SCRIPTLOC
 ant -f localdeploy.xml
 
 if [ $TEXTGRID_BUILD == true ]; then
