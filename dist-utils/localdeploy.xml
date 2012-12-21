@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy" name="localdeploy">
+
+	<property name="server.dir" value="build/sade/webapps/exist/WEB-INF"/>
+
+	<path id="classpath.core">
+		<fileset dir="${server.dir}/lib">
+		    <include name="*.jar"/>
+		</fileset>
+		<pathelement path="${server.dir}/exist.jar"/>
+		<pathelement path="${server.dir}/exist-optional.jar"/>
+	</path>
+
+	<typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
+		<classpath refid="classpath.core"/>
+	</typedef>
+
+	<target name="install">
+		<!-- look at http://en.wikibooks.org/wiki/XQuery/Reindex_a_Collection -->
+		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
+			uri="xmldb:exist://localhost:8080/exist/xmlrpc/db"
+			user="admin" password="">
+				import module namespace repo='http://exist-db.org/xquery/repo';
+				let $aa := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-projects-default-0.1.xar')
+				let $a := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-main-0.1.xar')
+				let $e := repo:install('http://127.0.0.1:8080/exist/repo/packages/sade-templates-0.1.xar')
+				let $b := repo:install('http://127.0.0.1:8080/exist/repo/packages/index-0.1.xar')
+				let $c := repo:install('http://127.0.0.1:8080/exist/repo/packages/search-0.1.xar')
+				let $d := repo:install('http://127.0.0.1:8080/exist/repo/packages/teixslt-0.1.xar')
+				let $e := repo:install('http://127.0.0.1:8080/exist/repo/packages/viewer-0.1.xar')
+				return "done"
+		</xdb:xquery>
+	</target>
+
+	<target name="deploy" depends="install">
+
+		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
+			uri="xmldb:exist://localhost:8080/exist/xmlrpc/db"
+			user="admin" password="">
+				import module namespace repo='http://exist-db.org/xquery/repo';
+				(: package as named in expath-pkg.xml :)
+				let $aa := repo:deploy('http://www.telota.de/sade/projects/default')
+				let $aa := repo:deploy('http://www.telota.de/sade/templates')
+				let $a := repo:deploy('http://www.telota.de/sade/main')
+				let $b := repo:deploy('http://www.telota.de/sade/index')
+				let $c := repo:deploy('http://www.telota.de/sade/search')
+				let $d := repo:deploy('http://www.telota.de/sade/teixslt')
+				let $e := repo:deploy('http://www.telota.de/sade/viewer')
+				return "done"
+		</xdb:xquery>
+
+	</target>
+	
+</project>
+
+
