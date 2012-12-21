@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="packages">
+	<property name="build.dir" value="${basedir}/build"/>
+	<target name="xar">
+	  <ant dir="modules"/>
+		<ant dir="core"/>
+		<ant dir="sade-projects-default" />
+	  <ant dir="templates" />
+	</target>
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+</project>
