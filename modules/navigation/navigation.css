@@ -1,0 +1,5 @@
+.dropdown-menu .dropdown-menu {
+    position: relative;
+    left: 100%;
+    display: block;
+}

@@ -1,0 +1,43 @@
+<module>
+    <name>Navigation</name>
+    <description>
+        Module to build a navigation. Needs configuration input. Example:
+        <!-- <container ref="navi-top">
+        <module ref="navigation">
+            <param name="base-path" value="/db/sade/projects/test"/>
+            <param name="navi-content">
+                <navigation dir="horizontal">
+                    <list>
+                        <item label="Home" link="index.xql" n="1" />
+                        <item label="Edition" n="2">
+                            <list>
+                                <item label="Transkription - Übersetzung" link="transcript-translation.xql" n="2" />
+                                <item label="Transkription - Faksimile" link="transcript-facsimile.xql" n="1"/>
+                            </list>
+                        </item>
+                        <item label="Register" n="3" />
+                        <item label="Projekt" link="project.xql" n="4" />
+                    </list>
+                </navigation>
+            </param>
+        </module>
+    </container> 
+    Navigationselemente
+- die Navigation ist hierarchisch aufgebaut
+- Wurzel: navigation, darin: list
+- einzelne Navigationselemente: items
+- Items können Attribute haben: @label, @link, @n [gibt Reihenfolge der Items an]
+- Items können wieder Listen von Items enthalten
+- navigation/@dir: vertical | horizontal
+- navigation/@style: tabs | pills
+-->
+        --&gt;
+      Containers suitable for the navigation:
+      navi-top
+      navi-left
+      navi-right
+      navi-bottom
+    </description>
+    <call>navi:create($projectname as xs:string, $uri as xs:string, $container as xs:string)</call>
+    <needs>navigation.css to be included</needs>
+</module>
