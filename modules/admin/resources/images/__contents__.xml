@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/resources/images" owner="admin" group="dba" mode="755" created="2012-12-20T11:46:20+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="BBAW-Logo.png" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:20+01:00" modified="2012-12-20T11:46:20+01:00" filename="BBAW-Logo.png" mimetype="image/png">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

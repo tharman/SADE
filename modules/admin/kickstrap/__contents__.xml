@@ -1,0 +1,22 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/sade/modules/admin/kickstrap" owner="admin" group="dba" mode="755" created="2012-12-20T11:45:28+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="index.html" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:19+01:00" modified="2012-12-20T11:46:19+01:00" filename="index.html" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="kickstrap.css" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:20+01:00" modified="2012-12-20T11:46:20+01:00" filename="kickstrap.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="kickstrap.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:19+01:00" modified="2012-12-20T11:46:19+01:00" filename="kickstrap.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="kickstrap.xql" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:20+01:00" modified="2012-12-20T15:59:46+01:00" filename="kickstrap.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="kstest.html" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:19+01:00" modified="2012-12-20T11:46:19+01:00" filename="kstest.html" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="theme.less" owner="admin" group="dba" mode="644" created="2012-12-20T11:46:19+01:00" modified="2012-12-20T11:46:19+01:00" filename="theme.less" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="Kickstrap" filename="Kickstrap"/>
+</collection>
