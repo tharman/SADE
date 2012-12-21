@@ -1,0 +1,33 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/docx/to/docxfiles" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.87+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="relationships.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.924+01:00" modified="2012-12-20T15:07:39.924+01:00" filename="relationships.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="endnotes.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.927+01:00" modified="2012-12-20T15:07:39.927+01:00" filename="endnotes.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="content-types.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.87+01:00" modified="2012-12-20T15:07:39.87+01:00" filename="content-types.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="numbering-definition.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.888+01:00" modified="2012-12-20T15:07:39.888+01:00" filename="numbering-definition.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="footers.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.903+01:00" modified="2012-12-20T15:07:39.903+01:00" filename="footers.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="headers.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.904+01:00" modified="2012-12-20T15:07:39.904+01:00" filename="headers.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="application.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.905+01:00" modified="2012-12-20T15:07:39.905+01:00" filename="application.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="footnotes.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.908+01:00" modified="2012-12-20T15:07:39.908+01:00" filename="footnotes.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="settings.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.91+01:00" modified="2012-12-20T15:07:39.91+01:00" filename="settings.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="comments.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.912+01:00" modified="2012-12-20T15:07:39.912+01:00" filename="comments.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

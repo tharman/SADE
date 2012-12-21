@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/oucs/p4" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:41.844+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="from.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.844+01:00" modified="2012-12-20T15:07:41.844+01:00" filename="from.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

@@ -1,0 +1,52 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/iso" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.942+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="removechanges.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.942+01:00" modified="2012-12-20T15:07:39.942+01:00" filename="removechanges.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isofooter.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.96+01:00" modified="2012-12-20T15:07:39.96+01:00" filename="isofooter.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso2meta.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.961+01:00" modified="2012-12-20T15:07:39.961+01:00" filename="iso2meta.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="iso-extracts.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.963+01:00" modified="2012-12-20T15:07:39.963+01:00" filename="iso-extracts.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="validate.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.986+01:00" modified="2012-12-20T15:07:39.986+01:00" filename="validate.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isoutils.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.989+01:00" modified="2012-12-20T15:07:39.989+01:00" filename="isoutils.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="check-docx.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.005+01:00" modified="2012-12-20T15:07:40.005+01:00" filename="check-docx.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isotei-schema.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.032+01:00" modified="2012-12-20T15:07:40.032+01:00" filename="isotei-schema.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso2terms.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.041+01:00" modified="2012-12-20T15:07:40.041+01:00" filename="iso2terms.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="iso.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.044+01:00" modified="2012-12-20T15:07:40.044+01:00" filename="iso.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso2rss.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.045+01:00" modified="2012-12-20T15:07:40.045+01:00" filename="iso2rss.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso2changes.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.046+01:00" modified="2012-12-20T15:07:40.046+01:00" filename="iso2changes.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="isoheader.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.053+01:00" modified="2012-12-20T15:07:40.053+01:00" filename="isoheader.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="iso2toc.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.065+01:00" modified="2012-12-20T15:07:40.065+01:00" filename="iso2toc.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="docx" filename="docx"/>
+    <subcollection name="latex" filename="latex"/>
+    <subcollection name="tbx" filename="tbx"/>
+    <subcollection name="html" filename="html"/>
+    <subcollection name="fo" filename="fo"/>
+    <subcollection name="schema" filename="schema"/>
+    <subcollection name="epub" filename="epub"/>
+</collection>

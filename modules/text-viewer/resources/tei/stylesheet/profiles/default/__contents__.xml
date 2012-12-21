@@ -1,0 +1,23 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/default" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:41.593+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="tei-fo.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:41.593+01:00" modified="2012-12-20T15:07:41.593+01:00" filename="tei-fo.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="epub" filename="epub"/>
+    <subcollection name="txt" filename="txt"/>
+    <subcollection name="csv" filename="csv"/>
+    <subcollection name="relaxng" filename="relaxng"/>
+    <subcollection name="html5" filename="html5"/>
+    <subcollection name="oddhtml" filename="oddhtml"/>
+    <subcollection name="dtd" filename="dtd"/>
+    <subcollection name="epub3" filename="epub3"/>
+    <subcollection name="docbook" filename="docbook"/>
+    <subcollection name="fo" filename="fo"/>
+    <subcollection name="docx" filename="docx"/>
+    <subcollection name="latex" filename="latex"/>
+    <subcollection name="p4" filename="p4"/>
+    <subcollection name="rdf" filename="rdf"/>
+    <subcollection name="lite" filename="lite"/>
+    <subcollection name="html" filename="html"/>
+    <subcollection name="odt" filename="odt"/>
+</collection>

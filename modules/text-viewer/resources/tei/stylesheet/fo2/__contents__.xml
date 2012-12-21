@@ -1,0 +1,51 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/fo2" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.023+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="figures.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.023+01:00" modified="2012-12-20T15:07:39.023+01:00" filename="figures.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="textstructure.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.03+01:00" modified="2012-12-20T15:07:39.03+01:00" filename="textstructure.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tei-param.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.05+01:00" modified="2012-12-20T15:07:39.05+01:00" filename="tei-param.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tei-makecolspec.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.065+01:00" modified="2012-12-20T15:07:39.065+01:00" filename="tei-makecolspec.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="teiCustom.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.067+01:00" modified="2012-12-20T15:07:39.067+01:00" filename="teiCustom.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="linking.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.068+01:00" modified="2012-12-20T15:07:39.068+01:00" filename="linking.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="verse.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.07+01:00" modified="2012-12-20T15:07:39.07+01:00" filename="verse.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="core.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.071+01:00" modified="2012-12-20T15:07:39.071+01:00" filename="core.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.086+01:00" modified="2012-12-20T15:07:39.086+01:00" filename="tei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="corpus.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.088+01:00" modified="2012-12-20T15:07:39.088+01:00" filename="corpus.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="header.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.089+01:00" modified="2012-12-20T15:07:39.089+01:00" filename="header.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="drama.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.09+01:00" modified="2012-12-20T15:07:39.09+01:00" filename="drama.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tagdocs.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.094+01:00" modified="2012-12-20T15:07:39.094+01:00" filename="tagdocs.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="namesdates.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.095+01:00" modified="2012-12-20T15:07:39.095+01:00" filename="namesdates.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="transcr.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.095+01:00" modified="2012-12-20T15:07:39.095+01:00" filename="transcr.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="textcrit.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.096+01:00" modified="2012-12-20T15:07:39.096+01:00" filename="textcrit.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

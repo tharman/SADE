@@ -1,0 +1,18 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.942+01:00">
+    <acl entries="0" version="1"/>
+    <subcollection name="iso" filename="iso"/>
+    <subcollection name="agora" filename="agora"/>
+    <subcollection name="ota" filename="ota"/>
+    <subcollection name="oucscourses" filename="oucscourses"/>
+    <subcollection name="ecco" filename="ecco"/>
+    <subcollection name="otapages" filename="otapages"/>
+    <subcollection name="oepack" filename="oepack"/>
+    <subcollection name="minimal" filename="minimal"/>
+    <subcollection name="podcasts" filename="podcasts"/>
+    <subcollection name="godwindiaries" filename="godwindiaries"/>
+    <subcollection name="tei" filename="tei"/>
+    <subcollection name="default" filename="default"/>
+    <subcollection name="bodley" filename="bodley"/>
+    <subcollection name="enrich" filename="enrich"/>
+    <subcollection name="oucs" filename="oucs"/>
+</collection>

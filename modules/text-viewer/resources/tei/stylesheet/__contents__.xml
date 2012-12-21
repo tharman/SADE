@@ -1,0 +1,45 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:37.219+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="VERSION" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.22+01:00" modified="2012-12-20T15:07:37.22+01:00" filename="VERSION" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="i18n.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.256+01:00" modified="2012-12-20T15:07:37.256+01:00" filename="i18n.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="msdescription.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.812+01:00" modified="2012-12-20T15:07:37.812+01:00" filename="msdescription.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="tei.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.813+01:00" modified="2012-12-20T15:07:37.813+01:00" filename="tei.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="tei-print.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.814+01:00" modified="2012-12-20T15:07:37.814+01:00" filename="tei-print.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="epub-print.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.814+01:00" modified="2012-12-20T15:07:37.814+01:00" filename="epub-print.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="teislides.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.815+01:00" modified="2012-12-20T15:07:37.815+01:00" filename="teislides.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="odd.css" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.816+01:00" modified="2012-12-20T15:07:37.816+01:00" filename="odd.css" mimetype="text/css">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="rdf" filename="rdf"/>
+    <subcollection name="common2" filename="common2"/>
+    <subcollection name="dtd" filename="dtd"/>
+    <subcollection name="txt" filename="txt"/>
+    <subcollection name="latex2" filename="latex2"/>
+    <subcollection name="tools" filename="tools"/>
+    <subcollection name="nlm" filename="nlm"/>
+    <subcollection name="fo2" filename="fo2"/>
+    <subcollection name="slides" filename="slides"/>
+    <subcollection name="odt" filename="odt"/>
+    <subcollection name="xhtml2" filename="xhtml2"/>
+    <subcollection name="odds2" filename="odds2"/>
+    <subcollection name="epub" filename="epub"/>
+    <subcollection name="relaxng" filename="relaxng"/>
+    <subcollection name="docx" filename="docx"/>
+    <subcollection name="profiles" filename="profiles"/>
+    <subcollection name="html" filename="html"/>
+    <subcollection name="tite" filename="tite"/>
+</collection>

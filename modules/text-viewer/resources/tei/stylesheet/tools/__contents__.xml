@@ -1,0 +1,50 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/tools" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:38.719+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="oddbyexample.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.72+01:00" modified="2012-12-20T15:07:38.72+01:00" filename="oddbyexample.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="analyze.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.76+01:00" modified="2012-12-20T15:07:38.76+01:00" filename="analyze.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="folint.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.761+01:00" modified="2012-12-20T15:07:38.761+01:00" filename="folint.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="html2tei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.832+01:00" modified="2012-12-20T15:07:38.832+01:00" filename="html2tei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tangle.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.851+01:00" modified="2012-12-20T15:07:38.851+01:00" filename="tangle.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="checkxsl.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.863+01:00" modified="2012-12-20T15:07:38.863+01:00" filename="checkxsl.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="xhtml2tei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.864+01:00" modified="2012-12-20T15:07:38.864+01:00" filename="xhtml2tei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="makegraphicsanttask.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.883+01:00" modified="2012-12-20T15:07:38.883+01:00" filename="makegraphicsanttask.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="extract-xsl-from-sch.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.895+01:00" modified="2012-12-20T15:07:38.895+01:00" filename="extract-xsl-from-sch.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="checkodd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.905+01:00" modified="2012-12-20T15:07:38.905+01:00" filename="checkodd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="getfiles.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.916+01:00" modified="2012-12-20T15:07:38.916+01:00" filename="getfiles.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="addlang.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.937+01:00" modified="2012-12-20T15:07:38.937+01:00" filename="addlang.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2nuodd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.939+01:00" modified="2012-12-20T15:07:38.939+01:00" filename="odd2nuodd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="checki18n.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.941+01:00" modified="2012-12-20T15:07:38.941+01:00" filename="checki18n.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="processpb.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.942+01:00" modified="2012-12-20T15:07:38.942+01:00" filename="processpb.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="docx-templates-twiddling" filename="docx-templates-twiddling"/>
+    <subcollection name="ImageInfo" filename="ImageInfo"/>
+</collection>

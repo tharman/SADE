@@ -1,0 +1,10 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T14:15:54.368+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="text-viewer.xqm" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T14:15:54.576+01:00" modified="2012-12-20T18:39:17.569+01:00" filename="text-viewer.xqm" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="module.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T16:46:25.212+01:00" modified="2012-12-20T16:46:25.212+01:00" filename="module.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="resources" filename="resources"/>
+</collection>

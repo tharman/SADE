@@ -1,0 +1,39 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/odt" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.141+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="TypeDetection.xcu" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.184+01:00" modified="2012-12-20T15:07:39.184+01:00" filename="TypeDetection.xcu" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="teilite.dtd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.184+01:00" modified="2012-12-20T15:07:39.184+01:00" filename="teilite.dtd" mimetype="text/plain">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="TEIP5.ott" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.196+01:00" modified="2012-12-20T15:07:39.196+01:00" filename="TEIP5.ott" mimetype="application/vnd.oasis.opendocument.text-template">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="grouping.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.141+01:00" modified="2012-12-20T15:07:39.141+01:00" filename="grouping.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="teitoodt.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.143+01:00" modified="2012-12-20T15:07:39.143+01:00" filename="teitoodt.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="fixgraphics.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.164+01:00" modified="2012-12-20T15:07:39.164+01:00" filename="fixgraphics.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="build-from.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.165+01:00" modified="2012-12-20T15:07:39.165+01:00" filename="build-from.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="expandxsl.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.167+01:00" modified="2012-12-20T15:07:39.167+01:00" filename="expandxsl.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="listgraphics.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.168+01:00" modified="2012-12-20T15:07:39.168+01:00" filename="listgraphics.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="build-to.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.169+01:00" modified="2012-12-20T15:07:39.169+01:00" filename="build-to.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odttotei.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.171+01:00" modified="2012-12-20T15:07:39.171+01:00" filename="odttotei.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="mimetype" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.183+01:00" modified="2012-12-20T15:07:39.183+01:00" filename="mimetype" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

@@ -1,0 +1,12 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/profiles/iso/docx/model" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:40.253+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="model_fr.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.253+01:00" modified="2012-12-20T15:07:40.253+01:00" filename="model_fr.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="model_iso_is_60_en.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.255+01:00" modified="2012-12-20T15:07:40.255+01:00" filename="model_iso_is_60_en.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="model_en.docx" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:40.266+01:00" modified="2012-12-20T15:07:40.266+01:00" filename="model_en.docx" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

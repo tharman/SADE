@@ -1,0 +1,33 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/rdf" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:37.817+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="build-to.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.817+01:00" modified="2012-12-20T15:07:37.817+01:00" filename="build-to.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="crm.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.874+01:00" modified="2012-12-20T15:07:37.874+01:00" filename="crm.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="dc.odd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.955+01:00" modified="2012-12-20T15:07:37.955+01:00" filename="dc.odd" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="dc.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.956+01:00" modified="2012-12-20T15:07:37.956+01:00" filename="dc.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="rdf.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:37.97+01:00" modified="2012-12-20T15:07:37.97+01:00" filename="rdf.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="make-acdc.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.024+01:00" modified="2012-12-20T15:07:38.024+01:00" filename="make-acdc.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="Makefile" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.031+01:00" modified="2012-12-20T15:07:38.031+01:00" filename="Makefile" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="rdf.odd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.032+01:00" modified="2012-12-20T15:07:38.032+01:00" filename="rdf.odd" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="tei2rdf.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.059+01:00" modified="2012-12-20T15:07:38.059+01:00" filename="tei2rdf.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="crm.odd" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:38.108+01:00" modified="2012-12-20T15:07:38.108+01:00" filename="crm.odd" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

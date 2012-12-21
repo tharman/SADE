@@ -1,0 +1,48 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sade/modules/text-viewer/resources/tei/stylesheet/odds2" version="1" owner="admin" group="dba" mode="755" created="2012-12-20T15:07:39.413+01:00">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="translate-odd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.559+01:00" modified="2012-12-20T15:07:39.559+01:00" filename="translate-odd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2odd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.56+01:00" modified="2012-12-20T15:07:39.56+01:00" filename="odd2odd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="RngToRnc.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.583+01:00" modified="2012-12-20T15:07:39.583+01:00" filename="RngToRnc.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2json.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.604+01:00" modified="2012-12-20T15:07:39.604+01:00" filename="odd2json.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="extract-sch.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.608+01:00" modified="2012-12-20T15:07:39.608+01:00" filename="extract-sch.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="extract-isosch.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.61+01:00" modified="2012-12-20T15:07:39.61+01:00" filename="extract-isosch.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="teiodds.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.413+01:00" modified="2012-12-20T15:07:39.413+01:00" filename="teiodds.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="build-to.xml" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.502+01:00" modified="2012-12-20T15:07:39.502+01:00" filename="build-to.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2lite.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.503+01:00" modified="2012-12-20T15:07:39.503+01:00" filename="odd2lite.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="table2list.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.508+01:00" modified="2012-12-20T15:07:39.508+01:00" filename="table2list.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2relax.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.509+01:00" modified="2012-12-20T15:07:39.509+01:00" filename="odd2relax.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="guidelines.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.515+01:00" modified="2012-12-20T15:07:39.515+01:00" filename="guidelines.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2html.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.539+01:00" modified="2012-12-20T15:07:39.539+01:00" filename="odd2html.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="extract-schemaSpec-ident.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.541+01:00" modified="2012-12-20T15:07:39.541+01:00" filename="extract-schemaSpec-ident.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="odd2dtd.xsl" skip="no" owner="admin" group="dba" mode="644" created="2012-12-20T15:07:39.542+01:00" modified="2012-12-20T15:07:39.542+01:00" filename="odd2dtd.xsl" mimetype="application/xslt+xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
