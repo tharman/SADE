@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://expath.org/ns/pkg" name="http://www.telota.de/sade/modules/basic" abbrev="sade-basic-modules" version="0.1" spec="1.0">
+    <title>SADE basic modules</title>
+</package>
