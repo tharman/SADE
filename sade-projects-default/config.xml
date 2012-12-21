@@ -3,10 +3,11 @@
     <!-- BASICS -->
     <properties>
         <property key="project-id">default</property>
+        <property key="project-title">Default Project</property>
         <!-- you could change the default template by changing the property
         template.dir to /db/sade/templates/bootstrap/ , then save and reload
         mainpage -->
-        <property key="template">default/</property>
+        <property key="template">default</property>
         <property key="data-dir">/db/apps/sade-projects/default/data/</property>
     </properties>
 
