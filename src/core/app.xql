@@ -45,7 +45,8 @@ function app:init($node as node(), $model as map(*), $project as xs:string?) {
 declare 
     %templates:wrap
 function app:title($node as node(), $model as map(*)) {
-    $model("config")//property[xs:string(@key)='project-title']
+(:    $model("config")//param[xs:string(@key)='project-title']:)
+config:param-value($model, 'project-title')
 (:    <p>exist:root {request:get-attribute("$exist:root")}<br/>
         exist:resource {request:get-attribute("$exist:resource")}<br/>
         exist:path {request:get-attribute("$exist:path")}<br/>

@@ -24,7 +24,8 @@ declare variable $config:app-root :=
         else
             $rawPath
     return
-        substring-before($modulePath, "/modules")
+(:        substring-before($modulePath, "/modules"):)
+        substring-before($modulePath, "/core")
 ;
 
 declare variable $config:repo-descriptor := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
@@ -69,15 +70,10 @@ declare %templates:wrap function config:app-description($node as node(), $model 
  : in the application descriptors.
  :)
 declare function config:app-info($node as node(), $model as map(*)) {
-    let $expath := config:expath-descriptor()
+  (:  let $expath := config:expath-descriptor()
     let $repo := config:repo-descriptor()
-    return
-        <table class="table table-bordered table-striped">
-            <tr>
-                <td>app collection:</td>
-                <td>{$config:app-root}</td>
-            </tr>
-            {
+    return :)
+    (:{
                 for $attr in ($expath/@*, $expath/*, $repo/*)
                 where $attr/string() != ""
                 return
@@ -85,6 +81,64 @@ declare function config:app-info($node as node(), $model as map(*)) {
                         <td>{node-name($attr)}:</td>
                         <td>{$attr/string()}</td>
                     </tr>
-            }
+            }:)
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>app collection:</td>
+                <td>{$config:app-root}</td>
+            </tr>
+            <tr>
+                <td>system:get-module-load-path():</td>
+                <td>{system:get-module-load-path()}</td>
+            </tr>
+            
+            
         </table>
+};
+
+(:~
+ : 
+ :
+ :)
+ 
+ declare function config:param-keys($config as map(*)*) as xs:string* {
+
+    let $config := $config("config")
+    
+    for $key in distinct-values($config//param/xs:string(@key))
+        order by $key
+        return $key
+    
+};
+
+
+declare function config:param-value($node as node()*, $config as map(*)*, $module-key as xs:string, $function-key as xs:string, $param-key as xs:string) as item()* {
+
+    let $node-id := $node/xs:string(@id)
+    let $config := $config("config")
+    
+    let $param-request := request:get-parameter($param-key,'')
+    let $param-container := $config//container[@key=$node-id]/function[xs:string(@key)=concat($module-key, ':', $function-key)]/param[xs:string(@key)=$param-key]
+    let $param-function := $config//function[xs:string(@key)=concat($module-key, ':', $function-key)]/param[xs:string(@key)=$param-key]
+    let $param-module := $config//module[xs:string(@key)=$module-key]/param[xs:string(@key)=$param-key]
+    let $param-global:= $config//param[xs:string(@key)=$param-key][parent::config]
+    
+    let $param := if ($param-request != '') then $param-request
+                        else if (exists($param-container)) then $param-container 
+                        else if (exists($param-function)) then $param-function
+                           else if (exists($param-module)) then $param-module
+                              else if (exists($param-global)) then $param-global
+                              else ""
+    
+    let $param-value := if ($param instance of text() or $param instance of xs:string) then $param
+                           else if (exists($param/@value)) then $param/xs:string(@value)
+                           else if (exists($param/*)) then $param/*
+                           else $param/text()
+                           
+   return $param-value
+    
+};
+
+declare function config:param-value($config as map(*), $param-key as xs:string) as item()* {
+    config:param-value((),$config,'','',$param-key)
 };

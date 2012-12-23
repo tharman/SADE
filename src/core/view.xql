@@ -10,7 +10,7 @@ xquery version "3.0";
 
 (:import module namespace resolver="http://exist-db.org/xquery/resolver" at "resolver.xql";:)
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
-(:import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";:)
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
    import module namespace app="http://sade/app" at "app.xql";  
    import module namespace test="http://sade/test" at "../modules/test/test.xqm";
 
@@ -39,7 +39,7 @@ let $lookup :=function($functionName as xs:string, $arity as xs:int) {
         return :)
         function-lookup(xs:QName($functionName), $arity)
     } catch * {
-        ()
+        ()  
     }
 } 
 (:  :
@@ -56,14 +56,17 @@ let $exist-path:= request:get-parameter('exist-path',"")
 
 let $project-config-path := concat($project-dir, $project, "/config.xml")
 let $project-config := if (doc-available($project-config-path)) then doc($project-config-path) else ()
-let $template-id := $project-config//property[xs:string(@key)='template']
+let $model := map { "config" := $project-config}
+
+(:let $template-id := config$project-config//property[xs:string(@key)='template']:)
+let $template-id := config:param-value($model,'template')
 let $template-path := concat($templates-dir,$template-id, "/", $exist-resource)
 let $template := if (doc-available($template-path)) then doc($template-path) else () 
     
 (:   let $content := doc("/db/apps/sade-projects/default/index.html")  :)
 (: let $content := request:get-data() :)
 (:   :let $model := map { "resolve" := doc("/db/apps/sade-projects/default/config.xml") } :)
-let $model := map { "config" := $project-config}
+
     
 (:return (request:get-uri(), " # ", $project," # ", $exist-path, " # ", $exist-resource) :)
 (: return $project-config:)
