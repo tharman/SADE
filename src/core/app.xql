@@ -10,25 +10,19 @@ import module namespace kwic="http://exist-db.org/xquery/kwic"
 import module namespace fcs = "http://clarin.eu/fcs/1.0" at "/db/cr/fcs.xqm";
 import module namespace repo-utils = "http://aac.ac.at/content_repository/utils" at  "/db/cr/repo-utils.xqm";
 :)
-declare variable $app:project-dir := "/db/apps/sade-projects/";
 
-(:~
- : This is the initializing function, that every template should call (very soon, i.e. at some of the top elements)
- : it provides information to the other modules, e.g. it fetches the project-config file etc.
- : 
- : @param $node the HTML node with the class attribute which triggered this call
- : @param $model a map containing arbitrary data - used to pass information between template calls
- :)
- 
+ (:
+ obsoleted by templates:init()
 declare 
     %templates:wrap
 function app:init($node as node(), $model as map(*), $project as xs:string?) {
-        let $project-config-path := concat($app:project-dir, $project, "/config.xml")
+        let $project-config-path := concat($config:projects-dir, $project, "/config.xml")
         let $project-resolved := if (doc-available($project-config-path)) then $project else "no such project"
         let $project-config := if (doc-available($project-config-path)) then doc($project-config-path) else ()
         return map { "config" := $project-config 
         }
-
+};
+:)
  (:   <p>{$project}</p>:)
  
         (:    <p>exist:root {request:get-attribute("$exist:root")}<br/>
@@ -40,7 +34,7 @@ function app:init($node as node(), $model as map(*), $project as xs:string?) {
         config:app-root {$config:app-root}<br/>
         
 </p>:)
-};
+
 
 declare 
     %templates:wrap

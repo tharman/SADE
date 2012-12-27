@@ -271,17 +271,30 @@ declare %private function templates:cast($values as item()*, $targetType as xs:s
  : Standard templates
  :-----------------------------------------------------------------------------------:)
  
+  
+(:~
+ : This is the initializing function, that every template should call (very soon, i.e. at some of the top elements)
+ : it provides context information to the other modules, currently it fetches the project-config file
+ : 
+ : @param $node the HTML node with the class attribute which triggered this call
+ : @param $model a map containing arbitrary data - used to pass information between template calls
+ : @param $project project-identifier
+ :)
+declare function templates:init($node as node(), $model as map(*), $project as xs:string?) {
+       map { "config" := config:project-config($project) }
+};
+ 
 declare function templates:include($node as node(), $model as map(*), $path as xs:string) {
-    templates:process(config:resolve($path), $model)
+    templates:process(config:resolve($model, $path), $model)
 };
 
 declare function templates:surround($node as node(), $model as map(*), $with as xs:string, $at as xs:string?, $using as xs:string?) {
     let $path := concat($config:app-root, "/", $with)
     let $content :=
         if ($using) then
-            config:resolve($with)//*[@id = $using]
+            config:resolve($model, $with)//*[@id = $using]
         else
-            config:resolve($with)
+            config:resolve($model, $with)
     let $merged := templates:process-surround($content, $node, $at)
     return
         templates:process($merged, $model)
