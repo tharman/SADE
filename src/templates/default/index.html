@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div class="app:init">
-    <div class="row-fluid">
-        <div id="content" class="span8">
-            <div class="page-header">
+<div class="templates:init">
+    <div class="templates:surround?with=page_index.html&amp;at=content">
+        <div class="row-fluid">
+            <div id="content" class="span8">
+                <div class="page-header">
 <!--                <h1 class="config:app-title">Generated page</h1>-->
-                <h1 class="app:title">Generated page</h1>
+                    <h1 class="app:title">Generated page</h1>
+                </div>
             </div>
-            
-<!--<div class="templates:if-parameter-set?param=query">-->
-        </div>
-        <div class="span4">
-            <h2>Scan </h2>
-            <div>position fixed</div>
-            <div>scan resources (with description)</div>
-<!--            <div class="config:app-info"/>-->
-            <div>
-                <div class="test:main">test:main</div>
+            <div class="span4">
+                <h3>Welcome</h3>
+                <div class="templates:include?path=static/content/welcome.xml">welcome</div>
+                <div class="config:app-info"/>
+                <div>
+                    <div class="test:main">test:main</div>
+                </div>
             </div>
         </div>
     </div>
