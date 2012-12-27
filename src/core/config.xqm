@@ -1,6 +1,8 @@
 (:~
  : A set of helper functions to access the application context from
  : within a module.
+ : Based on confing.xqm provided by the exist:templating system 
+ : extended to recognize multiple projects and templates and project-specific configuration
  :)
 module namespace config="http://exist-db.org/xquery/apps/config";
 
@@ -28,6 +30,8 @@ declare variable $config:app-root :=
         substring-before($modulePath, "/core")
 ;
 
+declare variable $config:projects-dir := "/db/apps/sade-projects/";
+declare variable $config:templates-dir := concat($config:app-root, "/templates/");
 declare variable $config:repo-descriptor := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
 
 declare variable $config:expath-descriptor := doc(concat($config:app-root, "/expath-pkg.xml"))/expath:package;
@@ -41,6 +45,23 @@ declare function config:resolve($relPath as xs:string) {
         doc(concat($config:app-root, "/", $relPath))
     else
         doc(concat("file://", $config:app-root, "/", $relPath))
+};
+
+
+(:~
+ : Extended resolver - projects and templates aware
+ : try to find the resource in project-static content then in current template
+ :)
+declare function config:resolve($model as map(*), $relPath as xs:string) {
+(:    let $file-type := tokenize($relPath,"\.")[last()]:)
+    let $project-dir := config:param-value($model, 'project-dir')
+    let $template-dir := config:param-value($model, 'template-dir')
+    
+    return 
+    if (doc-available(concat($project-dir,$relPath))) then
+        doc(concat($project-dir,$relPath))
+      else 
+        doc(concat($template-dir,$relPath))
 };
 
 (:~
@@ -96,26 +117,42 @@ declare function config:app-info($node as node(), $model as map(*)) {
         </table>
 };
 
-(:~
- : 
- :
+(:~ lists all parameter keys in the configuration file
+ :  sorted alphabetically
  :)
- 
  declare function config:param-keys($config as map(*)*) as xs:string* {
 
     let $config := $config("config")
+    let $special-params := ('project-dir', 'template-dir')
     
-    for $key in distinct-values($config//param/xs:string(@key))
+    for $key in (distinct-values($config//param/xs:string(@key)), $special-params)
         order by $key
         return $key
     
 };
 
 
+(:~ returns a value for given parameter reading from the config and the request
+ : Following precedence levels:
+ : 0. two special parameters: project-dir, template-dir
+ : 1. request parameter
+ : 2. config parameter for given function within given container (config:container/function/param)
+ : 3. config parameter for given function (config:function/param)
+ : 4. config parameter for given module (config:module/param)
+ : 5. global config param (config:param)
+ : @returns either the string-value of the @value-attribute or the content of the param-node (in that order)
+ :)
 declare function config:param-value($node as node()*, $config as map(*)*, $module-key as xs:string, $function-key as xs:string, $param-key as xs:string) as item()* {
 
     let $node-id := $node/xs:string(@id)
     let $config := $config("config")
+    
+    let $param-special := if ($param-key='project-dir') then
+                                concat(util:collection-name($config),'/')
+                            else if ($param-key='template-dir') then
+                                  let $template := $config//param[xs:string(@key)='template'][parent::config]
+                                return concat($config:templates-dir, $template,'/')
+                             else ''
     
     let $param-request := request:get-parameter($param-key,'')
     let $param-container := $config//container[@key=$node-id]/function[xs:string(@key)=concat($module-key, ':', $function-key)]/param[xs:string(@key)=$param-key]
@@ -123,7 +160,8 @@ declare function config:param-value($node as node()*, $config as map(*)*, $modul
     let $param-module := $config//module[xs:string(@key)=$module-key]/param[xs:string(@key)=$param-key]
     let $param-global:= $config//param[xs:string(@key)=$param-key][parent::config]
     
-    let $param := if ($param-request != '') then $param-request
+    let $param := if ($param-special != '') then $param-special
+                        else if ($param-request != '') then $param-request
                         else if (exists($param-container)) then $param-container 
                         else if (exists($param-function)) then $param-function
                            else if (exists($param-module)) then $param-module
@@ -139,6 +177,18 @@ declare function config:param-value($node as node()*, $config as map(*)*, $modul
     
 };
 
+(:~ returns the value of a parameter, but regards only request or global config param   
+ :)
 declare function config:param-value($config as map(*), $param-key as xs:string) as item()* {
     config:param-value((),$config,'','',$param-key)
+};
+
+(:~ tries to resolve to the project-specific config file
+  : @param $project project identifier
+ :)
+declare function config:project-config($project as xs:string) {
+       let $project-config-path := concat($config:projects-dir, $project, "/config.xml")
+        let $project-resolved := if (doc-available($project-config-path)) then $project else "no such project"
+        let $project-config := if (doc-available($project-config-path)) then doc($project-config-path) else ()
+        return $project-config
 };
