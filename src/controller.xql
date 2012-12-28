@@ -1,5 +1,7 @@
 xquery version "1.0";
 
+import module namespace config="http://exist-db.org/xquery/apps/config" at "core/config.xqm";
+
 declare variable $exist:path external;
 declare variable $exist:resource external;
 declare variable $exist:controller external;
@@ -7,40 +9,56 @@ declare variable $exist:prefix external;
 declare variable $exist:root external;
 
 
-(:        <forward url="../../../sade-projects/default/index.html" />
-<forward url="{$exist:controller}/../sade-projects/default/{$exist:resource}" />
-(:                <set-attribute name="project-config" value="{$project-config}" />:)
-:)
-        
+(:let $params := text:groups($exist:path, '^([^/]+)*/([^/]+)$'):)
+let $params := tokenize($exist:path, '/')
+
+let $project :=  if (config:project-exists($params[2])) then $params[2] 
+                  else if (config:project-exists(request:get-parameter('project',"default"))) then 
+                            request:get-parameter('project',"default") 
+                  else "default" 
+ 
+ let $project-config :=  config:project-config($project) 
+
+let $config := map { "config" := $project-config}
+
+ let $template-id := config:param-value($config,'template')
+ let $template-dir := config:param-value($config,'template-dir')
+
+ let $file-type := tokenize($exist:resource,'\.')[last()]
+ (: remove project from the path to the resource  needed for web-resources (css, js, ...) :)
+ let $rel-path := if (contains($exist:path,$project )) then substring-after($exist:path, $project) else $exist:path
+ 
+return         
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
 else if (ends-with($exist:resource, ".html")) then
-    let $params := text:groups($exist:path, '([^/]+)*/([^/]+)$')
-    
-    let $project := if ($params[2]) then $params[2] else 
-                           if (not(request:get-parameter('project',"")="")) then request:get-parameter('project',"") 
-                           else "default" 
+ let $template-path := concat($template-dir, $exist:resource)
+ let $template := if (doc-available($template-path)) then doc($template-path) else () 
 return 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+      <forward url="{$exist:controller}/templates/{$template-id}/{$exist:resource}"/>
+      <view>
         <forward url="{$exist:controller}/core/view.xql" >
             <add-parameter name="project" value="{$project}"/>
             <add-parameter name="exist-path" value="{$exist:path}"/>
-            <add-parameter name="exist-resource" value="{$params[3]}"/>
-
-            
+            <add-parameter name="exist-resource" value="{$exist:resource}"/>
         </forward>
     	<error-handler>
 			<forward url="{$exist:controller}/error-page.html" method="get"/>
 			<forward url="{$exist:controller}/core/view.xql"/>
 		</error-handler>
+	   </view>
     </dispatch>
-(: Requests for javascript libraries are resolved to the file system :)
-else if (contains($exist:path, "/libs/")) then
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="/{substring-after($exist:path, '/libs/')}" absolute="yes"/>
+(: Requests for js, css are resolved via our special resolver 
+<forward url="{concat('/sade/templates/', $template-id, '/', $rel-path )}" />
+:)
+else if ($file-type = ('js', 'css', 'png', 'jpg')) then
+    let $path := config:resolve-template-to-uri($config, $rel-path)
+    return <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$path}" />        
     </dispatch>
 else
     (: everything else is passed through :)

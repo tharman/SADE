@@ -1,3 +1,4 @@
+xquery version "3.0";
 (:~
  : A set of helper functions to access the application context from
  : within a module.
@@ -10,6 +11,8 @@ import module namespace templates="http://exist-db.org/xquery/templates" at "tem
 
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
+
+
 
 (: 
     Determine the application root collection from the current module load path.
@@ -31,7 +34,9 @@ declare variable $config:app-root :=
 ;
 
 declare variable $config:projects-dir := "/db/apps/sade-projects/";
-declare variable $config:templates-dir := concat($config:app-root, "/templates/");
+declare variable $config:projects-baseuri:= "/sade-projects/";
+declare variable $config:templates-dir := "templates/";
+declare variable $config:templates-baseuri:= concat("/sade/", $config:templates-dir);
 declare variable $config:repo-descriptor := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
 
 declare variable $config:expath-descriptor := doc(concat($config:app-root, "/expath-pkg.xml"))/expath:package;
@@ -51,18 +56,65 @@ declare function config:resolve($relPath as xs:string) {
 (:~
  : Extended resolver - projects and templates aware
  : try to find the resource in project-static content then in current template
+ : return the resolved resource
  :)
 declare function config:resolve($model as map(*), $relPath as xs:string) {
+    doc(config:resolve-to-dbpath($model, $relPath))
+};
+
+
+(:~
+ : Extended resolver - projects and templates aware
+ : try to find the resource in project-static content then in current template
+ : but return the path
+ :)
+declare function config:resolve-to-dbpath($model as map(*), $relPath as xs:string) as xs:anyURI {
 (:    let $file-type := tokenize($relPath,"\.")[last()]:)
     let $project-dir := config:param-value($model, 'project-dir')
     let $template-dir := config:param-value($model, 'template-dir')
     
     return 
     if (doc-available(concat($project-dir,$relPath))) then
-        doc(concat($project-dir,$relPath))
+        xs:anyURI(concat($project-dir,$relPath))
       else 
-        doc(concat($template-dir,$relPath))
+        xs:anyURI(concat($template-dir,$relPath))
 };
+
+(:~ delivers a URI (relative to base sade-controller) to a template-resource, with precedence for templates within project. 
+ : Function checks if given resource exists in a template within the project 
+ : (sade-projects)/{$project-id}/templates/{$project-template}/{$relPath}
+ : if not it checks for resource existence in the template itself
+ : (sade)/templates/{$project-template}/{$relPath}
+ : otherwise it returns the $relPath as it came in (knowing it will most probably result in 404)
+ : special error handling for binary-docs necessary, as doc-available will throw an error when confronted with binary docs 
+ :)
+
+declare function config:resolve-template-to-uri($model as map(*), $relPath as xs:string) as xs:anyURI {
+(:    let $file-type := tokenize($relPath,"\.")[last()]:)
+ let $project-dir := config:param-value($model, 'project-template-dir')
+ let $template-dir := config:param-value($model, 'template-dir')
+    let $project-baseuri:= config:param-value($model, 'project-template-baseuri')
+    let $template-baseuri := config:param-value($model, 'template-baseuri')
+ 
+ return
+    try {
+        if (doc-available(concat($project-dir,$relPath))) then
+            xs:anyURI(concat($project-baseuri,$relPath))
+        else if (doc-available(concat($template-dir,$relPath))) then
+              xs:anyURI(concat($template-baseuri,$relPath))
+        else xs:anyURI($relPath)
+    } catch err:FODC0005 {
+        if (util:binary-doc-available(concat($project-dir,$relPath))) then
+            xs:anyURI(concat($project-baseuri,$relPath))
+        else if (util:binary-doc-available(concat($template-dir,$relPath))) then
+              xs:anyURI(concat($template-baseuri,$relPath))
+        else xs:anyURI($relPath)
+    } catch * {
+        xs:anyURI($relPath)
+    }
+    
+};
+
 
 (:~
  : Returns the repo.xml descriptor for the current application.
@@ -109,8 +161,8 @@ declare function config:app-info($node as node(), $model as map(*)) {
                 <td>{$config:app-root}</td>
             </tr>
             <tr>
-                <td>system:get-module-load-path():</td>
-                <td>{system:get-module-load-path()}</td>
+                <td>?:</td>
+                <td></td>
             </tr>
             
             
@@ -123,7 +175,7 @@ declare function config:app-info($node as node(), $model as map(*)) {
  declare function config:param-keys($config as map(*)*) as xs:string* {
 
     let $config := $config("config")
-    let $special-params := ('project-dir', 'template-dir')
+    let $special-params := ('project-dir', 'template-dir', 'project-template-dir', 'project-template-baseuri', 'template-baseuri')
     
     for $key in (distinct-values($config//param/xs:string(@key)), $special-params)
         order by $key
@@ -149,10 +201,21 @@ declare function config:param-value($node as node()*, $config as map(*)*, $modul
     
     let $param-special := if ($param-key='project-dir') then
                                 concat(util:collection-name($config),'/')
-                            else if ($param-key='template-dir') then
+                          else if ($param-key='project-template-dir') then
+                                  let $project-dir:= util:collection-name($config)
                                   let $template := $config//param[xs:string(@key)='template'][parent::config]
-                                return concat($config:templates-dir, $template,'/')
-                             else ''
+                                return concat($project-dir, '/', $config:templates-dir, $template,'/')
+                          else if ($param-key='project-template-baseuri') then
+                                  let $project-id:= $config//param[xs:string(@key)='project-id'][parent::config]
+                                  let $template := $config//param[xs:string(@key)='template'][parent::config]
+                                return concat($config:projects-baseuri, $project-id, '/', $config:templates-dir, $template,'/')
+                          else if ($param-key='template-dir') then
+                                  let $template := $config//param[xs:string(@key)='template'][parent::config]
+                                return concat($config:app-root, '/', $config:templates-dir, $template,'/')
+                          else if ($param-key='template-baseuri') then
+                                  let $template := $config//param[xs:string(@key)='template'][parent::config]
+                                return concat($config:templates-baseuri, $template,'/')
+                          else ''
     
     let $param-request := request:get-parameter($param-key,'')
     let $param-container := $config//container[@key=$node-id]/function[xs:string(@key)=concat($module-key, ':', $function-key)]/param[xs:string(@key)=$param-key]
@@ -188,7 +251,14 @@ declare function config:param-value($config as map(*), $param-key as xs:string) 
  :)
 declare function config:project-config($project as xs:string) {
        let $project-config-path := concat($config:projects-dir, $project, "/config.xml")
-        let $project-resolved := if (doc-available($project-config-path)) then $project else "no such project"
         let $project-config := if (doc-available($project-config-path)) then doc($project-config-path) else ()
         return $project-config
+};
+
+(:~ checks if there is a config-file for given project
+  : @param $project project identifier
+ :)
+declare function config:project-exists($project as xs:string) {
+       let $project-config-path := concat($config:projects-dir, $project, "/config.xml")
+       return doc-available($project-config-path)
 };
