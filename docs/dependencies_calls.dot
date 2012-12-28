@@ -1,0 +1,67 @@
+/* dot -odependencies_calls.png -Tpng dependencies_calls.dot */ 
+digraph dependencies_calls {
+label="dependencies calls";
+rankdir=LR;
+compound=true;
+
+/* variable */
+node [shape=none];
+req [label="/$prj/$view"];
+
+/* functions */
+node [shape=ellipse];
+req -> sade_controller_xql;
+
+moduleA;
+templates_xql;
+view_xql;
+
+/* main_xqm;
+projectA_index_xql -> main_xqm [label="imports"];
+main_xqm -> resolver_xql [label="imports"];
+
+*/ 
+
+sade_controller_xql -> view_xql[label="$view, $prj"];
+view_xql -> templates_xql [label="imports"];
+view_xql -> resolver [dir=none, label="provides"];
+
+resolver -> moduleA [label="(dynamic) import"];
+resolver -> moduleB [label="(dynamic) import"];
+
+
+/* data */
+node [shape=box];
+	
+	subgraph cluster_templates {
+		label="template";
+			page_xml;
+			index_html;
+			
+	}
+	
+	subgraph cluster_project{
+	label="project";
+			config;
+			static_content;
+			data;
+	}
+/*
+	page_xml -> index_html [dir=back, label="ref", style=dashed];
+	 static_content -> index_html [dir=back, label="ref", style=dashed];
+	config -> page_xml [dir=back, label="ref", style=dashed]; */
+
+
+/* config -> projectA_index_xql; */
+config -> page_xml [label=ref, style=dashed, lhead=cluster_templates];
+config -> sade_controller_xql [dir=back, label="1. get ($prj/config)"];
+index_html -> sade_controller_xql [dir=back, label="2. get ($template/$view)"];
+/*
+moduleA -> descrA [dir=none];
+moduleB -> descrB [dir=none];
+
+descrA -> resolver_xql [constraint=false];
+descrB -> resolver_xql [constraint=false];
+*/
+
+}
