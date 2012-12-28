@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- global parameters -->
+    <param key="project-id">prj1</param>
+    <param key="project-title">Projekt 1</param>
+    <!-- you could change the default template by changing the param
+        template.dir to /db/sade/templates/bootstrap/ , then save and reload
+        mainpage -->
+    <param key="template">bootstrap</param>
+    <param key="data-dir">/db/data/prj1/</param>
+    
+    
+    <!-- parameters for MODULE -->
+    <module key="other-module">
+        <param key="param1" value="module-wide"/>
+        <param key="param2">module-wide</param>
+    </module>
+    
+    <!-- parameters for specific function call in the specific containers -->
+    <container key="">
+        <function key="test:main">
+            <param key="param1" value="container-specific"/>
+            <param key=""/>
+        </function>
+    </container>
+</config>

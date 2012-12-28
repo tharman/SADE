@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- global parameters -->
+    <param key="project-id">default</param>
+    <param key="project-title">Default Project</param>
+    <!-- reference to a template to be used for given project 
+            change the template for the project by changing the param template
+        TODO: how to distinguish between (sade-)global and (project-)local templates ? -->
+    <param key="template">default</param>
+    <!-- data-dir is relative to project-dir
+        default: data -->
+    <param key="data-dir">data</param>
+    
+    
+    <!-- parameters for MODULE -->
+    <module key="test">
+        <param key="param1" value="module-wide"/>
+        <param key="param2">module-wide</param>
+    </module>
+    
+    <!-- parameters for specific function call in the specific containers -->
+    <container key="">
+        <function key="test:main">
+            <param key="param1" value="container-specific"/>
+            <param key=""/>
+        </function>
+    </container>
+</config>
