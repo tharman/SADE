@@ -12,18 +12,14 @@ declare variable $exist:root external;
 (:let $params := text:groups($exist:path, '^([^/]+)*/([^/]+)$'):)
 let $params := tokenize($exist:path, '/')
 
-let $project :=  if (config:project-exists($params[2])) then $params[2] 
+ let $project :=  if (config:project-exists($params[2])) then $params[2] 
                   else if (config:project-exists(request:get-parameter('project',"default"))) then 
                             request:get-parameter('project',"default") 
                   else "default" 
- 
  let $project-config :=  config:project-config($project) 
-
-let $config := map { "config" := $project-config}
-
+ let $config := map { "config" := $project-config}
  let $template-id := config:param-value($config,'template')
- let $template-dir := config:param-value($config,'template-dir')
-
+ 
  let $file-type := tokenize($exist:resource,'\.')[last()]
  (: remove project from the path to the resource  needed for web-resources (css, js, ...) :)
  let $rel-path := if (contains($exist:path,$project )) then substring-after($exist:path, $project) else $exist:path
@@ -34,12 +30,9 @@ if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
-else if (ends-with($exist:resource, ".html")) then
- let $template-path := concat($template-dir, $exist:resource)
- let $template := if (doc-available($template-path)) then doc($template-path) else () 
-return 
+else if (ends-with($exist:resource, ".html")) then 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-      <forward url="{$exist:controller}/templates/{$template-id}/{$exist:resource}"/>
+      <forward url="{$exist:controller}/{$config:templates-dir}{$template-id}/{$exist:resource}"/>
       <view>
         <forward url="{$exist:controller}/core/view.xql" >
             <add-parameter name="project" value="{$project}"/>
