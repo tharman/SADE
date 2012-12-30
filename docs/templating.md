@@ -33,4 +33,4 @@ Plus, there is the equivalent function `config:resolve-template-to-uri()`, that 
 The aim of all this is to allow an intuitive linking in the template-views.
 Both the template-view or html-snippets to be included as well as css and js files can be refered to exactly as they are found in the project and template collections.
 
-![Diagram of linking within template system](/docs/templates_linking.png)
+![Diagram of linking within template system](templates_linking.png)
