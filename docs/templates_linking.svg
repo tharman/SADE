@@ -660,7 +660,7 @@
      inkscape:cx="184.53418"
      inkscape:cy="457.25406"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1600"
      inkscape:window-height="838"
@@ -1079,8 +1079,8 @@
        id="g8107"
        transform="translate(-76.821831,144.85911)"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-templates_init.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150">
+       inkscape:export-xdpi="100.45521"
+       inkscape:export-ydpi="100.45521">
       <path
          transform="matrix(0.32054488,0,0,0.31364933,617.57423,334.05711)"
          d="m 37.994415,472.61987 c 0,24.96341 -73.321884,45.20025 -163.769015,45.20025 -90.44713,0 -163.76901,-20.23684 -163.76901,-45.20025 0,-24.96341 73.32188,-45.20025 163.76901,-45.20025 90.447131,0 163.769015,20.23684 163.769015,45.20025 z"
@@ -1171,7 +1171,7 @@
          x="351.07516"
          y="308.14462"
          style="font-size:9.01240444px;text-align:start;text-anchor:start"
-         id="tspan4059"></tspan><tspan
+         id="tspan4059" /><tspan
          sodipodi:role="line"
          x="351.07516"
          y="319.41013"
@@ -1667,8 +1667,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-templates_init.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
+       inkscape:export-xdpi="100.45521"
+       inkscape:export-ydpi="100.45521" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1676,8 +1676,8 @@
        y="623.95087"
        id="text4376-2-4-4-8-4-6-1-02-6-2"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-templates_init.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150"><tspan
+       inkscape:export-xdpi="100.45521"
+       inkscape:export-ydpi="100.45521"><tspan
          sodipodi:role="line"
          x="365.14178"
          y="623.95087"
@@ -1717,8 +1717,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-templates_init.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
+       inkscape:export-xdpi="100.45521"
+       inkscape:export-ydpi="100.45521" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1726,8 +1726,8 @@
        y="623.32245"
        id="text4376-2-4-4-8-4-6-1-02-6-2-1"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-templates_init.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150"><tspan
+       inkscape:export-xdpi="100.45521"
+       inkscape:export-ydpi="100.45521"><tspan
          sodipodi:role="line"
          x="557.1651"
          y="623.32245"
@@ -1755,8 +1755,8 @@
        d="m 37.994415,472.61987 a 163.76901,45.200249 0 1 1 -327.538025,0 163.76901,45.200249 0 1 1 327.538025,0 z"
        transform="matrix(0.35490381,0,0,0.34726548,548.87108,532.47666)"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1764,8 +1764,8 @@
        y="700.26691"
        id="text4376-2-4-48-0-9-6-8-1-1-2"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150"><tspan
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992"><tspan
          sodipodi:role="line"
          x="503.22498"
          y="700.26691"
@@ -1778,8 +1778,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.0253613;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow2Lend);display:inline"
        d="m 563.52628,696.30936 97.76845,0.16042"
@@ -1787,8 +1787,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1796,8 +1796,8 @@
        y="680.77057"
        id="text4376-2-4-4-8-4-6-1-02-6-2-1-0"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150"><tspan
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992"><tspan
          sodipodi:role="line"
          x="566.96228"
          y="680.77057"
@@ -1825,8 +1825,8 @@
        y="693.15033"
        id="text4376-2-4-4-8-4-6-1-02-6-2-1-5"
        inkscape:export-filename="C:\Users\m\3\external\sade\_repo\SADE\docs\function-config_param-value.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150"><tspan
+       inkscape:export-xdpi="100.32992"
+       inkscape:export-ydpi="100.32992"><tspan
          sodipodi:role="line"
          x="346.66217"
          y="693.15033"
