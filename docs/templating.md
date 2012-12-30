@@ -20,6 +20,10 @@ The `template-views` have to invoke a special function `templates:init()` in the
 and puts it into the `$model` map, that is passed to all other functions invoked during the processing of the template-view.
 The *config* module provides a specialized function to access the config parameters: `config:param-value()`. (see inline-docs for more details)
 This allows the module functions to access config parameters in an harmonized and encapsulated way, without having to know anything about the structure of the config file.
+   function-templates_init.png
+
+![Visual input-output representation of the function templates:init()](/tharman/SADE/raw/sade_modules/docs/function-templates_init.png)
+![Visual input-output representation of the function config:param-value()](/tharman/SADE/raw/sade_modules/docs/function-config_param-value.png)
 
 Path resolution
 ---------------
@@ -33,4 +37,4 @@ Plus, there is the equivalent function `config:resolve-template-to-uri()`, that 
 The aim of all this is to allow an intuitive linking in the template-views.
 Both the template-view or html-snippets to be included as well as css and js files can be refered to exactly as they are found in the project and template collections.
 
-![Diagram of linking within template system](docs/templates_linking.png)
+![Diagram of linking within template system](/tharman/SADE/raw/sade_modules/docs/templates_linking.png)
