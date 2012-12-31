@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/modules/navigation/navigation.xqm</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://sade/navigation</xqdoc:uri>
+        <xqdoc:name>navi</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description/>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>navi:create</xqdoc:name>
+            <xqdoc:signature>navi:create($projectname as xs:string, $uri as xs:string, $container as xs:string) as node()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$projectname </xqdoc:param>
+                <xqdoc:param>$uri </xqdoc:param>
+                <xqdoc:param>$container </xqdoc:param>
+                <xqdoc:return>node() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>navi:create-breadcrumb</xqdoc:name>
+            <xqdoc:signature>navi:create-breadcrumb($projectname as xs:string, $uri as xs:string) as node()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$projectname </xqdoc:param>
+                <xqdoc:param>$uri </xqdoc:param>
+                <xqdoc:return>node() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>navi:createLevel</xqdoc:name>
+            <xqdoc:signature>navi:createLevel($navi as node(), $uri as xs:string) as node()+</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$navi </xqdoc:param>
+                <xqdoc:param>$uri </xqdoc:param>
+                <xqdoc:return>node()+ - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>

@@ -1,0 +1,166 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <meta http-equiv="Generator" content="xquerydoc - https://github.com/xquery/xquerydoc"></meta>
+      <title>xqDoc - </title><style type="text/css">
+          body {
+          font-family: Helvetica;
+          padding: 0.5em  1em;
+          }
+          pre {
+          font-family: Inconsolata, Consolas, monospace;
+          }
+          ol.results {
+          padding-left: 0;
+          }
+          .footer {
+          text-align:right;
+          border-top: solid 4px;
+          padding: 0.25em 0.5em;
+          font-size: 85%;
+          color: #999;
+          }
+          li.result {
+          list-style-position: inside;
+          list-style: none;
+          height:140px;
+          }
+          h2 {
+          display: inline-block;
+          margin: 0;
+          }
+
+          h2 a,
+          .result h3 a {
+          text-decoration: inherit;
+          color: inherit;
+          }
+          h3{
+	  font-size: 140%;
+	  background-color: #aaa;
+	  border-bottom: 1px solid #000;
+	  width: 100%;
+	  }
+          h4{
+	  font-size: 100%;
+	  background-color: #ddd;
+	  width: 90%;
+	  }
+
+          .namespace {
+          color: #999;
+          }
+          .namespace:before {
+          content: "{";
+          }
+          .namespace:after {
+          content: "}";
+          }
+          table{
+          width:75%;
+          float:right;
+          }
+          td {
+          height:100px;
+          width:50%;
+          vertical-align:text-top;
+          }
+        </style><script src="lib/prettify.js" type="text/javascript">&nbsp;</script><script src="lib/lang-xq.js" type="text/javascript">&nbsp;</script><link rel="stylesheet" type="text/css" href="lib/prettify.css"></link>
+   </head>
+   <body class="home">
+      <div id="main">
+         <h1>config</h1>
+         <h2><span class="namespace">http://exist-db.org/xquery/apps/config</span> &nbsp;library module 
+         </h2>
+         <p>A set of helper functions to access the application context from within a module.
+            Based on config.xqm provided by the exist:templating system extended to recognize
+            multiple projects and templates and project-specific configuration
+         </p>
+         <div id="functions">
+            <h3>Functions</h3>
+            <div id="func_config_app-description_">
+               <h4><u>Function</u>:&nbsp;config:app-description
+               </h4><pre class="prettyprint lang-xq">config:app-description($node as node(), $model as map) as text()</pre><p></p>
+            </div>
+            <div id="func_config_app-info_">
+               <h4><u>Function</u>:&nbsp;config:app-info
+               </h4><pre class="prettyprint lang-xq">config:app-info($node as node(), $model as map) as item()*</pre><p>For debugging: generates a table showing all properties defined in the application
+                  descriptors.
+               </p>
+            </div>
+            <div id="func_config_app-title_">
+               <h4><u>Function</u>:&nbsp;config:app-title
+               </h4><pre class="prettyprint lang-xq">config:app-title($node as node(), $model as map) as text()</pre><p></p>
+            </div>
+            <div id="func_config_expath-descriptor_">
+               <h4><u>Function</u>:&nbsp;config:expath-descriptor
+               </h4><pre class="prettyprint lang-xq">config:expath-descriptor() as element()</pre><p>Returns the expath-pkg.xml descriptor for the current application.</p>
+            </div>
+            <div id="func_config_param-keys_">
+               <h4><u>Function</u>:&nbsp;config:param-keys
+               </h4><pre class="prettyprint lang-xq">config:param-keys($config* as map) as xs:string*</pre><p>lists all parameter keys in the configuration file sorted alphabetically</p>
+            </div>
+            <div id="func_config_param-value_">
+               <h4><u>Function</u>:&nbsp;config:param-value
+               </h4><pre class="prettyprint lang-xq">config:param-value($config as map, $param-key as xs:string) as item()*</pre><p>returns the value of a parameter, but regards only request or global config param</p>
+            </div>
+            <div id="func_config_param-value_">
+               <h4><u>Function</u>:&nbsp;config:param-value
+               </h4><pre class="prettyprint lang-xq">config:param-value($node* as node(), $config* as map, $module-key as xs:string, $function-key as xs:string, $param-key as xs:string) as item()*</pre><p>returns a value for given parameter reading from the config and the request Following
+                  precedence levels: &lt;ol&gt; &lt;li&gt;two special parameters: project-dir, template-dir&lt;/li&gt;
+                  &lt;li&gt;request parameter&lt;/li&gt; &lt;li&gt;config parameter for given function within given container
+                  (config:container/function/param)&lt;/li&gt; &lt;li&gt;config parameter for given function (config:function/param)&lt;/li&gt;
+                  &lt;li&gt;config parameter for given module (config:module/param)&lt;/li&gt; &lt;li&gt;global config
+                  param (config:param)&lt;/li&gt; &lt;/ol&gt;
+               </p>
+            </div>
+            <div id="func_config_project-config_">
+               <h4><u>Function</u>:&nbsp;config:project-config
+               </h4><pre class="prettyprint lang-xq">config:project-config($project as xs:string) as item()*</pre><p>tries to resolve to the project-specific config file</p>
+            </div>
+            <div id="func_config_project-exists_">
+               <h4><u>Function</u>:&nbsp;config:project-exists
+               </h4><pre class="prettyprint lang-xq">config:project-exists($project as xs:string) as item()*</pre><p>checks if there is a config-file for given project</p>
+            </div>
+            <div id="func_config_repo-descriptor_">
+               <h4><u>Function</u>:&nbsp;config:repo-descriptor
+               </h4><pre class="prettyprint lang-xq">config:repo-descriptor() as element()</pre><p>Returns the repo.xml descriptor for the current application.</p>
+            </div>
+            <div id="func_config_resolve_">
+               <h4><u>Function</u>:&nbsp;config:resolve
+               </h4><pre class="prettyprint lang-xq">config:resolve($relPath as xs:string) as item()*</pre><p>Resolve the given path using the current application context. If the app resides in
+                  the file system,
+               </p>
+            </div>
+            <div id="func_config_resolve_">
+               <h4><u>Function</u>:&nbsp;config:resolve
+               </h4><pre class="prettyprint lang-xq">config:resolve($model as map, $relPath as xs:string) as item()*</pre><p>Extended resolver - projects and templates aware try to find the resource in project-static
+                  content then in current template
+               </p>
+            </div>
+            <div id="func_config_resolve-template-to-uri_">
+               <h4><u>Function</u>:&nbsp;config:resolve-template-to-uri
+               </h4><pre class="prettyprint lang-xq">config:resolve-template-to-uri($model as map, $relPath as xs:string) as xs:anyURI</pre><p>delivers a URI (relative to base sade-controller) to a template-resource, with precedence
+                  for templates within project. Function checks if given resource exists in a template
+                  within the project&lt;br/&gt; &lt;code&gt;(sade-projects)/{$project-id}/templates/{$project-template}/{$relPath}&lt;/code&gt;&lt;br/&gt;
+                  if not it checks for resource existence in the template itself&lt;br/&gt; &lt;code&gt;(sade)/templates/{$project-template}/{$relPath}&lt;/code&gt;&lt;br/&gt;
+                  otherwise it returns the $relPath as it came in (knowing it will most probably result
+                  in 404) special error handling for binary-docs necessary, as doc-available() will
+                  throw an error when confronted with binary docs
+               </p>
+            </div>
+            <div id="func_config_resolve-to-dbpath_">
+               <h4><u>Function</u>:&nbsp;config:resolve-to-dbpath
+               </h4><pre class="prettyprint lang-xq">config:resolve-to-dbpath($model as map, $relPath as xs:string) as xs:anyURI</pre><p>Extended resolver - projects and templates aware try to find the resource in project-static
+                  content then in current template but return the path
+               </p>
+            </div>
+         </div>
+         <div class="footer">
+            <p style="text-align:right"><i></i> |
+               generated by xquerydoc <a href="https://github.com/xquery/xquerydoc" target="xquerydoc">https://github.com/xquery/xquerydoc</a></p>
+         </div>
+      </div><script type="application/javascript">
+	  window.onload = function(){ prettyPrint(); }
+	</script></body>
+</html>

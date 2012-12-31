@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/modules/gendocs/scan.xql</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://exist-db.org/xquery/docs</xqdoc:uri>
+        <xqdoc:name>docs</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description/>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>docs:cardinality</xqdoc:name>
+            <xqdoc:signature>docs:cardinality($cardinality as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$cardinality </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>docs:generate-signature</xqdoc:name>
+            <xqdoc:signature>docs:generate-signature($func as element()) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$func </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>docs:generate-xqdoc</xqdoc:name>
+            <xqdoc:signature>docs:generate-xqdoc($module as element()) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$module </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>docs:load-fundocs</xqdoc:name>
+            <xqdoc:signature>docs:load-fundocs($source as xs:string, $target as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$source </xqdoc:param>
+                <xqdoc:param>$target </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>

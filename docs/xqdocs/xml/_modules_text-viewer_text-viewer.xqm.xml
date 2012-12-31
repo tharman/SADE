@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/modules/text-viewer/text-viewer.xqm</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://sade/text-viewer</xqdoc:uri>
+        <xqdoc:name>text-viewer</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description/>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>text-viewer:getNavBar</xqdoc:name>
+            <xqdoc:signature>text-viewer:getNavBar($position as xs:string, $script_url as xs:string, $last as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$position </xqdoc:param>
+                <xqdoc:param>$script_url </xqdoc:param>
+                <xqdoc:param>$last </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>text-viewer:showText</xqdoc:name>
+            <xqdoc:signature>text-viewer:showText($node as node(), $model as map, $position as xs:integer) as element()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$position </xqdoc:param>
+                <xqdoc:return>element() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>local:readConfig</xqdoc:name>
+            <xqdoc:signature>local:readConfig() as map</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:return>map - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>

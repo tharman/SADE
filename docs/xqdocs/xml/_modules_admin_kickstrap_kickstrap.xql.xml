@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/modules/admin/kickstrap/kickstrap.xql</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://exist-db.org/xquery/trigger</xqdoc:uri>
+        <xqdoc:name>trigger</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description/>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>trigger:after-update-document</xqdoc:name>
+            <xqdoc:signature>trigger:after-update-document($uri as xs:anyURI) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$uri </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>

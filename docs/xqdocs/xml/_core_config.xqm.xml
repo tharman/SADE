@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/core/config.xqm</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://exist-db.org/xquery/apps/config</xqdoc:uri>
+        <xqdoc:name>config</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description>
+ A set of helper functions to access the application context from
+ within a module.
+
+ Based on config.xqm provided by the exist:templating system 
+ extended to recognize multiple projects and templates and project-specific configuration
+</xqdoc:description>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>config:app-description</xqdoc:name>
+            <xqdoc:signature>config:app-description($node as node(), $model as map) as text()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>text() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:app-info</xqdoc:name>
+            <xqdoc:signature>config:app-info($node as node(), $model as map) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ For debugging: generates a table showing all properties defined
+ in the application descriptors.
+</xqdoc:description>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:app-title</xqdoc:name>
+            <xqdoc:signature>config:app-title($node as node(), $model as map) as text()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>text() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:expath-descriptor</xqdoc:name>
+            <xqdoc:signature>config:expath-descriptor() as element()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ Returns the expath-pkg.xml descriptor for the current application.
+</xqdoc:description>
+                <xqdoc:return>element() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:param-keys</xqdoc:name>
+            <xqdoc:signature>config:param-keys($config* as map) as xs:string*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> lists all parameter keys in the configuration file
+  sorted alphabetically
+</xqdoc:description>
+                <xqdoc:param>$config* </xqdoc:param>
+                <xqdoc:return>xs:string* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:param-value</xqdoc:name>
+            <xqdoc:signature>config:param-value($config as map, $param-key as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> returns the value of a parameter, but regards only request or global config param   
+</xqdoc:description>
+                <xqdoc:param>$config </xqdoc:param>
+                <xqdoc:param>$param-key </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:param-value</xqdoc:name>
+            <xqdoc:signature>config:param-value($node* as node(), $config* as map, $module-key as xs:string, $function-key as xs:string, $param-key as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> returns a value for given parameter reading from the config and the request
+ Following precedence levels:
+ &lt;ol&gt;
+ &lt;li&gt;two special parameters: project-dir, template-dir&lt;/li&gt;
+ &lt;li&gt;request parameter&lt;/li&gt;
+ &lt;li&gt;config parameter for given function within given container (config:container/function/param)&lt;/li&gt;
+ &lt;li&gt;config parameter for given function (config:function/param)&lt;/li&gt;
+ &lt;li&gt;config parameter for given module (config:module/param)&lt;/li&gt;
+ &lt;li&gt;global config param (config:param)&lt;/li&gt;
+  &lt;/ol&gt;
+ </xqdoc:description>
+                <xqdoc:param>$node* </xqdoc:param>
+                <xqdoc:param>$config* </xqdoc:param>
+                <xqdoc:param>$module-key </xqdoc:param>
+                <xqdoc:param>$function-key </xqdoc:param>
+                <xqdoc:param>$param-key </xqdoc:param>
+                <xqdoc:return>item()* -  either the string-value of the </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:project-config</xqdoc:name>
+            <xqdoc:signature>config:project-config($project as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> tries to resolve to the project-specific config file
+ </xqdoc:description>
+                <xqdoc:param>$project project identifier</xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:project-exists</xqdoc:name>
+            <xqdoc:signature>config:project-exists($project as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> checks if there is a config-file for given project
+ </xqdoc:description>
+                <xqdoc:param>$project project identifier</xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:repo-descriptor</xqdoc:name>
+            <xqdoc:signature>config:repo-descriptor() as element()</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ Returns the repo.xml descriptor for the current application.
+</xqdoc:description>
+                <xqdoc:return>element() - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:resolve</xqdoc:name>
+            <xqdoc:signature>config:resolve($relPath as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ Resolve the given path using the current application context.
+ If the app resides in the file system,
+</xqdoc:description>
+                <xqdoc:param>$relPath </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:resolve</xqdoc:name>
+            <xqdoc:signature>config:resolve($model as map, $relPath as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ Extended resolver - projects and templates aware
+ try to find the resource in project-static content then in current template
+ </xqdoc:description>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$relPath </xqdoc:param>
+                <xqdoc:return>item()* -  the resolved resource
+</xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:resolve-template-to-uri</xqdoc:name>
+            <xqdoc:signature>config:resolve-template-to-uri($model as map, $relPath as xs:string) as xs:anyURI</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> delivers a URI (relative to base sade-controller) to a template-resource, with precedence for templates within project. 
+ Function checks if given resource exists in a template within the project&lt;br/&gt; 
+ &lt;code&gt;(sade-projects)/{$project-id}/templates/{$project-template}/{$relPath}&lt;/code&gt;&lt;br/&gt; 
+ if not it checks for resource existence in the template itself&lt;br/&gt; 
+ &lt;code&gt;(sade)/templates/{$project-template}/{$relPath}&lt;/code&gt;&lt;br/&gt; 
+ otherwise it returns the $relPath as it came in (knowing it will most probably result in 404)
+ special error handling for binary-docs necessary, as doc-available() will throw an error when confronted with binary docs 
+</xqdoc:description>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$relPath </xqdoc:param>
+                <xqdoc:return>xs:anyURI - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>config:resolve-to-dbpath</xqdoc:name>
+            <xqdoc:signature>config:resolve-to-dbpath($model as map, $relPath as xs:string) as xs:anyURI</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ Extended resolver - projects and templates aware
+ try to find the resource in project-static content then in current template
+ but return the path
+</xqdoc:description>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$relPath </xqdoc:param>
+                <xqdoc:return>xs:anyURI - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>

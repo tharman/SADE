@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xqdoc:xqdoc xmlns:xqdoc="http://www.xqdoc.org/1.0">
+    <xqdoc:control>
+        <xqdoc:date>2012-12-31T12:27:01.983+01:00</xqdoc:date>
+        <xqdoc:location>/db/apps/sade/core/templates.xql</xqdoc:location>
+    </xqdoc:control>
+    <xqdoc:module type="library">
+        <xqdoc:uri>http://exist-db.org/xquery/templates</xqdoc:uri>
+        <xqdoc:name>templates</xqdoc:name>
+        <xqdoc:comment>
+            <xqdoc:description/>
+        </xqdoc:comment>
+    </xqdoc:module>
+    <xqdoc:functions>
+        <xqdoc:function>
+            <xqdoc:name>templates:apply</xqdoc:name>
+            <xqdoc:signature>templates:apply($content+ as node(), $resolver as function, $model? as map) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$content+ </xqdoc:param>
+                <xqdoc:param>$resolver </xqdoc:param>
+                <xqdoc:param>$model? </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:apply</xqdoc:name>
+            <xqdoc:signature>templates:apply($content+ as node(), $resolver as function, $model? as map, $configuration? as map) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> Start processing the provided content. Template functions are looked up by calling the
+ provided function $resolver. The function should take a name as a string
+ and return the corresponding function item. The simplest implementation of this function could
+ look like this:
+ 
+ &lt;pre&gt;function($functionName as xs:string, $arity as xs:int) { function-lookup(xs:QName($functionName), $arity) }&lt;/pre&gt;
+
+ </xqdoc:description>
+                <xqdoc:param>$content+ the sequence of nodes which will be processed</xqdoc:param>
+                <xqdoc:param>$resolver a function which takes a name and returns a function with that name</xqdoc:param>
+                <xqdoc:param>$model? a sequence of items which will be passed to all called template functions. Use this to pass
+ information between templating instructions.</xqdoc:param>
+                <xqdoc:param>$configuration? </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:display-source</xqdoc:name>
+            <xqdoc:signature>templates:display-source($node as node(), $model as map, $lang? as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$lang? </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:error-description</xqdoc:name>
+            <xqdoc:signature>templates:error-description($node as node(), $model as map) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:fix-links</xqdoc:name>
+            <xqdoc:signature>templates:fix-links($node as node(), $prefix as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$prefix </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:fix-links</xqdoc:name>
+            <xqdoc:signature>templates:fix-links($node as node(), $model as map, $root as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$root </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:form-control</xqdoc:name>
+            <xqdoc:signature>templates:form-control($node as node(), $model as map) as node()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+Processes input and select form controls, setting their value/selection to
+values found in the request - if present.
+</xqdoc:description>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>node()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:if-module-missing</xqdoc:name>
+            <xqdoc:signature>templates:if-module-missing($node as node(), $model as map, $uri as xs:string, $at as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$uri </xqdoc:param>
+                <xqdoc:param>$at </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:if-parameter-set</xqdoc:name>
+            <xqdoc:signature>templates:if-parameter-set($node as node(), $model as map, $param as xs:string) as node()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$param </xqdoc:param>
+                <xqdoc:return>node()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:if-parameter-unset</xqdoc:name>
+            <xqdoc:signature>templates:if-parameter-unset($node as node(), $model* as item(), $param as xs:string) as node()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model* </xqdoc:param>
+                <xqdoc:param>$param </xqdoc:param>
+                <xqdoc:return>node()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:include</xqdoc:name>
+            <xqdoc:signature>templates:include($node as node(), $model as map, $path as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$path </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:init</xqdoc:name>
+            <xqdoc:signature>templates:init($node as node(), $model as map, $project? as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description>
+ This is the initializing function, that every template should call (very soon, i.e. at some of the top elements)
+ it provides context information to the other modules, currently it fetches the project-config file
+ 
+ </xqdoc:description>
+                <xqdoc:param>$node the HTML node with the class attribute which triggered this call</xqdoc:param>
+                <xqdoc:param>$model a map containing arbitrary data - used to pass information between template calls</xqdoc:param>
+                <xqdoc:param>$project? project-identifier</xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:load-source</xqdoc:name>
+            <xqdoc:signature>templates:load-source($node as node(), $model as map) as node()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:return>node()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:process</xqdoc:name>
+            <xqdoc:signature>templates:process($nodes* as node(), $model as map) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description> Continue template processing on the given set of nodes. Call this function from
+ within other template functions to enable recursive processing of templates.
+
+ </xqdoc:description>
+                <xqdoc:param>$nodes* the nodes to process</xqdoc:param>
+                <xqdoc:param>$model a sequence of items which will be passed to all called template functions. Use this to pass
+ information between templating instructions.</xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:process-surround</xqdoc:name>
+            <xqdoc:signature>templates:process-surround($node as node(), $content as node(), $at as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$content </xqdoc:param>
+                <xqdoc:param>$at </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+        <xqdoc:function>
+            <xqdoc:name>templates:surround</xqdoc:name>
+            <xqdoc:signature>templates:surround($node as node(), $model as map, $with as xs:string, $at? as xs:string, $using? as xs:string) as item()*</xqdoc:signature>
+            <xqdoc:comment>
+                <xqdoc:description/>
+                <xqdoc:param>$node </xqdoc:param>
+                <xqdoc:param>$model </xqdoc:param>
+                <xqdoc:param>$with </xqdoc:param>
+                <xqdoc:param>$at? </xqdoc:param>
+                <xqdoc:param>$using? </xqdoc:param>
+                <xqdoc:return>item()* - </xqdoc:return>
+            </xqdoc:comment>
+        </xqdoc:function>
+    </xqdoc:functions>
+</xqdoc:xqdoc>
