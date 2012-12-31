@@ -2,7 +2,8 @@ xquery version "3.0";
 (:~
  : A set of helper functions to access the application context from
  : within a module.
- : Based on confing.xqm provided by the exist:templating system 
+ :
+ : Based on config.xqm provided by the exist:templating system 
  : extended to recognize multiple projects and templates and project-specific configuration
  :)
 module namespace config="http://exist-db.org/xquery/apps/config";
@@ -56,7 +57,7 @@ declare function config:resolve($relPath as xs:string) {
 (:~
  : Extended resolver - projects and templates aware
  : try to find the resource in project-static content then in current template
- : return the resolved resource
+ : @returns the resolved resource
  :)
 declare function config:resolve($model as map(*), $relPath as xs:string) {
     doc(config:resolve-to-dbpath($model, $relPath))
@@ -81,14 +82,13 @@ declare function config:resolve-to-dbpath($model as map(*), $relPath as xs:strin
 };
 
 (:~ delivers a URI (relative to base sade-controller) to a template-resource, with precedence for templates within project. 
- : Function checks if given resource exists in a template within the project 
- : (sade-projects)/{$project-id}/templates/{$project-template}/{$relPath}
- : if not it checks for resource existence in the template itself
- : (sade)/templates/{$project-template}/{$relPath}
+ : Function checks if given resource exists in a template within the project<br/> 
+ : <code>(sade-projects)/{$project-id}/templates/{$project-template}/{$relPath}</code><br/> 
+ : if not it checks for resource existence in the template itself<br/> 
+ : <code>(sade)/templates/{$project-template}/{$relPath}</code><br/> 
  : otherwise it returns the $relPath as it came in (knowing it will most probably result in 404)
- : special error handling for binary-docs necessary, as doc-available will throw an error when confronted with binary docs 
+ : special error handling for binary-docs necessary, as doc-available() will throw an error when confronted with binary docs 
  :)
-
 declare function config:resolve-template-to-uri($model as map(*), $relPath as xs:string) as xs:anyURI {
 (:    let $file-type := tokenize($relPath,"\.")[last()]:)
  let $project-dir := config:param-value($model, 'project-template-dir')
@@ -186,12 +186,14 @@ declare function config:app-info($node as node(), $model as map(*)) {
 
 (:~ returns a value for given parameter reading from the config and the request
  : Following precedence levels:
- : 0. two special parameters: project-dir, template-dir
- : 1. request parameter
- : 2. config parameter for given function within given container (config:container/function/param)
- : 3. config parameter for given function (config:function/param)
- : 4. config parameter for given module (config:module/param)
- : 5. global config param (config:param)
+ : <ol>
+ : <li>two special parameters: project-dir, template-dir</li>
+ : <li>request parameter</li>
+ : <li>config parameter for given function within given container (config:container/function/param)</li>
+ : <li>config parameter for given function (config:function/param)</li>
+ : <li>config parameter for given module (config:module/param)</li>
+ : <li>global config param (config:param)</li>
+ :  </ol>
  : @returns either the string-value of the @value-attribute or the content of the param-node (in that order)
  :)
 declare function config:param-value($node as node()*, $config as map(*)*, $module-key as xs:string, $function-key as xs:string, $param-key as xs:string) as item()* {

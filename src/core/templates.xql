@@ -2,7 +2,7 @@ xquery version "3.0";
 
 module namespace templates="http://exist-db.org/xquery/templates";
 
-(:~
+(:~ 
  : HTML templating module
  : 
  : @version 2.0
@@ -17,7 +17,7 @@ declare variable $templates:CONFIGURATION_ERROR := QName("http://exist-db.org/xq
 declare variable $templates:NOT_FOUND := QName("http://exist-db.org/xquery/templates", "NotFound");
 declare variable $templates:TOO_MANY_ARGS := QName("http://exist-db.org/xquery/templates", "TooManyArguments");
 
-(:~
+(:~ 
  : Start processing the provided content. Template functions are looked up by calling the
  : provided function $resolver. The function should take a name as a string
  : and return the corresponding function item. The simplest implementation of this function could
