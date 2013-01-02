@@ -46,15 +46,17 @@ The aim of all this is to allow an intuitive linking in the template-views.
 Both the template-view or html-snippets to be included as well as css and js files can be refered to exactly as they are found in the project and template collections.
 
 Practically, this means that in an template-views, you can link:
-; relative to project
-: to include a snippet from the static project content use:
-: `static/content/welcome.xml`
-: in:
-: `<div class="templates:include?path=static/content/welcome.xml">welcome</div>`
-; relative to template
-:  linking to *.css, *.js, *.png files lying within the template is as easy as:
-:  `css/sade.css, img/logo.png`
-; explicit template 
-: if you really need to use a resource e.g. an image from another template you can say:
-: `sade/templates/default/images/ide_logo.png`
-: However, this constitutes a dependency on another template, so there should be a good reason for it.
+* *relative to project*   
+   to include a snippet from the static project content use
+   `static/content/welcome.xml`
+   as in:  
+   `<div class="templates:include?path=static/content/welcome.xml">welcome</div>`
+
+* *relative to template*   
+   linking to *.css, *.js, *.png files lying within the template is as easy as   
+   `css/sade.css, img/logo.png`
+   
+* *explicit template*   
+   if you really need to use a resource e.g. an image from another template you can say:  
+   `sade/templates/default/images/ide_logo.png`  
+   However, this constitutes a dependency on another template, so there should be a good reason for it.
