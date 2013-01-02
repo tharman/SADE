@@ -36,30 +36,31 @@ List of (planned) modules
 
 
 Here a basic set of modules:
-; navigation
-: allow configuration and management on various indexes on the data and their display in the user interface
-; search
-; text-viewer
-: allows to navigate through pages, indexes, text
-: (has to interact with image-viewer to sync navigation) 
-; image-viewer 
-: integrate the digilib library to display images  (as a servlet) 
-; teixslt
-: XSLT-stylesheets for TEI by Sebastian Rahtz ([ http://www.tei-c.org/Tools/Stylesheets/ tei-c.org])
+* **navigation**
+   
+    allow configuration and management on various indexes on the data and their display in the user interface
+
+* **search**
+
+* **text-viewer**
+   
+  allows to navigate through pages, indexes, text
+  has to interact with image-viewer to sync navigation) 
+
+* **image-viewer**
+  
+  integrate the digilib library to display images  (as a servlet) 
+
+* **teixslt**
+
+  XSLT-stylesheets for TEI by Sebastian Rahtz ([ http://www.tei-c.org/Tools/Stylesheets/ tei-c.org])
 
 Following is a list of discussed/planned modules:
 
-;Timeline/Timemap
-: displaying data over time and space (e4d)
-; user
-: user management
-; i18n 
-: internationalization
-; diagnostics
-: a harmonized approach to error-handling/messaging
-: possibly base on [http://www.loc.gov/standards/sru/specs/diagnostics.html sru:diagnostics]
-; OAI-PMH provider 
-; FCS REST-interface
-: provide an (read-only) REST-interface to search in the data, compliant with the ([http://www.loc.gov/standards/sru/index.html SRU]-based) [http://clarin.eu/fcs (CLARIN) Federated Content Search effort]
-; FCS reader/aggregator
-: provide an interface able to read foreign FCS-interfaces
+* **Timeline/Timemap**: displaying data over time and space (e4d)
+* **user**:  user management
+* **i18n**: internationalization
+* **diagnostics**: a harmonized approach to error-handling/messaging, possibly base on [sru:diagnostics](http://www.loc.gov/standards/sru/specs/diagnostics.html)
+* **OAI-PMH provider**
+* **FCS**: provide an (read-only) REST-interface to search in the data, compliant with the [SRU](http://www.loc.gov/standards/sru/index.html)-based [(CLARIN) Federated Content Search effort](http://clarin.eu/fcs)
+* **FCS reader/aggregator**: provide an interface able to read foreign FCS-interfaces
