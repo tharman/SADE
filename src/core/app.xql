@@ -12,7 +12,6 @@ import module namespace repo-utils = "http://aac.ac.at/content_repository/utils"
 :)
 
  (:
- obsoleted by templates:init()
 declare 
     %templates:wrap
 function app:init($node as node(), $model as map(*), $project as xs:string?) {
@@ -21,7 +20,6 @@ function app:init($node as node(), $model as map(*), $project as xs:string?) {
         let $project-config := if (doc-available($project-config-path)) then doc($project-config-path) else ()
         return map { "config" := $project-config 
         }
-};
 :)
  (:   <p>{$project}</p>:)
  
@@ -33,8 +31,8 @@ function app:init($node as node(), $model as map(*), $project as xs:string?) {
         get-uri {request:get-uri()}<br/>
         config:app-root {$config:app-root}<br/>
         
-</p>:)
-
+</p>
+};:)
 
 declare 
     %templates:wrap
@@ -50,4 +48,17 @@ config:param-value($model, 'project-title')
         config:app-root {$config:app-root}<br/>
         
 </p>:)
+};
+
+declare 
+    %templates:wrap
+function app:logo($node as node(), $model as map(*)) {
+
+    let $logo-image := config:param-value($model, 'logo-image')
+    let $logo-link := config:param-value($model, 'logo-link')
+    
+    return <a href="{$logo-link}" target="_blank">
+                    <img src="{$logo-image}" class="logo right"/>
+                </a>
+           
 };
