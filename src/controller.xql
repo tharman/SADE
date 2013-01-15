@@ -30,9 +30,11 @@ if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
-else if (ends-with($exist:resource, ".html")) then 
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-      <forward url="{$exist:controller}/{$config:templates-dir}{$template-id}/{$exist:resource}"/>
+else if (ends-with($exist:resource, ".html")) then
+   let $path := config:resolve-template-to-uri($config, $rel-path)
+(:      <forward url="{$exist:controller}/{$config:templates-dir}{$template-id}/{$exist:resource}"/>:)
+return  <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+      <forward url="{$path}"/>
       <view>
         <forward url="{$exist:controller}/core/view.xql" >
             <add-parameter name="project" value="{$project}"/>
