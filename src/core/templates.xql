@@ -281,7 +281,7 @@ declare %private function templates:cast($values as item()*, $targetType as xs:s
  : @param $project project-identifier
  :)
 declare function templates:init($node as node(), $model as map(*), $project as xs:string?) {
-       map { "config" := config:project-config($project) }
+       map { "config" := config:config($project) }
 };
  
 declare function templates:include($node as node(), $model as map(*), $path as xs:string) {
