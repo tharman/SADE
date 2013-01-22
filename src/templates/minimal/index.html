@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:init">
+    <div class="templates:surround?with=page.html&amp;at=content">
+        <div class="row-fluid">
+            <div id="content" class="span8">
+                <div class="templates:if-parameter-unset?param=query">
+                    <div class="templates:include?path=content/welcome.xml">welcome
+                </div>
+                </div>
+<!--<div class="templates:if-parameter-set?param=query">-->
+                <div class="templates:include?path=query_input.html">search
+            </div>
+                <div class="templates:if-parameter-set?param=query">
+                    <div id="results" class="fcs:query?x-dataview=full">
+                        <p>Found: <span id="hit-count" class="fcs:hit-count"/> matches.</p>
+                        <div class="fcs:show-hits?howmany=20"/>
+                    </div>
+                </div>
+            </div>
+        <!--
+        <div class="span4">
+            <h2>Data Overview</h2>
+            <h3>Collections</h3>
+            <div class="app:scan?scanClause=cmd:MdCollectionDisplayName">
+                scan=cmd:MdCollectionDisplayName
+            </div>
+            <h3>CMD Profiles </h3>
+            <div class="app:scan?scanClause=cmd.profile">
+                scan=cmd.profile
+            </div>
+        </div>-->
+        </div>
+    </div>
+</div>

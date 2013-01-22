@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=templates/page.html&amp;at=content">
+    <h3>Search</h3>
+    <div class="templates:include?path=templates/query_input.html">search
+    </div>
+    <div class="templates:if-parameter-set?param=query">
+        <div id="results" class="app:query ">
+            <p>Found: <span id="hit-count" class="app:hit-count"/> matches.</p>
+            <div class="app:show-hits?howmany=20"/>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /*
+         * We use the onScrollBeyond jQuery plugin to dynamically load
+         * additional search results when the users scrolls down the page.
+         */
+        var itemsPerPage = 10;
+        var current = 1;
+        var loading = false;
+        jQuery(document).ready(function () {
+            $("#results").onScrollBeyond(function () {
+                if (loading) {
+                    return;
+                }
+                loading = true;
+                current = current + itemsPerPage;
+                $.ajax("shakespeare-ajax.html", {
+                    data: { start: current },
+                    success: function (data) {
+                        $("#results").append(data);
+                        loading = false;
+                    }
+                });
+            });
+        });
+    </script>
+</div>

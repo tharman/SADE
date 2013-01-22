@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title class="app:title">App Title</title>
+        <meta class="config:app-meta"/>
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+        <!--<link rel="stylesheet" type="text/css" href="sade/templates/bootstrap/css/bootstrap.min.css"/>-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/cmds-ui.css"/>
+        <!--<link rel="stylesheet" type="text/css" href="resources/css/corpusshell.css"/>
+        -->
+        
+<!--    specific dataset2view fcs-module stuff!!! -->
+        <link rel="stylesheet" type="text/css" href="sade/modules/fcs/scripts/style/jquery.ui.resizable.css"/>
+        <link rel="stylesheet" type="text/css" href="sade/modules/fcs/scripts/style/jquery.ui.all.css"/>
+        <link rel="stylesheet" type="text/css" href="sade/modules/fcs/scripts/style/jquery/clarindotblue/jquery-ui-1.8.5.custom.css"/>
+        <style type="text/css">
+        table { border-collapse:collapse;  border:1px solid grey }
+        td {padding: 3px; border:1px solid grey}
+        div.infovis-wrapper {border: 1px solid grey; margin: 20px; padding: 5px; height:350px; width:700px;}
+        .infovis {height: 90%; width: 100%;}
+        .value { text-align: right; }
+        label {display:inline}
+        </style>
+        <script type="text/javascript" src="sade/modules/fcs/scripts/js/jquery.min.js"/>
+        <script type="text/javascript" src="sade/modules/fcs/scripts/js/jquery-ui.min.js"/>
+        <script type="text/javascript" src="sade/modules/fcs/scripts/js/query_input/qi.js"/>
+        
+        <!--    <script type="text/javascript" src="sade/modules/fcs/scripts/js/jquery/jquery.tablesorter.js"/>
+            <script type="text/javascript" src="sade/modules/fcs/scripts/js/jquery/jquery.uitablefilter.js"/>
+        -->
+        <script type="text/javascript" src="sade/modules/fcs/scripts/google-jsapi.js"/>
+        <script type="text/javascript">
+                var data= {};
+                var options = {}; 
+                var chart = {};
+      
+          google.load("visualization", "1", {packages:["corechart"]});
+      
+            function drawChart(dataset) {        
+            var target_container_selector = "chart-" +  dataset;
+            
+               if (options[dataset]["layout"]=='pie') {
+               chart[dataset] = new google.visualization.PieChart(document.getElementById(target_container_selector));
+               chart[dataset].draw(data[dataset], options[dataset]);
+               } else {
+               chart[dataset] = new google.visualization.AreaChart(document.getElementById(target_container_selector));
+               chart[dataset].draw(data[dataset], options[dataset]);
+               }
+            }
+     
+     function toggleLayout(dataset) {
+        if (options[dataset]["layout"]=='pie') { options[dataset]["layout"] = 'area' } else { options[dataset]["layout"]='pie'};
+        drawChart(dataset);
+     }
+      
+      $(function()
+        {
+           
+           $("#query-input").QueryInput({params: {
+            query: { label:"Lemma", static_source: "fcs?operation=scan&amp;x-format=json&amp;scanClause=dataset&amp;maximumTerms=0&amp;sort=size", index:"dataset", minLength:2, widget:"autocomplete"},
+            "submit-query":{value:"Search", label:"", widget:"submit"}},
+            onValueChanged: function(v) {console.log(this, v)}
+            });
+           
+        });
+        
+    </script>
+    </head>
+    <body id="body">
+        <div>
+            <span id="logo" class="app:logo">
+                <a href="./index.html">
+                    <img src="images/logo.png"/>
+                </a>
+            </span>
+            <div id="site-name">
+<!--                <a class="config:app-title brand" href="./index.html">App Title</a>-->
+                <span class="app:title brand">App Title</span>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container"/>
+            </div>
+        </div>
+        <div id="content" class="container"/>
+    </body>
+</html>

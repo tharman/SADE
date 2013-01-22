@@ -1,0 +1,209 @@
+
+/*********************/
+/* basic page layout */ 
+#header { height: 70px; }
+#top-menu {position: absolute; right: 20px; top: 10px; }
+#left-menu {float: left; width:250px; height:500px; overflow:auto;}
+#main {margin-left:260px; /* max-width: .. */}
+#query-input { padding: 4px;  max-width:700px;  }
+#repositories {margin: 6px 0px; }
+#notify {display:none; /* max-width: 400px; position: relative; overflow: auto; height: 40px; */}
+#user {text-align: right;}
+#welcome {max-width: 600px; padding: 10px;}/* ******************** */
+/* look and feel, fonts */
+body, table { font-size: 12px; font-family: Helvetica,Tahoma,Arial,Verdana,sans-serif; margin:8px}
+#site-name { font-family: Helvetica, Tahoma, Verdana, sans-serif; font-size: 24px; color: #014172; /* #040288 #666699; */ display:inline; padding-left: 20px; position:absolute; top:24px}
+#welcome h3 { color: #014172;}
+.note { font-size: 0.9em; color: #9999aa; }
+.data {display: none; }
+.hilight { font-size: 1.1em; font-weight: bold}
+.error { color: #660000; border: 1px solid red; background-color: #ffcccc; }
+/* this is temporary for MdREcordView-Titlebar; -> move to ui-box-header */ 
+/* obsolete .box_heading { background-color: #014172;  color: #FAFAFF; font-weight: bold; padding: 2px; } 
+h3 { font-weight: bold; font-size:1.2em; margin:4px; padding: 4px;} *//* ************* */
+/* html-elements */a, .ui-widget-content a { text-decoration: none; color:#AC3333; }
+a.external {border-bottom: 1px solid #A6C9E2; }   
+
+label, .label, .cmds-elem-prop .label { font-size: 0.9em; color: #014172; font-style: italic; }
+ul { padding-left: 4px; list-style-type: none; margin: 0;}
+li { background: url('imgs/icon-dot-4.png') no-repeat; background-position: 0px 7px; padding-left: 8px;  } 
+a img { border:0;	}
+tr.detailselection {background-color: #E6E9F0;}
+p {margin: 4px 0;}
+.treeview,
+.treeview ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	background-color: inherit;
+}
+table.bordered { border: 1px solid #A6C9E2; }
+table.bordered, table.bordered table, table.bordered td {	border: 1px solid #A6C9E2;	border-collapse: collapse; vertical-align: top; }
+table.bordered th { font-style: italic; font-weight: normal; font-size: 0.9em; padding: 0px; }
+/* terms-tree table */
+.terms-tree .treecol {padding-left: 1.5em;}	/* .terms-tree .number { text-align: right; }
+		.terms-tree td { border-bottom: 1px solid #9999aa; padding: 1px 4px;}		
+		table.terms-tree  thead {background: #ccccff; font-size:0.9em; }
+		table.terms-tree  thead tr th { border:1px solid #9999aa; font-weight:normal; text-align:left; padding: 1px 4px;}
+*/
+/* jquery-ui overlay */
+
+.ui-accordion .ui-accordion-header { 	padding-left: 12px; }
+.ui-accordion .ui-accordion-header .ui-icon {	left: -0.2em; }
+.ui-accordion .ui-accordion-content { 	padding: 4px 8px; }
+.ui-widget-header { padding-left: 6px; }
+.ui-widget-content { padding: 6px;	}
+.ui-dialog {padding: 0px;}
+.ui-dialog .ui-dialog-titlebar { padding: 0 0 0 6px; }
+.cmds-ui-block { margin: 2px; text-align: left; overflow: auto;}
+.cmds-elem-plus .detail, .ui-context-dialog { display:none; overflow: auto; position:absolute;  border: 1px solid #A6C9E2; background-color: #fafaff;} /* z-index:1; }*/
+/* .cmds-elem-plus .detail { display: none; border: 1px solid #A6C9E2;} */
+.cmds-elem-prop {}
+.cmds-elem-prop .label { }
+.cmds-elem-prop .value { }
+.value-text { }
+.value-unspecified {}
+.value-empty {}
+.number { text-align: right;}.cmds-xmlelem {padding:2px; border-top: 1px dashed #A6C9E2; }
+.cmds-xmlelem.has-children { border: 1px solid #A6C9E2; margin: 2px;}
+.value-text .value { margin-left: 20%; display:block; }
+.value-text .inline.label { float:left; }
+.value-text .block.label { float:none; }
+.cmds-xmlelem .attributes .label {}
+.cmds-xmlelem .attributes .value {}input, h.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget area, .ui-widget button
+	{ border: 1px solid #A6C9E2; margin: 1px; } /*********************************** */
+/* input ui-elements - positioning */.cmds-ui-elem-stretch {width: 100%;}
+/* form#searchretrieve { margin-top: 12px;}  */
+/* hack for IE */
+.wwFormTable {width: 100%; }
+#input-simplequery, #input-query { width: 350px; margin: 8px 10px 6px 10px; font-size: 1.2em; height: 28px;}
+#submit-query, #input-submit-query { font-size: 1.2em; font-weight: bold; border-radius: 5px; }
+#searchclauselist {margin: 0px; display:none;}
+.searchclause {  }
+.and_level {border-top: 1px solid #9999cc; margin: 2px 0px;}
+.or_level {border: none ; }.sc-wrapper { margin: 1px 0px; }
+.index-input { width:38%;  }
+.rel_input { width:8%;  }
+.value_input { width:30%; }
+.sc_cmds { }
+.sc_id {display:none;}.result-header { /* float: right; */}
+.cmds-navi-header { float:right;}
+/* hack, for weird behaviour, the (appearingly) same rules for result-header.paging-input and cmds-navi-header.paging-input
+different render (cmds-navi-header.paging-input too small) */
+.cmds-navi-header .paging-input { height: 1.2em;}.paging-input { width: 3em; text-align: right; height: 1em;}.query {margin-right: 4px;}
+ 
+ .sc-wrapper .index-context { display: none; border: 1px solid #A6C9E2;}.columns-wrapper { right:0px;}
+.columns-selected { }/* documentation */
+.title, h1, h2, h3 { color: #014172;}
+h1 {font-size: 1.6em; margin: 30px 0 10px 30px;}
+h2 {font-size: 1.4em; margin: 1em 0 0.4em 0;}
+h3 {font-size: 1.2em; margin: 0.8em 0 0.4em 0;}	 
+.title {font-size: 1.2em; font-weight: bold; margin: 0.4em 0 0 0.2em;}
+dt { padding: 1em 0 0.2em 1.5em; font-weight: bold;}
+dd { padding-left: 2.5em; display:block; -moz-margin-start: 0px;}
+.info {max-width: 600px; margin:30px;}
+.info p { margin: 0.4em 0; }
+.info div { padding: 0.4em 0;}
+.info li { padding: 0.2em 0 0.2em 8px;}  .info div.example {border: 1px dashed #014172; background-color: #fafaff; font-family: "Courier New", monospaced; margin: 0.8em 0; padding: 4px; line-height: 1.2em}/* ************* */
+
+/* tooltip */
+#tt {
+ position:absolute;
+ display:block;
+ /*padding:2px 12px 3px 7px;*/
+ margin-left:5px;
+ background:#A6C9E2;
+ color:#000;
+}
+
+/* command icons */
+.cmd {
+	display: inline-block;
+	width: 12px;
+	height: 12px;	
+	background: no-repeat center center;
+	margin: 0px 1px;
+	position: relative;
+	top: 2px;
+	border: 1px solid #fafaff;
+}
+a.cmd { width: auto; height:auto; top: 0px; }
+.cmd:hover { border: 1px solid #A6C9E2;	}
+#submit-query, #input-submit-query { background: url("imgs/cdb-icon-load.png") no-repeat 2px center #D0E5F5; padding-left: 14px; color:#014172; height: 28px; margin: 2px; }
+.cmd_add { background-image: url("imgs/cdb-icon-add.png");}
+.cmd_add_and { background-image: url("imgs/icon_add_and.png");}
+.cmd_add_or { background-image: url("imgs/icon_add_or.png");}
+.cmd_close { background-image: url("imgs/cdb-icon-del.png");}
+.cmd_columns { background-image: url("imgs/cdb-icon-columns.png");}
+.cmd_del { 	background-image: url("imgs/cdb-icon-del.png");}
+.cmd_detail { background-image: url("imgs/cdb-icon-detail.png");}
+.cmd_down {	background-image: url("imgs/cdb-icon-down.png"); }
+.cmd_filter { background-image: url("imgs/cdb-icon-filter.png"); }
+.cmd_get { background-image: url("imgs/icon_get.gif");}
+.cmd_info { background-image: url("imgs/cdb-icon-info.png");}
+.cmd_query {	background-image: url("imgs/cdb-icon-load.png");}
+.cmd_load {	background-image: url("imgs/cdb-icon-load.png");}
+.cmd_publish { background-image: url("imgs/cdb-icon-publish.png");}
+.cmd_reload {	background-image: url("imgs/cdb-icon-load.png");}
+.cmd_resubmit {	background-image: url("imgs/cdb-icon-.png");}
+.cmd_save { background-image: url("imgs/cdb-icon-save.png");}
+.cmd_savenew { background-image: url("imgs/cdb-icon-savenew.png");}
+.cmd_sc_delete { background-image: url("imgs/cdb-icon-del.png");}
+.cmd_up { background-image: url("imgs/cdb-icon-up.png");}
+.cmd_prev { background-image: url("imgs/cdb-icon-prev.png");}
+.cmd_next { background-image: url("imgs/cdb-icon-next.png");}
+@media print {
+	ul { list-style-type: disc;	} 
+}/* ui layout */	.base-west ,
+	.base-east ,
+	.base-center ,
+	.base_center_p-north ,
+	.base_center_p-center  {
+		/*background-color: #EEE;*/
+		border:			0; /* cosmetic */
+		padding:		0; 
+		/*overflow:		hidden;*/
+	}
+	
+	
+ 
+	/*
+	 
+	customize borders on panes/resizers to make pretty
+	 */
+	.ui-layout-pane-west		{ border-right:		0; } 
+	.ui-layout-resizer-west		{ border-left:		1px solid #BBB; }
+	.ui-layout-pane-east		{ border-left:		0; } 
+	.ui-layout-resizer-east		{ border-right:		1px solid #BBB; }
+	.ui-layout-pane-north		{ border-bottom:	0; }
+	.ui-layout-resizer-north	{ border-top:		1px solid #BBB; }
+	.ui-layout-pane-south		{ border-top:		0; }
+	.ui-layout-resizer-south	{ border-bottom: 	1px solid #BBB; }
+	/*
+	 
+	add borders to resizers when pane is 'closed'
+	 
+ 
+	 
+.ui-layout-resizer-closed	{ border:			1px solid #BBB; }
+	 */
+	/* 
+	 
+	show both borders when the resizer is 'dragging' 
+	 */
+	.ui-layout-resizer-west-dragging ,
+	.ui-layout-resizer-east-dragging {
+		border-left:		1px solid #BBB;
+		border-right:		1px solid #BBB;
+	}
+	.ui-layout-resizer-north-dragging ,
+	.ui-layout-resizer-south-dragging {
+		border-top:		1px solid #BBB;
+		border-bottom:	1px solid #BBB;
+	}
+  /* neutralize bootstrap*/
+.label {background-color: transparent; text-shadow: none; font-weight: normal;}
+.label:hover {color: #014172; }
+div.note {line-height: 1em;}
