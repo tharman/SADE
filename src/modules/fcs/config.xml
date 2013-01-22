@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config type="module">
+    <module key="fcs">
+        <param key="scripts.path">/db/apps/sade/modules/fcs/xsl/</param>
+        <param key="scan.xsl">fcs/scan2view_v2.xsl</param>
+        <param key="scan-json.xsl">fcs/scan2json.xsl</param>
+        <param key="searchRetrieve.xsl">fcs/result2view_v2.xsl</param>
+        <param key="explain.xsl">fcs/explain2view.xsl</param>
+         <!--<param key="html.xsl">misc/html2view.xsl</param>
+         <param key="static.xsl">misc/static2view.xsl</param>
+         <param key="table.xsl">misc/xml2htmltable.xsl</param>
+         <param key="default.xsl">misc/xml2view.xsl</param>
+         <param key="test.xsl">misc/test2view.xsl</param>
+         <param key="terms.xsl">misc/terms2view.xsl</param>-->
+    </module>
+</config>

@@ -30,6 +30,7 @@ if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
+       
 else if (ends-with($exist:resource, ".html")) then
    let $path := config:resolve-template-to-uri($config, $rel-path)
 (:      <forward url="{$exist:controller}/{$config:templates-dir}{$template-id}/{$exist:resource}"/>:)
@@ -54,6 +55,16 @@ else if ($file-type = ('js', 'css', 'png', 'jpg')) then
     let $path := config:resolve-template-to-uri($config, $rel-path)
     return <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$path}" />        
+    </dispatch>
+else if (contains($exist:path, "fcs")) then
+
+<dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/modules/fcs/fcs.xql" >
+            <add-parameter name="project" value="{$project}"/>
+            <add-parameter name="exist-path" value="{$exist:path}"/>
+            <add-parameter name="exist-resource" value="{$exist:resource}"/>
+        </forward>
+	
     </dispatch>
 else
     (: everything else is passed through :)

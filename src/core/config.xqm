@@ -176,8 +176,8 @@ declare function config:app-info($node as node(), $model as map(*)) {
                 <td>{$config:app-root}</td>
             </tr>
             <tr>
-                <td>?:</td>
-                <td></td>
+                <td>exist-path:</td>
+                <td>{request:get-parameter("exist-path","")}</td>
             </tr>
             
             

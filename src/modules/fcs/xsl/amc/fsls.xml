@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d n="amc" base="C:/Users/m/3/corpus_shell/_repo/corpus_shell/xsl">
+    <f n="amc-helpers.xsl" x="xsl" s="8673" t="2012-12-10 19:47:51"/>
+    <f n="amc-params.xsl" x="xsl" s="3602" t="2012-12-10 18:33:37"/>
+    <f n="amc.xsl" x="xsl" s="13741" t="2012-12-10 18:30:16"/>
+    <f n="dataset2google-json.xsl" x="xsl" s="4415" t="2012-11-20 18:50:38"/>
+    <f n="dataset2table.xsl" x="xsl" s="1886" t="2012-12-05 21:27:23"/>
+    <f n="solr2dataset.xsl" x="xsl" s="27935" t="2012-12-10 19:47:30"/>
+</d>
