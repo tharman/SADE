@@ -3,6 +3,7 @@
 	<property name="build.dir" value="${basedir}/build"/>
 	<target name="xar">
 	  <ant dir="src"/>
+	  <ant dir="sample-projects"/>
 	</target>
   <target name="clean">
     <delete dir="build"/>
