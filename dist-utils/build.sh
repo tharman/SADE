@@ -61,11 +61,11 @@ shift `expr $OPTIND - 1`
 JETTY_VERSION=8.0.4.v20111024
 
 # digilib (setting "tip" as changeset gets head revision)
-DIGILIB_CHANGESET=3cfeec734282
+DIGILIB_CHANGESET=f2ac01ddebf1
 DIGILIB_LOC=http://hg.berlios.de/repos/digilib/archive/$DIGILIB_CHANGESET.tar.bz2
 
 # tomcat
-TOMCAT_VERSION=7.0.34
+TOMCAT_VERSION=7.0.37
 
 # exist
 #EXIST_BRANCH=stable/eXist-2.0.x    # exist 2.0
@@ -73,7 +73,7 @@ TOMCAT_VERSION=7.0.34
 EXIST_BRANCH=trunk/eXist           # eXist 2.1
 EXIST_SRC_LOC=exist-2.0
 #EXIST_REV=-1					   # revision to check out -1 means head
-EXIST_REV=17880
+EXIST_REV=18252
 
 
 # Create build directory
